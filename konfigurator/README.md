@@ -1,6 +1,12 @@
 # Ove Kock – leadgenererende projektkonfigurator
 
-`ove-kock-konfigurator.html` er en selvstændig HTML-fil. Den har ingen eksterne afhængigheder, så CSS og JavaScript ligger i filen. Filen kan åbnes direkte i en browser og testes.
+`ove-kock-konfigurator.html` er en selvstændig side i Ove Kocks designlinje: topbjælke med telefonnumre, header med logo (`../assets/ovekock-logo.png`), hero, konfigurator og footer med de fire afdelinger. Farver (navy `#27346a`, rød `#e2001a`) og skrifttyper (Roboto og Roboto Condensed fra Google Fonts) matcher ovekock.dk.
+
+**Header, hero og footer bruges kun på den selvstændige side.** Ved indlejring på ovekock.dk kopieres kun selve konfiguratoren, fordi sitet allerede har sin egen header og footer.
+
+**Heroens baggrundsbillede:** Sæt `--ok-hero-img` øverst i sidens CSS til et af Ove Kocks egne fotos.
+
+**Dybe links:** Tilføj `?produkt=renovation`, `kran`, `lift`, `sugebil` eller `hejs` til adressen for at springe direkte til den valgte produktlinje. Det er oplagt fra knapper på produktsiderne.
 
 ## Flow (8 trin)
 
@@ -40,7 +46,7 @@ window.addEventListener('message', function (e) {
 | Felt | Betydning |
 |---|---|
 | `endpoint` | URL der modtager leads som JSON via POST: HubSpot-, Pipedrive-, Make-, Zapier- eller n8n-webhook eller egen server. **Står den tom, åbnes brugerens mailprogram med en udfyldt mail til `fallbackEmail`. Sæt et endpoint før lancering.** |
-| `fallbackEmail` | Modtager, hvis der ikke er sat et endpoint |
+| `fallbackEmail` | Modtager, hvis der ikke er sat et endpoint (standard: info@ovekock.dk) |
 | `privacyUrl` | Link til privatlivspolitikken |
 | `leasing` | Løbetid, rente og restværdi til leasing-overslaget |
 | `assemblyWeeks` | Uger til montage, syn og klargøring |

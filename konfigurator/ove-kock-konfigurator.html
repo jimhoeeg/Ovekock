@@ -3,172 +3,337 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Konfigurator – Ove Kock</title>
-<meta name="description" content="Konfigurér din nye renovationsbil, kranbil, hejs, sugebil eller lift og få en prisindikation på få minutter.">
+<title>Projektkonfigurator – Ove Kock</title>
+<meta name="description" content="Konfigurér jeres næste renovationsbil, kran, lift, sugebil eller hejs og få en prisindikation på få minutter. Ove Kock – Hydraulik & Karosserifabrik siden 1970.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@500;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+/* ===== Sideramme (header, hero, footer) – bruges kun på den selvstændige side.
+   Ved indlejring på ovekock.dk har sitet allerede sin egen header og footer. ===== */
+:root{--ok-navy:#27346a;--ok-navy-2:#1d2853;--ok-red:#e2001a;--ok-gray:#f2f2f2;
+  --ok-slash:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 26 20'%3E%3Cpath fill='%23e2001a' d='M9 0h7L8 20H1zM19 0h7l-8 20h-7z'/%3E%3C/svg%3E");
+  /* Indsæt et af Ove Kocks egne værkstedsfotos her, fx url('https://www.ovekock.dk/wp-content/uploads/....jpg') */
+  --ok-hero-img:none;}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:#fff;font-family:'Roboto',Arial,sans-serif;color:#2b2f3a;-webkit-font-smoothing:antialiased}
+.okp-wrap{max-width:1320px;margin:0 auto;padding:0 40px}
+.okp-top{background:var(--ok-navy);color:#fff;font-family:'Roboto Condensed','Roboto',Arial,sans-serif;font-weight:700;font-size:16px;text-transform:uppercase;letter-spacing:.01em}
+.okp-top .okp-wrap{display:flex;justify-content:flex-end;align-items:center;gap:22px;height:46px;white-space:nowrap}
+.okp-top a{color:#fff;text-decoration:none}
+.okp-top a:hover{text-decoration:underline}
+.okp-top i{display:inline-block;width:3px;height:11px;background:var(--ok-red);transform:skewX(-12deg)}
+.okp-header{background:#f5f5f5;position:sticky;top:0;z-index:60;box-shadow:0 1px 0 rgba(0,0,0,.06)}
+.okp-header .okp-wrap{display:flex;align-items:center;gap:40px;height:104px}
+.okp-logo{display:inline-flex;flex:none;line-height:0}
+.okp-logo img{height:84px;width:auto;display:block}
+.okp-nav{display:flex;align-items:center;gap:46px;flex:1;justify-content:center}
+.okp-nav>a,.okp-dd>button{white-space:nowrap;font-family:'Roboto',Arial,sans-serif;font-weight:500;font-size:19px;color:var(--ok-navy);text-decoration:none;background:none;border:0;padding:10px 0;cursor:pointer}
+.okp-nav>a:hover,.okp-dd>button:hover{color:var(--ok-red)}
+.okp-dd{position:relative}
+.okp-dd>button::after{content:"";display:inline-block;margin-left:10px;vertical-align:3px;border:6px solid transparent;border-top:7px solid currentColor;border-bottom:0}
+.okp-dd-menu{display:none;position:absolute;left:-18px;top:100%;min-width:250px;background:#fff;border-top:3px solid var(--ok-red);box-shadow:0 10px 24px rgba(29,40,83,.15);padding:6px 0}
+.okp-dd:hover .okp-dd-menu,.okp-dd:focus-within .okp-dd-menu{display:block}
+.okp-dd-menu a{display:block;padding:11px 18px;color:var(--ok-navy);text-decoration:none;font-weight:500;font-size:16px}
+.okp-dd-menu a:hover{background:#f2f3f7;color:var(--ok-red)}
+.okp-search{display:flex;gap:14px;flex:none}
+.okp-search input{width:265px;height:52px;border:1px solid var(--ok-navy);border-radius:0;padding:0 20px;font:inherit;font-size:17px;background:#fff;color:#222}
+.okp-search input::placeholder{color:#a3a9b8}
+.okp-search button{width:46px;height:56px;margin-top:-2px;background:var(--ok-navy);border:0;color:#fff;cursor:pointer;display:flex;align-items:center;justify-content:center}
+.okp-search button:hover{background:var(--ok-red)}
+.okp-burger{display:none;margin-left:auto;background:var(--ok-navy);border:0;width:48px;height:48px;cursor:pointer;padding:12px}
+.okp-burger span{display:block;height:3px;background:#fff;margin:5px 0}
+.okp-hero{position:relative;color:#fff;background:var(--ok-navy) var(--ok-hero-img) center/cover no-repeat;overflow:hidden}
+.okp-hero::before{content:"";position:absolute;inset:0;background:linear-gradient(100deg,rgba(29,40,83,.96) 0%,rgba(39,52,106,.86) 55%,rgba(39,52,106,.62) 100%),repeating-linear-gradient(135deg,rgba(255,255,255,.035) 0 2px,transparent 2px 16px)}
+.okp-hero .okp-wrap{position:relative;z-index:1;padding-top:72px;padding-bottom:150px}
+.okp-hero h1{position:relative;margin:0;padding-left:0;font-family:'Roboto Condensed','Roboto',Arial,sans-serif;font-weight:700;font-size:62px;line-height:1.02;text-transform:uppercase;max-width:900px;letter-spacing:.005em}
+.okp-hero h1::before{content:"";position:absolute;left:-34px;top:-24px;width:96px;height:74px;background:var(--ok-slash) no-repeat left top/contain;z-index:-1}
+.okp-hero .okp-kicker{display:block;margin-top:14px;font-family:'Roboto Condensed','Roboto',Arial,sans-serif;font-weight:700;font-size:30px;text-transform:uppercase;color:var(--ok-red);text-shadow:0 1px 0 rgba(0,0,0,.15)}
+.okp-hero p{margin:22px 0 0;max-width:640px;font-size:19px;line-height:1.6;color:#e3e7f2}
+.okp-usps{display:flex;flex-wrap:wrap;gap:12px 34px;margin:30px 0 0;padding:0;list-style:none;font-family:'Roboto Condensed','Roboto',Arial,sans-serif;font-weight:700;text-transform:uppercase;font-size:16px;letter-spacing:.03em}
+.okp-usps li{display:flex;align-items:center;gap:10px}
+.okp-usps li::before{content:"";width:20px;height:16px;background:var(--ok-slash) no-repeat center/contain}
+.okp-app{position:relative;margin-top:-96px;padding:0 40px 80px}
+.okp-footer{background:var(--ok-gray);padding:64px 0 48px;position:relative;overflow:hidden}
+.okp-footer-grid{display:grid;grid-template-columns:1.25fr repeat(4,1fr);gap:32px;align-items:start}
+.okp-footer .okp-logo img{height:96px}
+.okp-fb{display:inline-flex;align-items:center;gap:12px;margin-top:26px;color:var(--ok-navy);text-decoration:none;font-weight:500;font-size:19px;text-transform:uppercase}
+.okp-fb:hover{color:var(--ok-red)}
+.okp-loc h4{position:relative;margin:4px 0 16px;padding-left:38px;font-weight:500;font-size:27px;color:var(--ok-navy);text-transform:uppercase;letter-spacing:.01em}
+.okp-loc h4::before{content:"";position:absolute;left:0;top:-4px;width:30px;height:24px;background:var(--ok-slash) no-repeat center/contain}
+.okp-loc p{margin:0 0 12px;font-size:18px;line-height:1.5;color:#333}
+.okp-loc a{color:inherit;text-decoration:none}
+.okp-loc a:hover{color:var(--ok-red)}
+.okp-bottom{background:var(--ok-navy);color:#fff}
+.okp-bottom .okp-wrap{display:flex;align-items:center;gap:14px;flex-wrap:wrap;min-height:84px;font-size:18px}
+.okp-bottom a{color:#fff;text-decoration:none}
+.okp-bottom a:hover{text-decoration:underline}
+.okp-bottom i{display:inline-block;width:3px;height:11px;background:var(--ok-red);transform:skewX(-12deg)}
+@media (max-width:1360px){
+  .okp-search input{width:210px}
+  .okp-nav{gap:32px}
+}
+@media (max-width:1180px){
+  .okp-search{display:none}
+  .okp-nav{gap:30px}
+}
+@media (max-width:980px){
+  .okp-wrap{padding:0 20px}
+  .okp-top .okp-wrap{justify-content:center;flex-wrap:wrap;white-space:normal;font-size:13px;gap:4px 12px;height:auto;padding-top:8px;padding-bottom:8px}
+  .okp-header .okp-wrap{height:84px;gap:16px}
+  .okp-logo img{height:56px}
+  .okp-burger{display:block}
+  .okp-nav{display:none;position:absolute;left:0;right:0;top:100%;flex-direction:column;align-items:stretch;gap:0;background:#fff;box-shadow:0 12px 24px rgba(29,40,83,.15);border-top:3px solid var(--ok-red)}
+  .okp-nav.open{display:flex}
+  .okp-nav>a,.okp-dd>button{display:block;width:100%;text-align:left;padding:14px 20px;border-bottom:1px solid #eceef3}
+  .okp-dd-menu{position:static;display:block;box-shadow:none;border:0;padding:0 0 6px 16px}
+  .okp-hero .okp-wrap{padding-top:44px;padding-bottom:120px}
+  .okp-hero h1{font-size:38px}
+  .okp-hero h1::before{left:-8px;top:-30px;width:70px;height:54px;opacity:.9}
+  .okp-hero .okp-kicker{font-size:21px}
+  .okp-hero p{font-size:17px}
+  .okp-app{padding:0 12px 56px;margin-top:-84px}
+  .okp-footer-grid{grid-template-columns:1fr 1fr;gap:28px}
+  .okp-footer-grid>div:first-child{grid-column:1/-1}
+  .okp-footer .okp-logo img{height:76px}
+  .okp-loc h4{font-size:22px}
+  .okp-loc p{font-size:16px}
+  .okp-bottom .okp-wrap{font-size:15px;padding-top:18px;padding-bottom:18px}
+}
+@media (max-width:520px){ .okp-footer-grid{grid-template-columns:1fr} }
+@media print{ .okp-top,.okp-header,.okp-hero,.okp-footer,.okp-bottom{display:none} .okp-app{margin:0;padding:0} }
+</style>
 </head>
-<body style="margin:0;background:#f5f7fa;">
+<body>
+
+<div class="okp-top"><div class="okp-wrap">
+  <a href="tel:+4576117777">Esbjerg - 7611 7777</a><i></i>
+  <a href="tel:+4576117777">Kolding - 7611 7777</a><i></i>
+  <a href="tel:+4557613613">Ringsted - 5761 3613</a><i></i>
+  <a href="tel:+4540210190">Hobro - 4021 0190</a>
+</div></div>
+
+<header class="okp-header"><div class="okp-wrap">
+  <a class="okp-logo" href="https://www.ovekock.dk/" aria-label="Ove Kock – forsiden"><img src="../assets/ovekock-logo.png" alt="Ove Kock – Hydraulik &amp; Karosserifabrik" width="597" height="188"></a>
+  <button class="okp-burger" type="button" aria-label="Menu" aria-expanded="false" aria-controls="okp-nav"><span></span><span></span><span></span></button>
+  <nav class="okp-nav" id="okp-nav" aria-label="Hovedmenu">
+    <a href="https://www.ovekock.dk/om-ove-kock/">Om Ove Kock</a>
+    <div class="okp-dd">
+      <button type="button" aria-haspopup="true">Produkter</button>
+      <div class="okp-dd-menu">
+        <a href="https://www.ovekock.dk/renovationsbiler/">Renovationsbiler</a>
+        <a href="https://www.ovekock.dk/kraner-tiplad/">Kraner / Tiplad</a>
+        <a href="https://www.ovekock.dk/lifte-laessebagsmaek/">Lifte / Læssebagsmæk</a>
+        <a href="https://www.ovekock.dk/sugebiler/">Sugebiler</a>
+        <a href="#konfigurator">Projektkonfigurator</a>
+      </div>
+    </div>
+    <a href="https://www.ovekock.dk/galleri-oversigt/">Galleri</a>
+    <a href="https://www.ovekock.dk/job/">Job</a>
+    <a href="https://www.ovekock.dk/kontakt/">Kontakt</a>
+  </nav>
+  <form class="okp-search" action="https://www.ovekock.dk/" method="get" role="search">
+    <input type="search" name="s" placeholder="Hvad leder du efter ?" aria-label="Søg på ovekock.dk">
+    <button type="submit" aria-label="Søg"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><circle cx="10" cy="10" r="6.5"/><path d="M15 15l6 6"/></svg></button>
+  </form>
+</div></header>
+
+<section class="okp-hero"><div class="okp-wrap">
+  <h1>Byg jeres næste specialbil</h1>
+  <span class="okp-kicker">Og få en prisindikation på få minutter</span>
+  <p>Fortæl os om opgaven – så guider vi jer til den rigtige opbygning, chassis og udstyr. Bygget på mere end 50 års erfaring med renovationsbiler, kraner, lifte og sugebiler.</p>
+  <ul class="okp-usps"><li>Siden 1970</li><li>Eneforhandler af JOAB i Danmark</li><li>Service i hele landet</li></ul>
+</div></section>
+
+<main class="okp-app" id="konfigurator">
 
 <!-- ================= OKC START – kopiér herfra og ned til OKC SLUT ================= -->
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@500;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
 <div class="okc" id="okc-root" data-okc>
-  <noscript>Konfiguratoren kræver JavaScript. Ring til Ove Kock på 76 11 77 77 eller skriv til kock@ovekock.dk.</noscript>
+  <noscript>Konfiguratoren kræver JavaScript. Ring til Ove Kock på 7611 7777 eller skriv til info@ovekock.dk.</noscript>
 </div>
 
 <style>
 .okc{
-  --okc-primary:#0d2a4a;      /* hovedfarve (navy) – tilpas til Ove Kocks brand */
-  --okc-primary-2:#16406e;
-  --okc-accent:#f2a900;       /* signalfarve */
-  --okc-bg:#f5f7fa;
-  --okc-card:#ffffff;
-  --okc-text:#14202e;
-  --okc-muted:#5b6b7c;
-  --okc-border:#d8e0e9;
-  --okc-sel:#eaf2fb;
-  --okc-ok:#1f7a45;
-  --okc-warn:#a34a06;
-  --okc-warn-bg:#fff4e5;
-  --okc-tip-bg:#eef5ff;
-  --okc-rec-bg:#effaf2;
-  --okc-radius:12px;
-  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+  /* Ove Kock-farver */
+  --okc-navy:#27346a; --okc-navy-2:#1d2853; --okc-navy-3:#33458a;
+  --okc-red:#e2001a; --okc-red-2:#bf0016;
+  --okc-primary:#27346a;
+  --okc-bg:#f4f5f8; --okc-card:#ffffff; --okc-text:#2b2f3a; --okc-muted:#5f6678;
+  --okc-border:#d6dae3; --okc-sel:#eef0f7; --okc-ok:#1f7a45;
+  --okc-cond:'Roboto Condensed','Roboto',Arial,sans-serif;
+  --okc-slash:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 26 20'%3E%3Cpath fill='%23e2001a' d='M9 0h7L8 20H1zM19 0h7l-8 20h-7z'/%3E%3C/svg%3E");
+  font-family:'Roboto',Arial,sans-serif;
   color:var(--okc-text);background:var(--okc-bg);
-  max-width:1200px;margin:0 auto;line-height:1.5;font-size:16px;
-  border-radius:var(--okc-radius);overflow:hidden;
+  max-width:1240px;margin:0 auto;line-height:1.55;font-size:16px;
+  box-shadow:0 18px 50px rgba(29,40,83,.18);
+  -webkit-font-smoothing:antialiased;
 }
 .okc *,.okc *::before,.okc *::after{box-sizing:border-box}
 :where(.okc) :where(h2,h3,h4,p){margin:0}
 :where(.okc) button{font:inherit;color:inherit}
-.okc-head{background:var(--okc-primary);color:#fff;padding:20px 28px 16px}
+/* Topbånd med fremdrift */
+.okc-head{background:var(--okc-navy-2);color:#fff;padding:22px 32px 18px}
 .okc-head-top{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
-.okc-brand{font-weight:800;letter-spacing:.02em;font-size:15px;text-transform:uppercase}
-.okc-brand span{color:var(--okc-accent)}
-.okc-restart{background:none;border:0;color:#c9d6e5;text-decoration:underline;cursor:pointer;font-size:14px;padding:4px}
-.okc-progress{margin-top:14px;display:flex;gap:6px}
-.okc-progress i{flex:1;height:6px;border-radius:3px;background:rgba(255,255,255,.18)}
-.okc-progress i.on{background:var(--okc-accent)}
-.okc-progress-label{margin-top:8px;font-size:13px;color:#c9d6e5}
-.okc-grid{display:grid;grid-template-columns:minmax(0,1fr) 340px;gap:24px;padding:28px}
+.okc-brand{position:relative;padding-left:34px;font-family:var(--okc-cond);font-weight:700;font-size:20px;letter-spacing:.03em;text-transform:uppercase}
+.okc-brand::before{content:"";position:absolute;left:0;top:2px;width:24px;height:19px;background:var(--okc-slash) no-repeat center/contain}
+.okc-restart{background:none;border:1px solid rgba(255,255,255,.45);color:#fff;cursor:pointer;font-family:var(--okc-cond);font-weight:700;font-size:14px;text-transform:uppercase;letter-spacing:.04em;padding:7px 14px}
+.okc-restart:hover{border-color:#fff;background:rgba(255,255,255,.08)}
+.okc-progress{margin-top:16px;display:flex;gap:4px}
+.okc-progress i{flex:1;height:5px;background:rgba(255,255,255,.18);transform:skewX(-20deg)}
+.okc-progress i.on{background:var(--okc-red)}
+.okc-progress-label{margin-top:10px;font-family:var(--okc-cond);font-weight:500;font-size:14px;color:#c8cfe3;text-transform:uppercase;letter-spacing:.05em}
+.okc-grid{display:grid;grid-template-columns:minmax(0,1fr) 350px;gap:32px;padding:36px 32px 40px}
 .okc-main{min-width:0}
-.okc-title{font-size:26px;line-height:1.25;font-weight:800;color:var(--okc-primary)}
-.okc-intro{margin-top:8px;color:var(--okc-muted);max-width:62ch}
-.okc-q{margin-top:28px}
-.okc-q-label{font-weight:700;font-size:17px}
-.okc-q-help{color:var(--okc-muted);font-size:14px;margin-top:2px}
-.okc-q-err{display:none;color:#b42318;font-size:14px;margin-top:6px;font-weight:600}
+/* Overskrifter i Ove Kock-stil */
+.okc-title{position:relative;padding-left:44px;font-family:var(--okc-cond);font-weight:700;font-size:36px;line-height:1.08;text-transform:uppercase;color:var(--okc-navy);letter-spacing:.005em}
+.okc-title::before{content:"";position:absolute;left:0;top:3px;width:34px;height:27px;background:var(--okc-slash) no-repeat center/contain}
+.okc-intro{margin-top:12px;color:var(--okc-navy);font-size:17px;line-height:1.6;max-width:64ch}
+.okc-q{margin-top:32px}
+.okc-q-label{font-family:var(--okc-cond);font-weight:700;font-size:19px;text-transform:uppercase;letter-spacing:.02em;color:var(--okc-navy)}
+.okc-q-help{color:var(--okc-muted);font-size:14.5px;margin-top:2px}
+.okc-q-err{display:none;color:var(--okc-red-2);font-size:14px;margin-top:8px;font-weight:700}
 .okc-q.err .okc-q-err{display:block}
-.okc-opts{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:12px;margin-top:12px}
-.okc-opt{position:relative;text-align:left;color:var(--okc-text);background:var(--okc-card);border:2px solid var(--okc-border);border-radius:var(--okc-radius);padding:14px 14px 12px;cursor:pointer;transition:border-color .15s,box-shadow .15s,transform .05s;display:flex;flex-direction:column;gap:4px}
-.okc-opt:hover:not(:disabled){border-color:var(--okc-primary-2)}
-.okc-opt:focus-visible{outline:3px solid var(--okc-accent);outline-offset:2px}
-.okc-opt[aria-checked="true"]{border-color:var(--okc-primary);background:var(--okc-sel);box-shadow:0 0 0 1px var(--okc-primary)}
-.okc-opt:disabled{cursor:not-allowed;opacity:.55;background:#f1f3f6}
-.okc-opt-l{font-weight:700;padding-right:22px}
-.okc-opt-d{font-size:14px;color:var(--okc-muted)}
-.okc-opt-dis{font-size:13px;color:#b42318;font-weight:600}
-.okc-opt-check{position:absolute;top:12px;right:12px;width:20px;height:20px;border-radius:50%;border:2px solid var(--okc-border);background:#fff}
-.okc-opt.multi .okc-opt-check{border-radius:5px}
-.okc-opt[aria-checked="true"] .okc-opt-check{background:var(--okc-primary);border-color:var(--okc-primary)}
+.okc-opts{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:14px;margin-top:14px}
+/* Valgkort */
+.okc-opt{position:relative;text-align:left;color:var(--okc-text);background:#fff;border:1px solid var(--okc-border);border-bottom:4px solid var(--okc-border);border-radius:0;padding:16px 16px 14px;cursor:pointer;display:flex;flex-direction:column;gap:5px;transition:border-color .15s,background-color .15s,box-shadow .15s}
+.okc-opt:hover:not(:disabled){border-bottom-color:var(--okc-red);box-shadow:0 6px 16px rgba(29,40,83,.08)}
+.okc-opt:focus-visible{outline:3px solid var(--okc-red);outline-offset:2px}
+.okc-opt[aria-checked="true"]{border-color:var(--okc-navy);border-bottom-color:var(--okc-red);background:var(--okc-sel)}
+.okc-opt:disabled{cursor:not-allowed;opacity:.5;background:#f1f2f5}
+.okc-opt-l{font-family:var(--okc-cond);font-weight:700;font-size:17.5px;text-transform:uppercase;letter-spacing:.015em;color:var(--okc-navy);padding-right:26px;line-height:1.25}
+.okc-opt-d{font-size:14.5px;color:var(--okc-muted);line-height:1.5}
+.okc-opt-dis{font-size:13px;color:var(--okc-red-2);font-weight:700}
+.okc-opt-check{position:absolute;top:14px;right:14px;width:20px;height:20px;border:2px solid #b9c0cf;background:#fff}
+.okc-opt[aria-checked="true"] .okc-opt-check{background:var(--okc-navy);border-color:var(--okc-navy)}
 .okc-opt[aria-checked="true"] .okc-opt-check::after{content:"";position:absolute;left:5px;top:1px;width:6px;height:11px;border:solid #fff;border-width:0 2px 2px 0;transform:rotate(45deg)}
-.okc-rec{position:absolute;top:-10px;left:12px;background:var(--okc-accent);color:#1c1300;font-size:11px;font-weight:800;padding:2px 8px;border-radius:999px;text-transform:uppercase;letter-spacing:.04em}
-.okc-lvl{display:flex;align-items:center;gap:6px;font-size:12px;color:var(--okc-muted);margin-top:4px}
-.okc-lvl b{display:inline-flex;gap:2px}
-.okc-lvl b i{width:7px;height:7px;border-radius:2px;background:var(--okc-border)}
-.okc-lvl b i.on{background:var(--okc-primary-2)}
-.okc-prod{align-items:stretch}
-.okc-prod svg{width:100%;height:auto;margin-bottom:6px}
-.okc-input{width:100%;max-width:320px;margin-top:10px;padding:12px 14px;border:2px solid var(--okc-border);border-radius:10px;font:inherit;background:#fff;color:var(--okc-text)}
-.okc-input:focus{outline:none;border-color:var(--okc-primary)}
-.okc-notes{margin-top:24px;display:flex;flex-direction:column;gap:10px}
-.okc-note{border-radius:10px;padding:12px 14px;font-size:14px;border-left:4px solid}
-.okc-note b{display:block;margin-bottom:2px}
-.okc-note.tip{background:var(--okc-tip-bg);border-color:#3b7dd8}
-.okc-note.warn{background:var(--okc-warn-bg);border-color:#e08a00;color:#4a2a00}
-.okc-note.rec{background:var(--okc-rec-bg);border-color:var(--okc-ok)}
-.okc-nav{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-top:32px;padding-top:20px;border-top:1px solid var(--okc-border)}
-.okc-btn{border:0;border-radius:999px;padding:13px 26px;font-weight:700;cursor:pointer;font-size:16px}
-.okc-btn-primary{background:var(--okc-primary);color:#fff}
-.okc-btn-primary:hover{background:var(--okc-primary-2)}
-.okc-btn-accent{background:var(--okc-accent);color:#1c1300}
-.okc-btn-accent:hover{filter:brightness(1.05)}
-.okc-btn-ghost{background:transparent;color:var(--okc-primary);padding-left:4px;padding-right:4px}
-.okc-btn-ghost:hover{text-decoration:underline}
+.okc-rec{position:absolute;top:-11px;left:14px;background:var(--okc-red);color:#fff;font-family:var(--okc-cond);font-size:12px;font-weight:700;padding:3px 9px;text-transform:uppercase;letter-spacing:.06em}
+.okc-lvl{display:flex;align-items:center;gap:7px;font-size:12px;color:var(--okc-muted);margin-top:5px;text-transform:uppercase;letter-spacing:.04em;font-family:var(--okc-cond);font-weight:500}
+.okc-lvl b{display:inline-flex;gap:3px}
+.okc-lvl b i{width:8px;height:8px;background:#d6dae3;transform:skewX(-15deg)}
+.okc-lvl b i.on{background:var(--okc-navy)}
+/* Produktfliser – som forsidens navy fliser med rød bundkant */
+.okc-opts-prod{grid-template-columns:repeat(auto-fill,minmax(220px,1fr))}
+.okc-prod{background:var(--okc-navy);border:0;border-bottom:5px solid var(--okc-red);color:#fff;align-items:center;text-align:center;padding:26px 18px 22px}
+.okc-prod:hover:not(:disabled){background:var(--okc-navy-3);border-bottom-color:var(--okc-red)}
+.okc-prod[aria-checked="true"]{background:var(--okc-navy-2);box-shadow:inset 0 0 0 3px var(--okc-red)}
+.okc-prod svg{width:100%;max-width:150px;height:auto;margin:4px auto 12px;display:block}
+.okc-prod .okc-opt-l{color:#fff;font-size:21px;padding:0;letter-spacing:.02em}
+.okc-prod .okc-opt-d{color:#cdd3e6;font-size:14px}
+.okc-prod .okc-opt-check{border-color:rgba(255,255,255,.6);background:transparent}
+.okc-prod[aria-checked="true"] .okc-opt-check{background:var(--okc-red);border-color:var(--okc-red)}
+/* Felter */
+.okc-input{width:100%;max-width:320px;margin-top:12px;height:52px;padding:0 16px;border:1px solid #b9c0cf;border-radius:0;font:inherit;font-size:17px;background:#fff;color:var(--okc-text)}
+textarea.okc-input{height:auto;padding:12px 16px}
+.okc-input:focus{outline:none;border-color:var(--okc-navy);box-shadow:0 0 0 2px rgba(39,52,106,.18)}
+/* Faglige noter */
+.okc-notes{margin-top:26px;display:flex;flex-direction:column;gap:12px}
+.okc-note{padding:14px 16px;font-size:15px;line-height:1.55;border-left:5px solid;background:#fff}
+.okc-note b{display:block;margin-bottom:3px;font-family:var(--okc-cond);font-weight:700;font-size:16px;text-transform:uppercase;letter-spacing:.02em;color:var(--okc-navy)}
+.okc-note.tip{border-color:var(--okc-navy);background:#eef0f7}
+.okc-note.warn{border-color:var(--okc-red);background:#fdeef0}
+.okc-note.warn b{color:var(--okc-red-2)}
+.okc-note.rec{border-color:var(--okc-navy);background:#fff;box-shadow:inset 0 0 0 1px var(--okc-border)}
+/* Navigation og knapper */
+.okc-nav{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-top:36px;padding-top:22px;border-top:1px solid var(--okc-border)}
+.okc-btn{border:0;border-radius:0;padding:15px 30px;font-family:var(--okc-cond);font-weight:700;font-size:17px;text-transform:uppercase;letter-spacing:.05em;cursor:pointer;transition:background-color .15s}
+.okc-btn-primary{background:var(--okc-navy);color:#fff}
+.okc-btn-primary:hover{background:var(--okc-navy-2)}
+.okc-btn-accent{background:var(--okc-red);color:#fff}
+.okc-btn-accent:hover{background:var(--okc-red-2)}
+.okc-btn-ghost{background:transparent;color:var(--okc-navy);padding-left:2px;padding-right:2px}
+.okc-btn-ghost:hover{color:var(--okc-red)}
 .okc-btn:disabled{opacity:.6;cursor:wait}
-.okc-side{display:flex;flex-direction:column;gap:16px}
-.okc-card{background:var(--okc-card);border:1px solid var(--okc-border);border-radius:var(--okc-radius);padding:16px}
-.okc-card h4{font-size:13px;text-transform:uppercase;letter-spacing:.06em;color:var(--okc-muted);margin-bottom:10px}
+/* Sidepanel */
+.okc-side{display:flex;flex-direction:column;gap:18px}
+.okc-card{background:#fff;border:1px solid var(--okc-border);padding:18px 18px 16px}
+.okc-card h4{position:relative;padding-left:26px;margin-bottom:12px;font-family:var(--okc-cond);font-weight:700;font-size:16px;text-transform:uppercase;letter-spacing:.04em;color:var(--okc-navy)}
+.okc-card h4::before{content:"";position:absolute;left:0;top:2px;width:18px;height:14px;background:var(--okc-slash) no-repeat center/contain}
 .okc-viz svg{width:100%;height:auto;display:block}
-.okc-sum{list-style:none;margin:0;padding:0;font-size:14px}
-.okc-sum li{display:flex;justify-content:space-between;gap:10px;padding:6px 0;border-bottom:1px dashed var(--okc-border)}
+.okc-sum{list-style:none;margin:0;padding:0;font-size:14.5px}
+.okc-sum li{display:flex;justify-content:space-between;gap:12px;padding:7px 0;border-bottom:1px solid #eceef3}
 .okc-sum li:last-child{border-bottom:0}
 .okc-sum span{color:var(--okc-muted)}
-.okc-sum strong{text-align:right;font-weight:600}
-.okc-info ul{margin:0;padding-left:18px;font-size:14px}
-.okc-info li{margin-bottom:8px}
-.okc-teaser{background:var(--okc-primary);color:#fff;border:0}
-.okc-teaser h4{color:#c9d6e5}
-.okc-teaser p{font-size:14px}
-.okc-teaser .okc-big{font-size:20px;font-weight:800;color:var(--okc-accent);margin-bottom:4px}
+.okc-sum strong{text-align:right;font-weight:500;color:var(--okc-navy)}
+.okc-info ul{margin:0;padding-left:18px;font-size:14.5px;line-height:1.55}
+.okc-info li{margin-bottom:9px}
+.okc-info li::marker{color:var(--okc-red)}
+.okc-info b{color:var(--okc-navy)}
+.okc-teaser{background:var(--okc-navy);color:#fff;border:0;border-bottom:5px solid var(--okc-red)}
+.okc-teaser h4{color:#fff}
+.okc-teaser p{font-size:14.5px;color:#d4d9ea}
+.okc-teaser .okc-big{font-family:var(--okc-cond);font-weight:700;font-size:26px;text-transform:uppercase;margin-bottom:6px;letter-spacing:.02em}
 /* Prisindikation */
-.okc-price-hero{margin-top:20px;background:var(--okc-primary);color:#fff;border-radius:var(--okc-radius);padding:24px}
-.okc-price-hero small{color:#c9d6e5;font-size:13px;text-transform:uppercase;letter-spacing:.06em}
-.okc-price-val{font-size:34px;font-weight:800;color:var(--okc-accent);line-height:1.15;margin:4px 0}
-.okc-price-sub{color:#dbe5f0;font-size:14px}
-.okc-kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:12px;margin-top:16px}
-.okc-kpi{background:rgba(255,255,255,.08);border-radius:10px;padding:12px}
-.okc-kpi small{display:block}
-.okc-kpi strong{font-size:18px}
-.okc-table{width:100%;border-collapse:collapse;margin-top:12px;font-size:14px;background:#fff;border-radius:10px;overflow:hidden}
-.okc-table th,.okc-table td{padding:9px 12px;border-bottom:1px solid var(--okc-border);text-align:left;vertical-align:top}
+.okc-price-hero{margin-top:24px;background:var(--okc-navy);color:#fff;padding:28px 28px 24px;border-bottom:5px solid var(--okc-red)}
+.okc-price-hero small{font-family:var(--okc-cond);font-weight:700;font-size:15px;text-transform:uppercase;letter-spacing:.06em;color:#ff4b5c}
+.okc-price-val{font-family:var(--okc-cond);font-weight:700;font-size:50px;line-height:1.05;margin:6px 0 6px;color:#fff;letter-spacing:.005em}
+.okc-price-sub{color:#d4d9ea;font-size:15px}
+.okc-kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px;margin-top:20px}
+.okc-kpi{background:var(--okc-navy-2);padding:14px 16px;border-top:3px solid var(--okc-red)}
+.okc-kpi small{display:block;color:#c8cfe3;font-size:13px}
+.okc-kpi strong{font-family:var(--okc-cond);font-weight:700;font-size:21px;text-transform:uppercase;letter-spacing:.01em}
+.okc-table{width:100%;border-collapse:collapse;margin-top:14px;font-size:15px;background:#fff;border:1px solid var(--okc-border)}
+.okc-table th,.okc-table td{padding:11px 14px;border-bottom:1px solid #eceef3;text-align:left;vertical-align:top}
 .okc-table td:last-child,.okc-table th:last-child{text-align:right;white-space:nowrap}
-.okc-table th{background:#eef2f6;font-size:12px;text-transform:uppercase;letter-spacing:.05em;color:var(--okc-muted)}
-.okc-h3{font-size:18px;font-weight:800;color:var(--okc-primary);margin-top:28px}
-.okc-list{margin:8px 0 0;padding-left:20px;font-size:15px}
-.okc-list li{margin-bottom:6px}
-.okc-cta{margin-top:28px;background:#fff;border:2px solid var(--okc-accent);border-radius:var(--okc-radius);padding:20px;display:flex;gap:16px;align-items:center;justify-content:space-between;flex-wrap:wrap}
-.okc-cta p{max-width:52ch}
-.okc-fine{font-size:12px;color:var(--okc-muted);margin-top:14px}
+.okc-table th{background:var(--okc-navy);color:#fff;font-family:var(--okc-cond);font-weight:700;font-size:14px;text-transform:uppercase;letter-spacing:.06em}
+.okc-table b{color:var(--okc-navy)}
+.okc details summary{font-family:var(--okc-cond);text-transform:uppercase;letter-spacing:.04em}
+.okc-h3{position:relative;margin-top:34px;font-family:var(--okc-cond);font-weight:700;font-size:23px;text-transform:uppercase;color:var(--okc-navy);letter-spacing:.01em}
+.okc-list{margin:10px 0 0;padding-left:20px;font-size:15.5px}
+.okc-list li{margin-bottom:7px}
+.okc-list li::marker{color:var(--okc-red)}
+.okc-cta{margin-top:34px;background:var(--okc-navy);color:#fff;padding:26px 28px;display:flex;gap:20px;align-items:center;justify-content:space-between;flex-wrap:wrap;border-bottom:5px solid var(--okc-red)}
+.okc-cta .okc-h3{color:#fff;margin-top:0;font-size:28px}
+.okc-cta p{max-width:54ch;margin-top:6px;color:#d4d9ea}
+.okc-fine{font-size:12.5px;color:var(--okc-muted);margin-top:14px}
 /* Formular */
-.okc-form{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:20px}
-.okc-field{display:flex;flex-direction:column;gap:4px}
+.okc-form{display:grid;grid-template-columns:1fr 1fr;gap:16px 18px;margin-top:24px}
+.okc-field{display:flex;flex-direction:column;gap:6px}
 .okc-field.full{grid-column:1/-1}
-.okc-field label{font-weight:600;font-size:14px}
+.okc-field>label{font-family:var(--okc-cond);font-weight:700;font-size:15px;text-transform:uppercase;letter-spacing:.03em;color:var(--okc-navy)}
 .okc-field .okc-input{max-width:none;margin-top:0}
-.okc-field.err .okc-input{border-color:#b42318}
+.okc-field.err .okc-input{border-color:var(--okc-red)}
 .okc-field .okc-q-err{font-size:13px}
 .okc-field.err .okc-q-err{display:block}
-.okc-field .okc-check{display:flex;gap:10px;align-items:flex-start;font-size:14px;font-weight:400}
-.okc-check input{margin-top:3px;width:18px;height:18px;flex:none}
+.okc-field>label.okc-check{display:flex;gap:10px;align-items:flex-start;font-family:'Roboto',Arial,sans-serif;font-weight:400;font-size:14.5px;text-transform:none;letter-spacing:0;color:var(--okc-text)}
+.okc-check input{margin-top:3px;width:18px;height:18px;flex:none;accent-color:var(--okc-navy)}
+.okc-check a{color:var(--okc-navy)}
 .okc-seg{display:flex;flex-wrap:wrap;gap:8px}
-.okc-seg button{color:var(--okc-text);border:2px solid var(--okc-border);background:#fff;border-radius:999px;padding:8px 14px;cursor:pointer;font-weight:600;font-size:14px}
-.okc-seg button[aria-checked="true"]{border-color:var(--okc-primary);background:var(--okc-sel)}
+.okc-seg button{color:var(--okc-navy);border:1px solid #b9c0cf;background:#fff;padding:11px 18px;cursor:pointer;font-family:var(--okc-cond);font-weight:700;font-size:15px;text-transform:uppercase;letter-spacing:.03em}
+.okc-seg button[aria-checked="true"]{background:var(--okc-navy);border-color:var(--okc-navy);color:#fff}
 .okc-hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
-.okc-alert{margin-top:16px;padding:12px 14px;border-radius:10px;background:#fdecea;color:#7a1610;font-size:14px}
-.okc-done-ref{display:inline-block;margin-top:12px;background:var(--okc-sel);border-radius:8px;padding:6px 12px;font-weight:700;color:var(--okc-primary)}
-.okc-steps{counter-reset:s;list-style:none;padding:0;margin:16px 0 0}
-.okc-steps li{counter-increment:s;position:relative;padding:0 0 14px 44px}
-.okc-steps li::before{content:counter(s);position:absolute;left:0;top:0;width:30px;height:30px;border-radius:50%;background:var(--okc-primary);color:#fff;font-weight:800;display:flex;align-items:center;justify-content:center}
+.okc-alert{margin-top:16px;padding:14px 16px;background:#fdeef0;border-left:5px solid var(--okc-red);color:#6a0010;font-size:14.5px}
+.okc-done-ref{display:inline-block;margin-top:16px;background:var(--okc-navy);color:#fff;padding:8px 14px;font-family:var(--okc-cond);font-weight:700;text-transform:uppercase;letter-spacing:.05em}
+.okc-steps{counter-reset:s;list-style:none;padding:0;margin:18px 0 0}
+.okc-steps li{counter-increment:s;position:relative;padding:3px 0 16px 50px}
+.okc-steps li::before{content:counter(s);position:absolute;left:0;top:0;width:34px;height:34px;background:var(--okc-red);color:#fff;font-family:var(--okc-cond);font-weight:700;font-size:18px;display:flex;align-items:center;justify-content:center}
+.okc-steps b{color:var(--okc-navy)}
 .okc-print-only{display:none}
-@media (max-width:920px){
-  .okc-grid{grid-template-columns:1fr;padding:20px 16px}
-  .okc-head{padding:16px}
-  .okc-side{order:2}
-  .okc-title{font-size:22px}
-  .okc-price-val{font-size:28px}
+@media (max-width:960px){
+  .okc-grid{grid-template-columns:1fr;padding:26px 18px 30px}
+  .okc-head{padding:18px}
+  .okc-title{font-size:28px;padding-left:38px}
+  .okc-title::before{width:28px;height:22px}
+  .okc-price-val{font-size:36px}
 }
 @media (max-width:560px){
   .okc-form{grid-template-columns:1fr}
-  .okc-opts{grid-template-columns:1fr}
+  .okc-opts,.okc-opts-prod{grid-template-columns:1fr}
   .okc-nav{flex-direction:column-reverse;align-items:stretch}
   .okc-nav .okc-btn{width:100%}
+  .okc-cta .okc-btn{width:100%}
+  .okc-table td:last-child{white-space:normal}
+  .okc-table th,.okc-table td{padding:9px 10px}
 }
 @media print{
   body *{visibility:hidden}
   .okc,.okc *{visibility:visible}
-  .okc{position:absolute;left:0;top:0;width:100%;max-width:none;background:#fff}
+  .okc{position:absolute;left:0;top:0;width:100%;max-width:none;background:#fff;box-shadow:none}
   .okc-nav,.okc-restart,.okc-progress,.okc-progress-label,.okc-noprint{display:none!important}
   .okc-grid{grid-template-columns:1fr}
   .okc-print-only{display:block}
-  .okc-head{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .okc-head,.okc-table th{-webkit-print-color-adjust:exact;print-color-adjust:exact}
 }
 </style>
 
@@ -183,8 +348,8 @@
     // URL der modtager leads som JSON (POST). Fx HubSpot/Make/Zapier/n8n-webhook eller egen server.
     // Tom streng = lead sendes via brugerens e-mailprogram til fallbackEmail.
     endpoint: '',
-    fallbackEmail: 'kock@ovekock.dk',
-    privacyUrl: '/privatlivspolitik/',
+    fallbackEmail: 'info@ovekock.dk',
+    privacyUrl: 'https://www.ovekock.dk/cookie-og-privatlivspolitik/',
     // Leasing-overslag (operationel leasing): løbetid, årlig rente, restværdi i % af pris
     leasing: { months: 60, rate: 0.065, residual: 0.20 },
     // Uger der lægges til for montage, syn og klargøring
@@ -194,10 +359,10 @@
   };
 
   var BRANCHES = {
-    esbjerg:  { name: 'Ove Kock Esbjerg',  addr: 'Murervej 14, 6710 Esbjerg V', phone: '76 11 77 77' },
-    kolding:  { name: 'Ove Kock Kolding',  addr: 'Armbolten 24F, Kolding',      phone: '76 11 77 77' },
-    ringsted: { name: 'Ove Kock Ringsted', addr: 'Huginsvej 8, Ringsted',       phone: '57 61 36 13' },
-    hobro:    { name: 'Ove Kock Hobro',    addr: 'Boldrupvej 112, Aalestrup',   phone: '76 11 77 77' }
+    esbjerg:  { name: 'Ove Kock Esbjerg',  addr: 'Murervej 14, 6710 Esbjerg V',    phone: '7611 7777' },
+    kolding:  { name: 'Ove Kock Kolding',  addr: 'Armbolten 24 f, 6000 Kolding',   phone: '7611 7777' },
+    ringsted: { name: 'Ove Kock Ringsted', addr: 'Huginsvej 8, 4100 Ringsted',     phone: '5761 3613' },
+    hobro:    { name: 'Ove Kock Hobro',    addr: 'Boldrupvej 112, 9620 Aalestrup', phone: '4021 0190' }
   };
 
   /* =====================================================================
@@ -206,11 +371,11 @@
      og skal kalibreres af Ove Kock før lancering.
      ===================================================================== */
   var PRODUCTS = {
-    ren:  { name: 'Renovationsbil', desc: 'Bagladere, sidelæssere, 2-kammerbiler og kranbiler til nedgravede containere – fra JOAB, Zöller, FAUN og Farid.', screens: ['ren1', 'ren2'], weeks: [14, 26], chassis: true },
-    kran: { name: 'Kranbil', desc: 'Lastbilkraner fra HMF og Palfinger – opbygget og tilpasset jeres opgaver i eget værksted.', screens: ['kran1', 'kran2'], weeks: [10, 20], chassis: true },
+    ren:  { name: 'Renovationsbil', desc: 'Bagladere, sidelæssere, 2-kammerbiler og kranbiler til nedgravede containere fra JOAB – inkl. ZOELLER og FAUN.', screens: ['ren1', 'ren2'], weeks: [14, 26], chassis: true },
+    kran: { name: 'Kraner / tiplad', desc: 'Lastbilkraner fra HMF og Palfinger – opbygget og tilpasset jeres opgaver i eget værksted.', screens: ['kran1', 'kran2'], weeks: [10, 20], chassis: true },
     hejs: { name: 'Krog- eller wirehejs', desc: 'Containerhejs til vognmænd, entreprenører og genbrugspladser.', screens: ['hejs1'], weeks: [8, 16], chassis: true },
     sug:  { name: 'Sugebil', desc: 'MTS kombi-, slam- og sugegraverbiler til kloak, anlæg, forsyning og industri.', screens: ['sug1', 'sug2'], weeks: [20, 40], chassis: true },
-    lift: { name: 'Lift / læssebagsmæk', desc: 'Montering af lift eller læssebagsmæk på lastbil, varebil eller trailer.', screens: ['lift1'], weeks: [2, 6], chassis: false }
+    lift: { name: 'Lifte / læssebagsmæk', desc: 'Montering af lift eller læssebagsmæk på lastbil, varebil eller trailer.', screens: ['lift1'], weeks: [2, 6], chassis: false }
   };
 
   var SCREENS = {
@@ -220,7 +385,7 @@
       qs: ['product'],
       info: [
         '<b>Over 50 års erfaring.</b> Ove Kock har bygget lastbiler og hydraulik siden 1970 og er en af HMF\'s ældste partnere i Danmark.',
-        '<b>Import siden 2007.</b> Vi importerer og servicerer renovationsbiler fra JOAB, Zöller, FAUN og Farid Hillend Engineering samt MTS sugebiler.',
+        '<b>Eneret i Danmark.</b> Som de eneste har vi retten til import, salg og service af svenske JOAB – inkl. ZOELLER og FAUN under JOAB-varemærket. Vi forhandler også MTS sugebiler.',
         '<b>Service tæt på jer.</b> Afdelinger i Esbjerg, Kolding, Ringsted og Hobro – og servicefolk der kører ud.'
       ]
     },
@@ -807,11 +972,13 @@
     var ax = parseInt(opts.axles || A('axles') || (p === 'lift' ? '2' : '3'), 10);
     var van = p === 'lift' && (opts.vehicle || A('lift_vehicle')) === 'van';
     var el = !opts.mini && A('drive') === 'el';
-    var C = { body: '#16406e', body2: '#0d2a4a', acc: '#f2a900', cab: '#dfe6ee', glass: '#9fb8d3', wheel: '#1d232b', frame: '#3a4552' };
+    var C = opts.mono
+      ? { mono: true, body: '#ffffff', body2: '#d3d9e8', acc: '#ffffff', cab: '#ffffff', glass: '#27346a', wheel: '#27346a', hub: '#ffffff', wstroke: '#ffffff', frame: '#ffffff', line: '#27346a', rib: 'rgba(39,52,106,.35)' }
+      : { body: '#27346a', body2: '#1d2853', acc: '#e2001a', cab: '#e9ecf2', glass: '#9fb0cf', wheel: '#1d232b', hub: '#8b96a3', wstroke: 'none', frame: '#3a4552', line: '#3a4552', rib: 'rgba(255,255,255,.22)' };
     var s = '<svg viewBox="0 0 440 170" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Illustration af ' + (PRODUCTS[p] ? PRODUCTS[p].name : '') + '">';
-    s += '<line x1="6" y1="156" x2="434" y2="156" stroke="#c3ccd6" stroke-width="2"/>';
+    if (!C.mono) s += '<line x1="6" y1="156" x2="434" y2="156" stroke="#c3ccd6" stroke-width="2"/>';
     if (van) {
-      s += '<path d="M40 70 q4 -30 40 -32 h250 q14 0 14 14 v86 h-304z" fill="' + C.cab + '" stroke="' + C.frame + '" stroke-width="2"/>';
+      s += '<path d="M40 70 q4 -30 40 -32 h250 q14 0 14 14 v86 h-304z" fill="' + C.cab + '" stroke="' + C.line + '" stroke-width="2"/>';
       s += '<path d="M48 70 q6 -22 32 -24 h28 v30 h-60z" fill="' + C.glass + '"/>';
       s += '<rect x="344" y="128" width="40" height="6" rx="2" fill="' + C.acc + '"/>';
       s += wheel(95, 140) + wheel(300, 140);
@@ -822,7 +989,7 @@
     // førerhus
     var lowentry = has('ex_ren', 'lowentry') && p === 'ren';
     var cabTop = lowentry ? 46 : 36;
-    s += '<path d="M22 128 V' + (cabTop + 18) + ' q0 -18 18 -18 h56 q8 0 8 8 V128z" fill="' + C.cab + '" stroke="' + C.frame + '" stroke-width="2"/>';
+    s += '<path d="M22 128 V' + (cabTop + 18) + ' q0 -18 18 -18 h56 q8 0 8 8 V128z" fill="' + C.cab + '" stroke="' + C.line + '" stroke-width="2"/>';
     s += '<path d="M28 ' + (cabTop + 40) + ' V' + (cabTop + 20) + ' q0 -10 10 -10 h30 v30z" fill="' + C.glass + '"/>';
     s += '<rect x="22" y="112" width="10" height="10" fill="' + C.acc + '"/>';
     // opbygning
@@ -834,7 +1001,7 @@
       if (A('ren_body') === 'kammer') s += '<line x1="250" y1="44" x2="250" y2="116" stroke="' + C.acc + '" stroke-width="3" stroke-dasharray="6 4"/>';
       if (A('ren_body') === 'side') s += '<rect x="160" y="112" width="60" height="10" rx="3" fill="' + C.acc + '"/><rect x="214" y="96" width="8" height="24" fill="' + C.acc + '"/>';
       if (kran) s += '<rect x="112" y="20" width="12" height="22" fill="' + C.acc + '"/><path d="M118 22 L300 14 L300 22 L118 32z" fill="' + C.acc + '"/>';
-      s += '<rect x="130" y="56" width="60" height="6" rx="3" fill="rgba(255,255,255,.25)"/>';
+      s += '<rect x="130" y="56" width="60" height="6" rx="3" fill="' + C.rib + '"/>';
     } else if (p === 'kran') {
       var rear = A('kran_pos') === 'rear';
       var big = A('kran_size') === 'stor' || A('kran_size') === 'tung';
@@ -842,7 +1009,7 @@
       var bodyType = A('kran_body');
       var bx = rear ? 110 : 136, bw = rear ? 266 : 270;
       if (bodyType === 'tip' || bodyType === 'skrot') s += '<path d="M' + bx + ' 120 V' + (bodyType === 'skrot' ? 64 : 80) + ' H' + (bx + bw) + ' V120z" fill="' + C.body + '"/>';
-      else if (bodyType === 'hejs') s += '<rect x="' + bx + '" y="66" width="' + bw + '" height="50" rx="3" fill="' + C.body + '"/><g stroke="rgba(255,255,255,.25)" stroke-width="3">' + ribs(bx, bw, 66, 116) + '</g>';
+      else if (bodyType === 'hejs') s += '<rect x="' + bx + '" y="66" width="' + bw + '" height="50" rx="3" fill="' + C.body + '"/><g stroke="' + C.rib + '" stroke-width="3">' + ribs(bx, bw, 66, 116) + '</g>';
       else s += '<rect x="' + bx + '" y="100" width="' + bw + '" height="20" fill="' + C.body + '"/><rect x="' + bx + '" y="92" width="' + bw + '" height="6" fill="' + C.body2 + '"/>';
       s += '<rect x="' + (cx - 2) + '" y="' + (big ? 38 : 50) + '" width="' + (big ? 20 : 16) + '" height="' + (big ? 82 : 70) + '" fill="' + C.acc + '"/>';
       var dir = rear ? -1 : 1;
@@ -852,7 +1019,7 @@
     } else if (p === 'hejs') {
       s += '<path d="M112 116 L118 40 h16 L130 116z" fill="' + C.acc + '"/>';
       s += '<rect x="140" y="56" width="260" height="60" rx="3" fill="' + C.body + '"/>';
-      s += '<g stroke="rgba(255,255,255,.25)" stroke-width="3">' + ribs(140, 260, 56, 116) + '</g>';
+      s += '<g stroke="' + C.rib + '" stroke-width="3">' + ribs(140, 260, 56, 116) + '</g>';
       if (has('ex_hejs', 'net')) s += '<rect x="140" y="50" width="260" height="8" rx="3" fill="' + C.body2 + '"/>';
     } else if (p === 'sug') {
       var tl = A('sug_tank') === 'l' ? 286 : A('sug_tank') === 's' ? 230 : 260;
@@ -869,10 +1036,10 @@
     var front = ax === 4 ? [62, 112] : [64];
     var rearX = ax === 2 ? [330] : ax === 3 ? [306, 352] : [318, 364];
     front.concat(rearX).forEach(function (x) { s += wheel(x, 138); });
-    if (el) s += '<g><circle cx="66" cy="' + (cabTop + 62) + '" r="13" fill="' + C.acc + '"/><path d="M68 ' + (cabTop + 52) + ' l-8 12 h6 l-3 10 9-13 h-6z" fill="#1c1300"/></g>';
+    if (el) s += '<g><circle cx="66" cy="' + (cabTop + 62) + '" r="13" fill="' + C.acc + '"/><path d="M68 ' + (cabTop + 52) + ' l-8 12 h6 l-3 10 9-13 h-6z" fill="#ffffff"/></g>';
     return s + '</svg>';
 
-    function wheel(x, y) { return '<circle cx="' + x + '" cy="' + y + '" r="17" fill="' + C.wheel + '"/><circle cx="' + x + '" cy="' + y + '" r="7" fill="#8b96a3"/>'; }
+    function wheel(x, y) { return '<circle cx="' + x + '" cy="' + y + '" r="17" fill="' + C.wheel + '" stroke="' + C.wstroke + '" stroke-width="4"/><circle cx="' + x + '" cy="' + y + '" r="7" fill="' + C.hub + '"/>'; }
     function ribs(x, w, y1, y2) { var r = ''; for (var i = x + 20; i < x + w - 10; i += 22) r += '<line x1="' + i + '" y1="' + (y1 + 6) + '" x2="' + i + '" y2="' + (y2 - 6) + '"/>'; return r; }
   }
 
@@ -887,7 +1054,7 @@
     var flowLen = S.product ? list.length - 1 : 8; // "done" tæller ikke
     var idx = Math.min(S.step, flowLen - 1);
     var h = '';
-    h += '<div class="okc-head"><div class="okc-head-top"><div class="okc-brand">Ove Kock <span>·</span> Konfigurator</div>';
+    h += '<div class="okc-head"><div class="okc-head-top"><div class="okc-brand">Projektkonfigurator</div>';
     if (S.step > 0 && sid !== 'done') h += '<button type="button" class="okc-restart" data-act="restart">Start forfra</button>';
     h += '</div>';
     if (sid !== 'done') {
@@ -936,11 +1103,11 @@
   function renderQ(id) {
     var q = Q[id], h = '<div class="okc-q" id="okc-q-' + id + '">';
     if (q.type === 'product') {
-      h += '<div class="okc-opts" role="radiogroup" aria-label="Vælg løsning">';
-      Object.keys(PRODUCTS).forEach(function (k) {
+      h += '<div class="okc-opts okc-opts-prod" role="radiogroup" aria-label="Vælg løsning">';
+      ['ren', 'kran', 'lift', 'sug', 'hejs'].forEach(function (k) {
         var pr = PRODUCTS[k], on = S.product === k;
         h += '<button type="button" class="okc-opt okc-prod" role="radio" aria-checked="' + on + '" data-q="product" data-v="' + k + '"><span class="okc-opt-check"></span>' +
-          truckSVG(k, { mini: true, axles: k === 'lift' ? '2' : '3', vehicle: 'truck' }) +
+          truckSVG(k, { mini: true, mono: true, axles: k === 'lift' ? '2' : '3', vehicle: 'truck' }) +
           '<span class="okc-opt-l">' + esc(pr.name) + '</span><span class="okc-opt-d">' + esc(pr.desc) + '</span></button>';
       });
       h += '</div><div class="okc-q-err">Vælg en løsning for at fortsætte.</div></div>';
@@ -1021,7 +1188,7 @@
       }
       h += '<div class="okc-card okc-info"><h4>Derfor Ove Kock</h4><ul>' +
         '<li>Specialbyggede biler siden 1970 – vi bygger fra bunden og skræddersyr.</li>' +
-        '<li>Importør af JOAB, Zöller, FAUN, Farid og MTS. Mangeårig HMF-partner.</li>' +
+        '<li>Eneforhandler af JOAB i Danmark – inkl. ZOELLER og FAUN. Forhandler af MTS sugebiler og mangeårig HMF-partner.</li>' +
         '<li>Renovationsbiler i drift fra Frederikshavn og Thisted til Randers og Djursland.</li>' +
         '<li>Service i hele landet fra Esbjerg, Kolding, Ringsted og Hobro.</li></ul></div>';
     }
@@ -1126,7 +1293,7 @@
     if (br) h += '<tr><td>Nærmeste afdeling</td><td style="text-align:left">' + esc(BRANCHES[br].name + ', ' + BRANCHES[br].addr + ', tlf. ' + BRANCHES[br].phone) + '</td></tr>';
     h += '</tbody></table>';
     h += '<div class="okc-nav okc-noprint" style="justify-content:flex-start;gap:16px;flex-wrap:wrap"><button type="button" class="okc-btn okc-btn-primary" data-act="print">Gem som PDF / print</button><button type="button" class="okc-btn okc-btn-ghost" data-act="restart">Lav en ny konfiguration</button></div>';
-    h += '<p class="okc-fine">Prisindikationen er vejledende og ikke et tilbud. Har I travlt? Ring på ' + esc(br ? BRANCHES[br].phone : '76 11 77 77') + '.</p>';
+    h += '<p class="okc-fine">Prisindikationen er vejledende og ikke et tilbud. Har I travlt? Ring på ' + esc(br ? BRANCHES[br].phone : '7611 7777') + '.</p>';
     return h;
   }
 
@@ -1257,7 +1424,7 @@
       .catch(function () {
         btn.disabled = false; btn.textContent = 'Send forespørgsel';
         track('submit_error');
-        alertBox.innerHTML = '<div class="okc-alert">Beklager – forespørgslen kunne ikke sendes. Prøv igen, eller ring på 76 11 77 77 / skriv til <a href="mailto:' + esc(CONFIG.fallbackEmail) + '">' + esc(CONFIG.fallbackEmail) + '</a> og oplys reference ' + esc(S.ref) + '.</div>';
+        alertBox.innerHTML = '<div class="okc-alert">Beklager – forespørgslen kunne ikke sendes. Prøv igen, eller ring på 7611 7777 / skriv til <a href="mailto:' + esc(CONFIG.fallbackEmail) + '">' + esc(CONFIG.fallbackEmail) + '</a> og oplys reference ' + esc(S.ref) + '.</div>';
       });
   }
 
@@ -1330,6 +1497,12 @@
     root = document.getElementById('okc-root');
     if (!root) return;
     load();
+    // Dybt link fra produktsider, fx ?produkt=renovation / kran / lift / sugebil / hejs
+    try {
+      var qp = (new URLSearchParams(window.location.search).get('produkt') || '').toLowerCase();
+      var map = { ren: 'ren', renovation: 'ren', renovationsbil: 'ren', renovationsbiler: 'ren', kran: 'kran', kraner: 'kran', tiplad: 'kran', lift: 'lift', lifte: 'lift', laessebagsmaek: 'lift', sug: 'sug', sugebil: 'sug', sugebiler: 'sug', hejs: 'hejs', krog: 'hejs', wire: 'hejs' };
+      if (map[qp] && S.product !== map[qp]) { S.product = map[qp]; S.a = {}; S.step = 1; S.sent = false; }
+    } catch (e) {}
     bind();
     render(false);
     track('loaded');
@@ -1339,5 +1512,35 @@
 </script>
 <!-- ================= OKC SLUT ================= -->
 
+</main>
+
+<footer class="okp-footer"><div class="okp-wrap okp-footer-grid">
+  <div>
+    <a class="okp-logo" href="https://www.ovekock.dk/" aria-label="Ove Kock – forsiden"><img src="../assets/ovekock-logo.png" alt="Ove Kock – Hydraulik &amp; Karosserifabrik" width="597" height="188"></a><br>
+    <a class="okp-fb" href="https://www.facebook.com/p/Ove-Kock-AS-100056483064749/" target="_blank" rel="noopener">
+      <svg width="30" height="30" viewBox="0 0 24 24" aria-hidden="true"><rect width="24" height="24" rx="3" fill="#27346a"/><path fill="#fff" d="M16.5 24v-9.3h3.1l.5-3.6h-3.6V8.8c0-1 .3-1.8 1.8-1.8h1.9V3.8c-.3 0-1.5-.1-2.8-.1-2.8 0-4.6 1.7-4.6 4.8v2.6H9.6v3.6h3.2V24z"/></svg>
+      Følg os på Facebook
+    </a>
+  </div>
+  <div class="okp-loc"><h4>Esbjerg</h4><p>Murervej 14<br>6710 Esbjerg V</p><p><a href="tel:+4576117777">Telefon 7611 7777</a></p><p><a href="mailto:info@ovekock.dk">E-mail info@ovekock.dk</a></p></div>
+  <div class="okp-loc"><h4>Kolding</h4><p>Armbolten 24 f<br>6000 Kolding</p><p><a href="tel:+4576117777">Telefon 7611 7777</a></p><p><a href="mailto:info@ovekock.dk">E-mail info@ovekock.dk</a></p></div>
+  <div class="okp-loc"><h4>Ringsted</h4><p>Huginsvej 8<br>4100 Ringsted</p><p><a href="tel:+4557613613">Telefon 5761 3613</a></p><p><a href="mailto:info@ovekock.dk">E-mail info@ovekock.dk</a></p></div>
+  <div class="okp-loc"><h4>Hobro</h4><p>Boldrupvej 112<br>9620 Aalestrup</p><p><a href="tel:+4540210190">Telefon 4021 0190</a></p><p><a href="mailto:info@ovekock.dk">E-mail info@ovekock.dk</a></p></div>
+</div></footer>
+<div class="okp-bottom"><div class="okp-wrap">
+  <a href="https://www.ovekock.dk/cookie-og-privatlivspolitik/">Cookie- &amp; privatlivspolitik</a><i></i>
+  <a href="https://www.ovekock.dk/handelsbetingelser/">Handelsbetingelser</a><i></i>
+  <span>CVR 37880515</span>
+</div></div>
+
+<script>
+(function () {
+  var b = document.querySelector('.okp-burger'), n = document.getElementById('okp-nav');
+  if (b && n) b.addEventListener('click', function () {
+    var open = n.classList.toggle('open');
+    b.setAttribute('aria-expanded', String(open));
+  });
+})();
+</script>
 </body>
 </html>
