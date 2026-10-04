@@ -74,6 +74,11 @@ body{margin:0;background:#fff;font-family:'Roboto',Arial,sans-serif;color:#2b2f3
   .okp-search input{width:210px}
   .okp-nav{gap:32px}
 }
+.okp-lang{display:inline-flex;margin-left:14px;border:1px solid rgba(255,255,255,.55)}
+.okp-lang button{background:none;border:0;color:#fff;font:inherit;font-size:14px;padding:3px 10px;cursor:pointer;letter-spacing:.04em}
+.okp-lang button[aria-pressed="true"]{background:var(--ok-red)}
+.okp-lang button:hover:not([aria-pressed="true"]){background:rgba(255,255,255,.15)}
+.okp-lang button:focus-visible{outline:2px solid #fff;outline-offset:-2px}
 @media (max-width:1180px){
   .okp-search{display:none}
   .okp-nav{gap:30px}
@@ -112,45 +117,46 @@ body{margin:0;background:#fff;font-family:'Roboto',Arial,sans-serif;color:#2b2f3
   <a href="tel:+4576117777">Kolding - 7611 7777</a><i></i>
   <a href="tel:+4557613613">Ringsted - 5761 3613</a><i></i>
   <a href="tel:+4540210190">Hobro - 4021 0190</a>
+  <div class="okp-lang" role="group" aria-label="Sprog / Language"><button type="button" data-page-lang="da" aria-pressed="true" lang="da" title="Dansk">DA</button><button type="button" data-page-lang="en" aria-pressed="false" lang="en" title="English">EN</button></div>
 </div></div>
 
 <header class="okp-header"><div class="okp-wrap">
   <a class="okp-logo" href="https://www.ovekock.dk/" aria-label="Ove Kock – forsiden"><img src="../assets/ovekock-logo.png" alt="Ove Kock – Hydraulik &amp; Karosserifabrik" width="597" height="188"></a>
   <button class="okp-burger" type="button" aria-label="Menu" aria-expanded="false" aria-controls="okp-nav"><span></span><span></span><span></span></button>
   <nav class="okp-nav" id="okp-nav" aria-label="Hovedmenu">
-    <a href="https://www.ovekock.dk/om-ove-kock/">Om Ove Kock</a>
+    <a href="https://www.ovekock.dk/om-ove-kock/" data-en="About Ove Kock">Om Ove Kock</a>
     <div class="okp-dd">
-      <button type="button" aria-haspopup="true">Produkter</button>
+      <button type="button" aria-haspopup="true" data-en="Products">Produkter</button>
       <div class="okp-dd-menu">
-        <a href="https://www.ovekock.dk/renovationsbiler/">Renovationsbiler</a>
-        <a href="https://www.ovekock.dk/kraner-tiplad/">Kraner / Tiplad</a>
-        <a href="https://www.ovekock.dk/lifte-laessebagsmaek/">Lifte / Læssebagsmæk</a>
-        <a href="https://www.ovekock.dk/sugebiler/">Sugebiler</a>
-        <a href="#konfigurator">Projektkonfigurator</a>
+        <a href="https://www.ovekock.dk/renovationsbiler/" data-en="Refuse trucks">Renovationsbiler</a>
+        <a href="https://www.ovekock.dk/kraner-tiplad/" data-en="Cranes / tipper bodies">Kraner / Tiplad</a>
+        <a href="https://www.ovekock.dk/lifte-laessebagsmaek/" data-en="Tail lifts">Lifte / Læssebagsmæk</a>
+        <a href="https://www.ovekock.dk/sugebiler/" data-en="Vacuum trucks">Sugebiler</a>
+        <a href="#konfigurator" data-en="Project configurator">Projektkonfigurator</a>
       </div>
     </div>
-    <a href="https://www.ovekock.dk/galleri-oversigt/">Galleri</a>
-    <a href="https://www.ovekock.dk/job/">Job</a>
-    <a href="https://www.ovekock.dk/kontakt/">Kontakt</a>
+    <a href="https://www.ovekock.dk/galleri-oversigt/" data-en="Gallery">Galleri</a>
+    <a href="https://www.ovekock.dk/job/" data-en="Careers">Job</a>
+    <a href="https://www.ovekock.dk/kontakt/" data-en="Contact">Kontakt</a>
   </nav>
   <form class="okp-search" action="https://www.ovekock.dk/" method="get" role="search">
-    <input type="search" name="s" placeholder="Hvad leder du efter ?" aria-label="Søg på ovekock.dk">
-    <button type="submit" aria-label="Søg"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><circle cx="10" cy="10" r="6.5"/><path d="M15 15l6 6"/></svg></button>
+    <input type="search" name="s" placeholder="Hvad leder du efter ?" aria-label="Søg på ovekock.dk" data-en-placeholder="Search the site" data-en-aria-label="Search ovekock.dk">
+    <button type="submit" aria-label="Søg" data-en-aria-label="Search"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><circle cx="10" cy="10" r="6.5"/><path d="M15 15l6 6"/></svg></button>
   </form>
 </div></header>
 
 <section class="okp-hero"><div class="okp-wrap">
-  <h1>Byg jeres næste specialbil</h1>
-  <span class="okp-kicker">Og få en prisindikation på få minutter</span>
-  <p>Fortæl os om opgaven – så guider vi jer til den rigtige opbygning, chassis og udstyr. Bygget på mere end 50 års erfaring med renovationsbiler, kraner, lifte og sugebiler.</p>
-  <ul class="okp-usps"><li>Siden 1970</li><li>Eneforhandler af JOAB i Danmark</li><li>Service i hele landet</li></ul>
+  <h1 data-en="Build your next specialist truck">Byg jeres næste specialbil</h1>
+  <span class="okp-kicker" data-en="And get a price indication in minutes">Og få en prisindikation på få minutter</span>
+  <p data-en="Tell us about the job – and we will guide you to the right body, chassis and equipment. Built on more than 50 years of experience with refuse trucks, cranes, tail lifts and vacuum trucks. Danish manufacturer – delivering in Denmark and abroad.">Fortæl os om opgaven – så guider vi jer til den rigtige opbygning, chassis og udstyr. Bygget på mere end 50 års erfaring med renovationsbiler, kraner, lifte og sugebiler.</p>
+  <ul class="okp-usps"><li data-en="Since 1970">Siden 1970</li><li data-en="Exclusive JOAB dealer in Denmark">Eneforhandler af JOAB i Danmark</li><li data-en="Nationwide service in Denmark">Service i hele landet</li></ul>
 </div></section>
 
 <main class="okp-app" id="konfigurator">
 
 <!-- ================= OKC START – kopiér herfra og ned til OKC SLUT ================= -->
 <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@500;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
-<div class="okc" id="okc-root" data-okc>
+<div class="okc" id="okc-root" data-okc data-lang-toggle="off">
   <noscript>Konfiguratoren kræver JavaScript. Ring til Ove Kock på 7611 7777 eller skriv til info@ovekock.dk.</noscript>
 </div>
 
@@ -373,7 +379,7 @@ textarea.okc-input{height:auto;padding:12px 16px}
 .okc-meter{margin-top:14px;padding-top:14px;border-top:1px solid #eceef3}
 .okc-meter-top{display:flex;justify-content:space-between;align-items:baseline;gap:10px}
 .okc-meter-top span{font-family:var(--okc-cond);font-weight:700;font-size:14px;text-transform:uppercase;letter-spacing:.04em;color:var(--okc-navy)}
-.okc-meter-top strong{font-family:var(--okc-cond);font-weight:700;font-size:26px;color:var(--okc-ok);line-height:1}
+.okc-meter-top strong{white-space:nowrap;font-family:var(--okc-cond);font-weight:700;font-size:26px;color:var(--okc-ok);line-height:1}
 .okc-meter.st-tight .okc-meter-top strong{color:#b86e00}
 .okc-meter.st-low .okc-meter-top strong{color:var(--okc-red-2)}
 .okc-meter-bar{display:flex;height:14px;margin-top:10px;background:#eceef3;overflow:hidden}
@@ -463,6 +469,11 @@ textarea.okc-input{height:auto;padding:12px 16px}
   .okc-mmeter.st-tight strong{color:#b86e00}.okc-mmeter.st-tight i{background:#d98a12}
   .okc-mmeter.st-low strong{color:var(--okc-red-2)}.okc-mmeter.st-low i{background:var(--okc-red)}
 }
+.okc-head-r{display:flex;align-items:center;gap:10px}
+.okc-lang{display:inline-flex;border:1px solid rgba(255,255,255,.45)}
+.okc-lang button{background:none;border:0;color:#fff;font-family:var(--okc-cond);font-weight:700;font-size:14px;letter-spacing:.04em;padding:6px 10px;cursor:pointer}
+.okc-lang button[aria-pressed="true"]{background:var(--okc-red)}
+.okc-eur{margin-top:2px;font-weight:500;color:#fff}
 </style>
 
 <script>
@@ -481,6 +492,8 @@ textarea.okc-input{height:auto;padding:12px 16px}
     leasing: { months: 60, rate: 0.065, residual: 0.20 },
     assemblyWeeks: [3, 6],
     maxUploadMB: 15,
+    // Omregning til euro i den engelske version (DKK er bundet til EUR omkring 7,46)
+    eurRate: 7.46,
     // Fast (sticky) header på siden, som konfiguratoren skal scrolle fri af
     stickyHeaderSelector: '.okp-header, .elementor-sticky--active, header.sticky',
     storageKey: 'okc_state_v2',
@@ -643,7 +656,7 @@ textarea.okc-input{height:auto;padding:12px 16px}
     project: {
       title: 'Om jeres projekt',
       intro: 'Sidste trin før prisindikationen. Svarene giver en realistisk leveringstid og peger på jeres nærmeste afdeling og kontaktperson.',
-      qs: ['timeline', 'trigger', 'tradein', 'tradein_desc', 'qty', 'service', 'zip'],
+      qs: ['timeline', 'trigger', 'tradein', 'tradein_desc', 'qty', 'service', 'zip', 'country'],
       info: [
         '<b>Udbud?</b> Har I en fast opstartsdato, så tæller hver uge. Vi regner baglæns fra datoen og foreslår lager-, demo- eller lejebiler, hvis tiden er knap.',
         '<b>Flere biler</b> i samme ordre giver bedre priser og ensartet drift og service.',
@@ -918,7 +931,10 @@ textarea.okc-input{height:auto;padding:12px 16px}
       { v: 'own', l: 'Nej – eget værksted' },
       { v: 'unsure', l: 'Ved ikke endnu' }
     ]},
-    zip: { label: 'Postnummer hvor køretøjet skal være stationeret', short: 'Postnr.', type: 'text', numeric: true, placeholder: 'Fx 6700', pattern: /^\d{4}$/, err: 'Indtast et gyldigt dansk postnummer (4 cifre).' }
+    zip: { label: 'Postnummer hvor køretøjet skal være stationeret', short: 'Postnr.', type: 'text', numeric: true,
+      showIf: function () { return !A('abroad'); }, placeholder: 'Fx 6700', pattern: /^\d{4}$/, err: 'Indtast et gyldigt dansk postnummer (4 cifre).' },
+    country: { label: 'Land og by hvor køretøjet skal køre', short: 'Land / by', type: 'text', placeholder: 'Fx Tyskland, Hamborg', err: 'Skriv land og by.',
+      showIf: function () { return !!A('abroad'); } }
   };
 
   /* =====================================================================
@@ -976,58 +992,555 @@ textarea.okc-input{height:auto;padding:12px 16px}
     }
     return { gvw: ch.gvw, chassis: chTare, body: body, extras: ex, payload: pl, axles: ax, assumed: assumed, status: status };
   }
-  function tons(kg) { return (Math.max(0, kg) / 1000).toLocaleString('da-DK', { minimumFractionDigits: 1, maximumFractionDigits: 1 }) + ' t'; }
+  /* =====================================================================
+     SPROG (dansk / engelsk)
+     ===================================================================== */
+  var LANG = 'da', MISSING = {};
+  /* Engelske oversættelser af data-tekster (nøgle = den danske tekst). Ret frit i den engelske side. */
+  var EN = {
+    // Produkter
+    "Renovationsbil": "Refuse truck",
+    "Bagladere, sidelæssere, 2-kammerbiler og kranbiler til nedgravede containere fra JOAB – inkl. ZOELLER og FAUN.": "Rear loaders, side loaders, split-body trucks and crane trucks for underground containers from JOAB – incl. ZOELLER and FAUN.",
+    "Kraner / tiplad": "Cranes / tipper bodies",
+    "Lastbilkraner fra HMF og Palfinger – opbygget og tilpasset jeres opgaver i eget værksted.": "Truck-mounted cranes from HMF and Palfinger – built and adapted to your work in our own workshop.",
+    "Krog- eller wirehejs": "Hook lift or cable hoist",
+    "Containerhejs til vognmænd, entreprenører og genbrugspladser.": "Container hoists for hauliers, contractors and recycling centres.",
+    "Sugebil": "Vacuum truck",
+    "MTS kombi-, slam- og sugegraverbiler til kloak, anlæg, forsyning og industri.": "MTS combination, sludge and suction excavator trucks for sewers, civil works, utilities and industry.",
+    "Lifte / læssebagsmæk": "Tail lifts",
+    "Montering af lift eller læssebagsmæk på lastbil, varebil eller trailer.": "Fitting of tail lifts on trucks, vans and trailers.",
+    // Cases
+    "Typisk opbygning": "Typical build",
+    "Leveret": "Delivered",
+    "2-kammer renovationsbil": "Split-body refuse truck",
+    "Husstandsindsamling af rest- og madaffald i én tur.": "Household collection of residual and food waste in one round.",
+    "Skrotbil med Palfinger-kran": "Scrap truck with Palfinger crane",
+    "Bygget til Tonny Frank Jensen på Volvo fra Skifter.": "Built for Tonny Frank Jensen on a Volvo from Skifter.",
+    "Kranbil med HMF 2820 K4": "Crane truck with HMF 2820 K4",
+    "Krankonsol til Vognmand Hans Christensen.": "Crane installation for haulier Hans Christensen.",
+    "Wirehejs med anhængerkobling": "Cable hoist with trailer coupling",
+    "HMF 324 wirehejs og 28,5 t kobling på Volvo FH.": "HMF 324 cable hoist and 28.5 t coupling on a Volvo FH.",
+    "Kombibil til kloakrens": "Combination truck for sewer cleaning",
+    "MTS suge-/spulebil med vandrecirkulering.": "MTS jetter-vac truck with water recycling.",
+    // Skærme
+    "Hvad skal jeres nye køretøj kunne?": "What does your new vehicle need to do?",
+    "Vælg den type løsning I overvejer. Efter 5–6 korte trin får I en prisindikation, en realistisk leveringstid og vores faglige anbefalinger – helt uforpligtende.": "Choose the type of solution you are considering. After 5–6 short steps you get a price indication, a realistic delivery time and our expert recommendations – with no obligation.",
+    "Fortæl os om indsamlingen": "Tell us about the collection",
+    "Opgaven bestemmer den rigtige opbygning. Svar så godt I kan – vi foreslår løsninger ud fra jeres svar.": "The job determines the right body. Answer as best you can – we suggest solutions based on your answers.",
+    "Opbygning og kapacitet": "Body and capacity",
+    "Vælg opbygningstype og størrelse. Anbefalingerne er markeret ud fra jeres svar på forrige side.": "Choose body type and size. Recommendations are marked based on your answers on the previous page.",
+    "Hvad skal kranen løfte?": "What will the crane lift?",
+    "Kranens størrelse angives i tonmeter (tm): løft i ton × udlæg i meter. En 20 tm kran kan groft sagt løfte 2 ton 10 meter ud – minus egenvægten af tilbehør.": "Crane size is stated in tonne-metres (tm): load in tonnes × outreach in metres. A 20 tm crane can roughly lift 2 tonnes 10 metres out – minus the weight of attachments.",
+    "Placering og lad": "Position and body",
+    "Kranens placering påvirker akseltryk, ladlængde og hvordan chaufføren arbejder.": "The crane position affects axle loads, body length and how the driver works.",
+    "Hejs og containere": "Hoist and containers",
+    "Vælg hejstype ud fra den containerpark I kører med – systemerne er ikke kompatible med hinanden.": "Choose the hoist type to match your container fleet – the systems are not compatible with each other.",
+    "Hvad skal sugebilen bruges til?": "What will the vacuum truck be used for?",
+    "Sugebiler bygges meget forskelligt afhængigt af opgaven. Vælg den primære anvendelse.": "Vacuum trucks are built very differently depending on the job. Choose the main application.",
+    "Tank og kapacitet": "Tank and capacity",
+    "Tankstørrelsen bestemmer hvor længe bilen kan arbejde, før den skal tømmes – og hvilket chassis der kræves.": "The tank size determines how long the truck can work before emptying – and which chassis is required.",
+    "Lift og køretøj": "Lift and vehicle",
+    "Vi monterer, reparerer og vedligeholder lifte og læssebagsmække til alle typer køretøjer.": "We fit, repair and maintain tail lifts for all types of vehicles.",
+    "Chassis og drivlinje": "Chassis and drivetrain",
+    "Vi leverer gerne den komplette bil – eller bygger op på et chassis fra jeres faste forhandler. Under hver akselkonfiguration kan I se, hvad den giver i nyttelast.": "We are happy to supply the complete truck – or build on a chassis from your usual dealer. Under each axle configuration you can see the payload it gives.",
+    "Udstyr og tilvalg": "Equipment and options",
+    "Vælg det udstyr I ved, I skal bruge. Det er helt i orden at springe over – vi gennemgår det sammen senere.": "Choose the equipment you know you need. It is fine to skip this – we will go through it together later.",
+    "Erfaring fra værkstedet": "Experience from the workshop",
+    "Udstyr markeret «Ofte savnet» er det, kunderne oftest beder os eftermontere bagefter. Det er næsten altid billigere at bygge det med fra start.": "Equipment marked «Often missed» is what customers most often ask us to retrofit later. It is almost always cheaper to build it in from the start.",
+    "Om jeres projekt": "About your project",
+    "Sidste trin før prisindikationen. Svarene giver en realistisk leveringstid og peger på jeres nærmeste afdeling og kontaktperson.": "Last step before the price indication. Your answers give a realistic delivery time and point to your nearest branch and contact person.",
+    "Jeres prisindikation": "Your price indication",
+    "Få et præcist tilbud": "Get an exact quote",
+    "Tak": "Thank you",
+    // Godt at vide
+    "<b>Over 50 års erfaring.</b> Ove Kock har bygget lastbiler og hydraulik siden 1970 og er en af HMF's ældste partnere i Danmark.": "<b>More than 50 years of experience.</b> Ove Kock has built trucks and hydraulics since 1970 and is one of HMF's oldest partners in Denmark.",
+    "<b>Eneret i Danmark.</b> Som de eneste har vi retten til import, salg og service af svenske JOAB – inkl. ZOELLER og FAUN under JOAB-varemærket. Vi forhandler også MTS sugebiler.": "<b>Exclusive in Denmark.</b> We hold the sole rights to import, sell and service Swedish JOAB – incl. ZOELLER and FAUN under the JOAB brand. We are also dealers for MTS vacuum trucks.",
+    "<b>Service tæt på jer.</b> Afdelinger i Esbjerg, Kolding, Ringsted og Hobro – og servicefolk der kører ud.": "<b>Service close to you.</b> Branches in Esbjerg, Kolding, Ringsted and Hobro – and mobile service technicians.",
+    "<b>10 affaldstyper.</b> Med den ensartede affaldssortering skal kommunerne indsamle 10 affaldstyper. Det har gjort 2-kammerbiler langt mere udbredte, fordi én bil kan tage to fraktioner på samme tur.": "<b>10 waste types.</b> Under Denmark's harmonised waste sorting, municipalities must collect 10 waste types. This has made split-body trucks far more common, as one truck can take two fractions in the same round.",
+    "<b>By eller land?</b> I tæt by tæller wendbarhed, støj og arbejdsmiljø mest. På landet tæller kørselsøkonomi, og at én chauffør kan klare ruten.": "<b>Urban or rural?</b> In dense urban areas, manoeuvrability, noise and working conditions matter most. In rural areas, running costs and a one-person route matter most.",
+    "<b>Nedgravede containere</b> tømmes med kran og kræver en anden bil end almindelige beholdere.": "<b>Underground containers</b> are emptied by crane and require a different truck from ordinary bins.",
+    "<b>Rumfang vs. nyttelast.</b> En stor kasse hjælper ikke, hvis bilen når sin tilladte totalvægt først. Følg nyttelasten i panelet – den opdateres ved hvert valg.": "<b>Volume vs. payload.</b> A big body does not help if the truck reaches its permitted gross weight first. Watch the payload in the panel – it updates with every choice.",
+    "<b>Komprimering.</b> Den reelle kapacitet afhænger af fraktionen – madaffald er tungt, pap og plast fylder.": "<b>Compaction.</b> Real capacity depends on the fraction – food waste is heavy, cardboard and plastic are bulky.",
+    "<b>Løfteren</b> skal passe til jeres beholderpark (2-hjulede 140–370 L eller 4-hjulede 400–1.100 L).": "<b>The lifter</b> must match your bins (2-wheeled 140–370 L or 4-wheeled 400–1,100 L).",
+    "<b>Tommelfingerregel:</b> Find det tungeste emne I løfter jævnligt, og den længste afstand fra bilen det skal placeres. Gang dem sammen og læg 20–30 % til som reserve.": "<b>Rule of thumb:</b> Take the heaviest item you lift regularly and the furthest distance from the truck it must be placed. Multiply them and add 20–30 % in reserve.",
+    "<b>Certifikat.</b> Lastbilkraner over 25 tm kræver kranførercertifikat. Mindre kraner kræver dokumenteret oplæring. Tjek altid de gældende regler hos Arbejdstilsynet.": "<b>Certificate.</b> In Denmark, truck cranes over 25 tm require a crane operator certificate, and smaller cranes require documented training. Always check the current rules with the Danish Working Environment Authority.",
+    "<b>Eftersyn.</b> Kraner skal have hovedeftersyn mindst hver 12. måned – det udfører vi på alle vores afdelinger.": "<b>Inspection.</b> Cranes must have a full inspection at least every 12 months – we carry this out at all our branches.",
+    "<b>Bag førerhus</b> er det mest udbredte og giver den bedste vægtfordeling på forakslen.": "<b>Behind the cab</b> is the most common and gives the best weight distribution on the front axle.",
+    "<b>Bagmonteret kran</b> giver et langt, frit lad – men belaster bagakslen og forkorter den tilladte last.": "<b>A rear-mounted crane</b> gives a long, clear load bed – but loads the rear axle and reduces the permitted payload.",
+    "<b>Kombination med hejs</b> gør bilen til et multiværktøj: containere, materialer og maskiner med én bil.": "<b>Combining with a hoist</b> turns the truck into a multi-tool: containers, materials and machinery with one truck.",
+    "<b>Wirehejs</b> er meget udbredt i Danmark til containere med wirebeslag og kan håndtere lange containere.": "<b>Cable hoists</b> are very common in Denmark for containers with cable fittings and can handle long containers.",
+    "<b>Krogløft (kroghejs)</b> er hurtig og robust og bruges til containere og vekselflak med krogbøjle.": "<b>Hook lifts</b> are fast and robust and are used for containers and swap bodies with a hook bar.",
+    "<b>Med anhænger</b> kan bilen køre to containere på én tur. Det kræver typisk 3 aksler og den rigtige kobling.": "<b>With a trailer</b> the truck can carry two containers per trip. This typically requires 3 axles and the right coupling.",
+    "<b>Vakuumpumpe eller blæser?</b> En vakuumpumpe er stærk på væsker og slam. En blæser (high-flow) flytter store luftmængder og er velegnet til sugegravning af jord og grus.": "<b>Vacuum pump or blower?</b> A vacuum pump is strong on liquids and sludge. A high-flow blower moves large volumes of air and suits suction excavation of soil and gravel.",
+    "<b>Sugegravning</b> blotlægger kabler og rør uden at beskadige dem – et stærkt argument i forsyning og anlæg.": "<b>Suction excavation</b> exposes cables and pipes without damaging them – a strong argument in utilities and civil works.",
+    "<b>Kombibil</b> = suge + højtryksspul i én bil. Én bil og én mand kan løse hele kloakopgaven.": "<b>Combination truck</b> = suction + high-pressure jetting in one truck. One truck and one operator can handle the whole sewer job.",
+    "<b>Slam vejer ca. 1 t pr. m³.</b> En stor tank er ikke det samme som en stor last – se i panelet, hvor meget I lovligt kan fylde.": "<b>Sludge weighs approx. 1 t per m³.</b> A big tank is not the same as a big load – see in the panel how much you can legally fill.",
+    "<b>Vandrecirkulering</b> renser og genbruger spulevandet, så bilen kan arbejde i timevis uden at hente frisk vand.": "<b>Water recycling</b> cleans and reuses the jetting water, so the truck can work for hours without refilling.",
+    "<b>ADR.</b> Skal bilen håndtere farligt gods (fx olieholdigt slam), kræves ADR-godkendt opbygning.": "<b>ADR.</b> If the truck handles dangerous goods (e.g. oily sludge), an ADR-approved body is required.",
+    "<b>Kapacitet</b> skal matche den tungeste last <i>inkl.</i> palleløfter eller rullebur – og bilens bagudhæng og akseltryk.": "<b>Capacity</b> must match the heaviest load <i>including</i> pallet truck or roll cage – and the vehicle's rear overhang and axle load.",
+    "<b>Montering</b> sker efter chassisfabrikantens opbygningsvejledning, så garantien bevares.": "<b>Fitting</b> follows the chassis manufacturer's body builder guidelines, so the warranty is kept.",
+    "<b>Eftersyn.</b> Lifte er løftegrej og skal efterses jævnligt efter fabrikantens anvisning – typisk mindst én gang årligt.": "<b>Inspection.</b> Tail lifts are lifting equipment and must be inspected regularly according to the manufacturer – typically at least once a year.",
+    "<b>Leveringstid.</b> Chassis har typisk 4–12 måneders leveringstid afhængigt af mærke og marked. El-chassis er ofte i den lange ende.": "<b>Delivery time.</b> Chassis typically take 4–12 months to deliver depending on make and market. Electric chassis are often at the long end.",
+    "<b>Vejafgift.</b> Fra 2025 betaler lastbiler over 12 t en CO₂-differentieret kilometerafgift i Danmark. Nulemissionskøretøjer har den laveste sats.": "<b>Road toll.</b> Since 2025, trucks over 12 t pay a CO₂-differentiated per-kilometre toll in Denmark. Zero-emission vehicles pay the lowest rate.",
+    "<b>Miljøzoner.</b> I København, Frederiksberg, Aarhus, Aalborg og Odense skal lastbiler som udgangspunkt overholde Euro 6.": "<b>Low-emission zones.</b> In Copenhagen, Frederiksberg, Aarhus, Aalborg and Odense, trucks generally must meet Euro 6.",
+    "<b>Arbejdsmiljø betaler sig.</b> Kameraer, lys og ergonomisk udstyr reducerer skader og sygefravær – og står ofte højt i udbudskrav.": "<b>Good working conditions pay off.</b> Cameras, lighting and ergonomic equipment reduce injuries and sick leave – and often rank high in tender requirements.",
+    "<b>Dokumentation.</b> Vejning og registrering giver data til afregning, ruteplanlægning og dokumentation over for kunden.": "<b>Documentation.</b> Weighing and registration provide data for billing, route planning and reporting to your customer.",
+    "<b>Vægt.</b> Alt udstyr vejer noget. Nyttelasten i panelet regner det med.": "<b>Weight.</b> All equipment weighs something. The payload in the panel includes it.",
+    "<b>Udbud?</b> Har I en fast opstartsdato, så tæller hver uge. Vi regner baglæns fra datoen og foreslår lager-, demo- eller lejebiler, hvis tiden er knap.": "<b>Tender?</b> If you have a fixed start date, every week counts. We plan backwards from the date and suggest stock, demo or rental vehicles if time is short.",
+    "<b>Flere biler</b> i samme ordre giver bedre priser og ensartet drift og service.": "<b>Several vehicles</b> in the same order give better prices and consistent operation and service.",
+    "<b>Service</b> afgør oppetiden. En bil der står stille, koster indtjening hver dag.": "<b>Service</b> determines uptime. A truck standing still costs revenue every day.",
+    // Spørgsmål og valg
+    "Vælg løsning": "Choose solution",
+    "Hvad skal bilen primært indsamle?": "What will the truck mainly collect?",
+    "Indsamling": "Collection",
+    "Rest- og madaffald": "Residual and food waste",
+    "Dagrenovation fra husstande – ofte i 2-kammer.": "Household waste – often in a split body.",
+    "Genanvendelse": "Recycling",
+    "Papir, pap, plast, metal, glas og kartoner.": "Paper, cardboard, plastic, metal, glass and cartons.",
+    "Storskrald og haveaffald": "Bulky and garden waste",
+    "Volumenaffald, ofte uregelmæssigt.": "Bulky waste, often irregular.",
+    "Nedgravede containere": "Underground containers",
+    "Molok, underjordiske og halvt nedgravede containere.": "Molok, underground and semi-underground containers.",
+    "Erhvervsaffald": "Commercial waste",
+    "Større beholdere og containere hos virksomheder.": "Larger bins and containers at businesses.",
+    "Hvor kører bilen?": "Where will the truck operate?",
+    "Område": "Area",
+    "Tæt by": "Dense urban",
+    "Smalle gader, parkerede biler, tidlige morgener.": "Narrow streets, parked cars, early mornings.",
+    "Blandet by og land": "Mixed urban and rural",
+    "Parcelhuskvarterer og landsbyer.": "Residential areas and villages.",
+    "Land": "Rural",
+    "Lange afstande, spredte husstande.": "Long distances, scattered households.",
+    "Opbygningstype": "Body type",
+    "Opbygning": "Body",
+    "Baglader": "Rear loader",
+    "Den mest fleksible løsning. Håndterer stort set alle beholdere og fraktioner.": "The most flexible solution. Handles almost all bins and fractions.",
+    "2-kammer baglader": "Split-body rear loader",
+    "To fraktioner på én tur – fx mad/rest eller papir/plast.": "Two fractions in one round – e.g. food/residual or paper/plastic.",
+    "Sidelæsser": "Side loader",
+    "Én-mandsbetjening: chaufføren bliver i førerhuset, og armen tømmer beholderen.": "One-person operation: the driver stays in the cab and the arm empties the bin.",
+    "Chaufføren bliver i førerhuset – ingen løft og langt færre skridt pr. rute.": "The driver stays in the cab – no lifting and far fewer steps per route.",
+    "Kranbil til nedgravede": "Crane truck for underground",
+    "Renovationsopbygning med kran og krogsystem til tømning af nedgravede containere.": "Refuse body with crane and hook system for emptying underground containers.",
+    "Kapacitet (opbygningens rumfang)": "Capacity (body volume)",
+    "Rumfang": "Volume",
+    "Kompakt – til smalle veje og mindre ruter. Passer typisk på 2 aksler.": "Compact – for narrow roads and smaller routes. Typically fits on 2 axles.",
+    "Det mest valgte. Typisk 3 aksler.": "The most popular choice. Typically 3 axles.",
+    "Maksimal kapacitet til lange ruter med få tipninger. Kræver 3–4 aksler.": "Maximum capacity for long routes with few tip runs. Requires 3–4 axles.",
+    "Løfteudstyr": "Lifting equipment",
+    "Løfter": "Lifter",
+    "Standard kamløfter": "Standard comb lifter",
+    "Til 2-hjulede beholdere (140–370 L).": "For 2-wheeled bins (140–370 L).",
+    "Kombiløfter": "Combi lifter",
+    "Både 2- og 4-hjulede beholdere (op til 1.100 L).": "Both 2- and 4-wheeled bins (up to 1,100 L).",
+    "Løfteren tager vægten af de store beholdere – ikke medarbejderen.": "The lifter takes the weight of the large bins – not the operative.",
+    "Delt løfter": "Split lifter",
+    "To uafhængige løftere – tømmer to beholdere samtidig eller én i hvert kammer.": "Two independent lifters – empties two bins at once or one into each compartment.",
+    "To løftere halverer ventetiden bag bilen og sparer tunge træk.": "Two lifters halve the waiting time behind the truck and save heavy pulling.",
+    "Hvad løfter I primært?": "What do you mainly lift?",
+    "Opgave": "Job",
+    "Byggematerialer og paller": "Building materials and pallets",
+    "Levering til byggepladser og private.": "Deliveries to building sites and private customers.",
+    "Maskiner og tungt gods": "Machinery and heavy goods",
+    "Minigravere, elementer, stål.": "Mini excavators, precast elements, steel.",
+    "Skrot og affald": "Scrap and waste",
+    "Grab eller magnet, mange løft pr. dag.": "Grab or magnet, many lifts per day.",
+    "Containere og moduler": "Containers and modules",
+    "Skurvogne, mandskabsvogne, containere.": "Site cabins, welfare units, containers.",
+    "Træ og fældning": "Timber and tree felling",
+    "Træfældning, flis og stammer.": "Tree felling, wood chips and logs.",
+    "Kranstørrelse (løftemoment)": "Crane size (lifting moment)",
+    "Kran": "Crane",
+    "Let: 8–15 tm": "Light: 8–15 tm",
+    "Paller og byggematerialer tæt på bilen.": "Pallets and building materials close to the truck.",
+    "Mellem: 16–30 tm": "Medium: 16–30 tm",
+    "Den alsidige størrelse til de fleste vognmandsopgaver.": "The versatile size for most haulage jobs.",
+    "Stor: 31–60 tm": "Large: 31–60 tm",
+    "Tunge elementer, maskiner og lange udlæg.": "Heavy elements, machinery and long outreach.",
+    "Tung: 60–100+ tm": "Heavy: 60–100+ tm",
+    "Specialløft og montageopgaver.": "Special lifts and installation work.",
+    "Kranens placering": "Crane position",
+    "Placering": "Position",
+    "Bag førerhus": "Behind the cab",
+    "Bedst vægtfordeling og mest udbredt.": "Best weight distribution and most common.",
+    "Bagmonteret": "Rear-mounted",
+    "Langt frit lad og aflæsning bag bilen.": "Long clear load bed and unloading behind the truck.",
+    "Lad og opbygning": "Load bed and body",
+    "Lad": "Load bed",
+    "Fladt lad med sider": "Flatbed with drop sides",
+    "Klassisk kranbil til gods og materialer.": "Classic crane truck for goods and materials.",
+    "Tipperlad": "Tipper body",
+    "Til grus, jord, skrot og løse materialer.": "For gravel, soil, scrap and loose materials.",
+    "Skrotkasse": "Scrap body",
+    "Høje sider og forstærket bund til grab-arbejde.": "High sides and reinforced floor for grab work.",
+    "Kombineret med krog-/wirehejs": "Combined with hook lift / cable hoist",
+    "Kran og containerhejs på samme bil.": "Crane and container hoist on the same truck.",
+    "Hejstype": "Hoist type",
+    "Hejs": "Hoist",
+    "Wirehejs": "Cable hoist",
+    "Til containere med wirebeslag. Udbredt i Danmark.": "For containers with cable fittings. Common in Denmark.",
+    "Krogløft (kroghejs)": "Hook lift",
+    "Hurtig af- og pålæsning af containere med krogbøjle.": "Fast loading and unloading of containers with a hook bar.",
+    "Løftekapacitet": "Lifting capacity",
+    "Kapacitet": "Capacity",
+    "Ca. 20 t": "Approx. 20 t",
+    "Til lettere containere og 2–3 aksler.": "For lighter containers and 2–3 axles.",
+    "Ca. 26 t": "Approx. 26 t",
+    "Standard til 3-akslede biler.": "Standard for 3-axle trucks.",
+    "30 t+": "30 t+",
+    "Tunge containere og 4-akslede biler.": "Heavy containers and 4-axle trucks.",
+    "Containerlængder": "Container lengths",
+    "Containere": "Containers",
+    "Én fast længde": "One fixed length",
+    "Alle containere har samme længde.": "All containers have the same length.",
+    "Varierende længder": "Varying lengths",
+    "Teleskoparm eller justerbar krog til forskellige containere.": "Telescopic arm or adjustable hook for different containers.",
+    "Skal bilen køre med anhænger?": "Will the truck tow a trailer?",
+    "Anhænger": "Trailer",
+    "Nej": "No",
+    "Kun container på bilen.": "Container on the truck only.",
+    "Ja – containeranhænger": "Yes – container trailer",
+    "To containere pr. tur. Inkl. anhænger og kobling.": "Two containers per trip. Incl. trailer and coupling.",
+    "Primær anvendelse": "Main application",
+    "Anvendelse": "Application",
+    "Kloak- og afløbsrensning": "Sewer and drain cleaning",
+    "Spuling og sugning af brønde og ledninger.": "Jetting and suction of manholes and pipes.",
+    "Sugegravning": "Suction excavation",
+    "Blotlægning af kabler og rør, anlæg og forsyning.": "Exposing cables and pipes, civil works and utilities.",
+    "Industri og tankrens": "Industrial and tank cleaning",
+    "Tanke, udskillere, procesanlæg.": "Tanks, separators, process plants.",
+    "Slam og septik": "Sludge and septic",
+    "Bundfældningstanke, landbrug, spildevand.": "Septic tanks, agriculture, wastewater.",
+    "Biltype": "Truck type",
+    "Type": "Type",
+    "Kombibil (suge/spule)": "Combination truck (jetter-vac)",
+    "Vakuum + højtryksspul i én bil.": "Vacuum + high-pressure jetting in one truck.",
+    "Sugegraver (high-flow)": "Suction excavator (high-flow)",
+    "Kraftig blæser til jord, grus og tørt materiale.": "Powerful blower for soil, gravel and dry material.",
+    "Slamsuger": "Sludge vacuum tanker",
+    "Vakuumpumpe og tank – enkel og robust.": "Vacuum pump and tank – simple and robust.",
+    "Tankvolumen": "Tank volume",
+    "Tank": "Tank",
+    "Kompakt og wendbar – byopgaver.": "Compact and manoeuvrable – urban jobs.",
+    "Det mest alsidige valg.": "The most versatile choice.",
+    "Lange arbejdsdage uden tømning. Kræver 4 aksler.": "Long working days without emptying. Requires 4 axles.",
+    "Hvilket køretøj skal liften på?": "Which vehicle will the lift go on?",
+    "Køretøj": "Vehicle",
+    "Lastbil": "Truck",
+    "Kasse- eller ladbil over 3,5 t.": "Box or flatbed truck over 3.5 t.",
+    "Varebil": "Van",
+    "Op til 3,5 t.": "Up to 3.5 t.",
+    "Trailer / sættevogn": "Trailer / semi-trailer",
+    "Påhængskøretøj.": "Towed vehicle.",
+    "Lifttype": "Lift type",
+    "Lift": "Lift",
+    "Læssebagsmæk": "Column tail lift",
+    "Liften fungerer også som bagdør. Den mest udbredte løsning.": "The lift also acts as the rear door. The most common solution.",
+    "Foldelift": "Tuck-away lift",
+    "Foldes ind under chassiset – bagdøre og rampe kan bruges frit.": "Folds under the chassis – rear doors and ramp can be used freely.",
+    "Kompakt-/varebilslift": "Compact / van lift",
+    "Let lift til varebiler og mindre kassebiler.": "Light lift for vans and smaller box vans.",
+    "500–1.000 kg": "500–1,000 kg",
+    "Rullebure og lette paller.": "Roll cages and light pallets.",
+    "1.500 kg": "1,500 kg",
+    "Paller med palleløfter.": "Pallets with pallet truck.",
+    "2.000–2.500 kg": "2,000–2,500 kg",
+    "Tunge paller, maskiner og truck.": "Heavy pallets, machinery and forklifts.",
+    "Hvem leverer chassiset?": "Who supplies the chassis?",
+    "Chassis": "Chassis",
+    "Ove Kock leverer komplet bil": "Ove Kock supplies the complete truck",
+    "Vi koordinerer chassis, opbygning, syn og levering. Én kontrakt og én kontakt.": "We coordinate chassis, body, approval and delivery. One contract and one contact.",
+    "Vi leverer chassis selv": "We supply the chassis ourselves",
+    "Fra jeres faste lastbilforhandler. Prisen er så kun for opbygning og udstyr.": "From your usual truck dealer. The price then covers body and equipment only.",
+    "Ved ikke endnu": "Not sure yet",
+    "Vi regner med chassis i prisindikationen.": "We include a chassis in the price indication.",
+    "Akselkonfiguration": "Axle configuration",
+    "Aksler": "Axles",
+    "2 aksler (4x2)": "2 axles (4x2)",
+    "Ca. 18–19 t totalvægt. Kompakt og wendbar.": "Approx. 18–19 t gross weight. Compact and manoeuvrable.",
+    "3 aksler (6x2 / 6x4)": "3 axles (6x2 / 6x4)",
+    "Ca. 26 t totalvægt. Det mest valgte.": "Approx. 26 t gross weight. The most popular choice.",
+    "4 aksler (8x2 / 8x4)": "4 axles (8x2 / 8x4)",
+    "Ca. 32 t totalvægt. Maksimal nyttelast.": "Approx. 32 t gross weight. Maximum payload.",
+    "Drivlinje": "Drivetrain",
+    "Diesel (Euro 6)": "Diesel (Euro 6)",
+    "Velkendt, lav anskaffelsespris og stort servicenet.": "Proven, low purchase price and wide service network.",
+    "Diesel – HVO-godkendt": "Diesel – HVO approved",
+    "Kører på fossilfri HVO-diesel. Markant lavere CO₂-udledning over hele livscyklussen.": "Runs on fossil-free HVO diesel. Significantly lower CO₂ emissions over the whole life cycle.",
+    "El (batteri)": "Electric (battery)",
+    "Lokalt emissionsfri og støjsvag. Laveste vejafgift. Batterierne vejer flere ton.": "Zero local emissions and quiet. Lowest road toll. The batteries weigh several tonnes.",
+    "Foretrukket chassismærke": "Preferred chassis make",
+    "Mærke": "Make",
+    "Valgfrit – vi bygger på alle større mærker.": "Optional – we build on all major makes.",
+    "Ingen præference": "No preference",
+    "Vælg udstyr": "Choose equipment",
+    "Udstyr": "Equipment",
+    "Low-entry førerhus": "Low-entry cab",
+    "Lav indstigning direkte fra fortovsniveau.": "Low step-in straight from kerb level.",
+    "Chaufføren stiger ind og ud hundredvis af gange om dagen – lav indstigning skåner knæ og ryg.": "The driver climbs in and out hundreds of times a day – a low step-in protects knees and back.",
+    "360° kamerasystem": "360° camera system",
+    "Fuldt overblik ved bakning og i tæt trafik.": "Full overview when reversing and in dense traffic.",
+    "Overblik over børn, cyklister og kolleger ved bakning i boligområder.": "Sight of children, cyclists and colleagues when reversing in residential areas.",
+    "Automatisk centralsmøring": "Automatic central lubrication",
+    "Mindre slid og kortere serviceophold.": "Less wear and shorter service stops.",
+    "Vejesystem": "Weighing system",
+    "Vejer hver tømning – til afregning og dokumentation.": "Weighs every lift – for billing and documentation.",
+    "Chip/RFID-registrering": "Chip / RFID registration",
+    "Registrerer hver tømt beholder. Færre klager og bedre data.": "Registers every bin emptied. Fewer complaints and better data.",
+    "Sikkerhedspakke på trin": "Footboard safety package",
+    "Hastigheds- og bakspærre, når der står personale på trinbrættet.": "Speed and reversing lock when crew are on the footboard.",
+    "Beskytter medarbejderen, der står på trinbrættet under kørsel.": "Protects the operative riding on the footboard.",
+    "LED arbejdslys-pakke": "LED work light package",
+    "Bedre sikkerhed i mørke morgentimer.": "Better safety in dark early mornings.",
+    "Medarbejdere bag bilen er synlige og kan se, hvad de laver – også kl. 6 om morgenen i januar.": "Crew behind the truck are visible and can see what they are doing – even at 6 am in January.",
+    "Spulesystem til kammer": "Body flushing system",
+    "Nem rengøring af opbygningen – vigtigt ved madaffald.": "Easy cleaning of the body – important for food waste.",
+    "Radiofjernbetjening": "Radio remote control",
+    "Betjen kranen fra det sted, hvor overblikket er bedst.": "Operate the crane from where you have the best view.",
+    "Føreren står med frit udsyn – og på sikker afstand af lasten.": "The operator has a clear view – and stays at a safe distance from the load.",
+    "Ekstra støtteben bag": "Extra rear stabilisers",
+    "Fuld løfteevne hele vejen rundt om bilen.": "Full lifting capacity all the way around the truck.",
+    "Stabil opstilling hele vejen rundt mindsker risikoen ved løft tæt på grænsen.": "Stable set-up all round reduces the risk when lifting close to the limit.",
+    "Jib / forlængerarm": "Jib / extension",
+    "Ekstra rækkevidde og højde – fx tagmaterialer.": "Extra reach and height – e.g. roofing materials.",
+    "Wirespil": "Winch",
+    "Præcisionsløft og løft ned i udgravninger.": "Precision lifts and lifts down into excavations.",
+    "Rotator og grab": "Rotator and grab",
+    "Til skrot, sten, træ og løse materialer.": "For scrap, stone, timber and loose materials.",
+    "Kamera og arbejdslys": "Camera and work lights",
+    "Bedre sikkerhed ved bakning og arbejde i mørke.": "Better safety when reversing and working in the dark.",
+    "Bedre overblik ved bakning og løft i mørke.": "Better view when reversing and lifting in the dark.",
+    "Vejeceller i kran": "Crane load cells",
+    "Dokumentér vægten af hvert løft.": "Document the weight of every lift.",
+    "Automatisk overdækning": "Automatic sheeting",
+    "Net eller presenning lægges på fra førerhuset.": "Net or tarpaulin is applied from the cab.",
+    "Ingen klatring op på containeren for at lægge net på.": "No climbing onto the container to fit a net.",
+    "Mindre slid på hejsens led og ruller.": "Less wear on the hoist's joints and rollers.",
+    "Fjernbetjening": "Remote control",
+    "Betjen hejsen udefra med fuldt overblik.": "Operate the hoist from outside with a full view.",
+    "Betjen hejsen udefra med fuldt overblik over containeren.": "Operate the hoist from outside with a full view of the container.",
+    "Vej containeren ved afhentning.": "Weigh the container at pick-up.",
+    "Bakkamera og arbejdslys": "Reversing camera and work lights",
+    "Præcis placering af containeren.": "Precise placement of the container.",
+    "Vandrecirkulering": "Water recycling",
+    "Genbruger spulevandet – flere timers arbejde uden at fylde vand.": "Reuses the jetting water – hours of work without refilling.",
+    "Vinterpakke": "Winter package",
+    "Frostsikring af pumper og vandsystem.": "Frost protection of pumps and water system.",
+    "Drejebar sugebom m. fjernbetjening": "Slewing suction boom with remote",
+    "Ergonomisk og hurtig positionering af slangen.": "Ergonomic and fast positioning of the hose.",
+    "Hydraulisk bom fjerner de tunge træk i sugeslangen.": "A hydraulic boom removes the heavy pulling on the suction hose.",
+    "Front-slangetromle": "Front hose reel",
+    "Spuling foran bilen – smart ved brønde i vejen.": "Jetting in front of the truck – handy for manholes in the road.",
+    "Mindre slæb med slanger i trafikken.": "Less dragging of hoses in traffic.",
+    "ADR-godkendelse": "ADR approval",
+    "Til transport af farligt gods og olieholdigt slam.": "For transporting dangerous goods and oily sludge.",
+    "Sikkert arbejde i trafik og mørke.": "Safe work in traffic and darkness.",
+    "Vintersikring": "Winter protection",
+    "Varme og beskyttelse af hydraulik og el.": "Heating and protection of hydraulics and electrics.",
+    "Trådløs fjernbetjening": "Wireless remote control",
+    "Betjen liften fra ladet eller jorden.": "Operate the lift from the load bed or the ground.",
+    "Betjen liften fra sikker afstand.": "Operate the lift from a safe distance.",
+    "Rullestop": "Roll stops",
+    "Automatiske stop til rullebure og palleløftere.": "Automatic stops for roll cages and pallet trucks.",
+    "Rullebure og palleløftere ruller ikke af liften.": "Roll cages and pallet trucks cannot roll off the lift.",
+    "Advarselslys og flag": "Warning lights and flags",
+    "Synlighed ved af- og pålæsning på vejen.": "Visibility when loading and unloading on the road.",
+    "Hvornår skal løsningen være i drift?": "When does the solution need to be in operation?",
+    "Tidshorisont": "Timeframe",
+    "Inden for 3 måneder": "Within 3 months",
+    "Om 3–6 måneder": "In 3–6 months",
+    "Om 6–12 måneder": "In 6–12 months",
+    "Om mere end 12 måneder": "In more than 12 months",
+    "Vi undersøger markedet": "We are exploring the market",
+    "Hvad er baggrunden for projektet?": "What is the background to the project?",
+    "Baggrund": "Background",
+    "Vi har vundet et udbud": "We have won a tender",
+    "Fast opstartsdato.": "Fixed start date.",
+    "Vi byder på et udbud": "We are bidding on a tender",
+    "Har brug for pris og specifikation til tilbuddet.": "We need price and specification for our bid.",
+    "Udskiftning af eksisterende bil": "Replacing an existing vehicle",
+    "Ny opgave eller udvidelse": "New contract or expansion",
+    "Skal den gamle bil indgå i handlen?": "Should the old vehicle be part of the deal?",
+    "Byttebil": "Trade-in",
+    "Ja – giv os et bud på den": "Yes – give us an offer for it",
+    "Vi vurderer bilen og modregner den i tilbuddet.": "We value the vehicle and deduct it in the quote.",
+    "Vi beholder eller sælger den selv.": "We keep or sell it ourselves.",
+    "Hvilken bil er det?": "Which vehicle is it?",
+    "Byttebil – model": "Trade-in – model",
+    "Valgfrit – mærke, årgang og km er nok. Billeder kan vedhæftes i sidste trin.": "Optional – make, year and mileage are enough. Photos can be attached in the last step.",
+    "Fx Volvo FE 2016, ca. 350.000 km, JOAB-opbygning": "E.g. Volvo FE 2016, approx. 350,000 km, JOAB body",
+    "Hvor mange enheder?": "How many units?",
+    "Antal": "Quantity",
+    "4 eller flere": "4 or more",
+    "Ønsker I service hos Ove Kock?": "Would you like service from Ove Kock?",
+    "Service": "Service",
+    "Ja – fuld serviceaftale": "Yes – full service contract",
+    "Planlagt service, eftersyn og prioriteret udrykning.": "Scheduled service, inspections and priority call-out.",
+    "Ja – lovpligtige eftersyn": "Yes – statutory inspections",
+    "Vi holder styr på eftersyn og attester.": "We keep track of inspections and certificates.",
+    "Nej – eget værksted": "No – own workshop",
+    "Postnummer hvor køretøjet skal være stationeret": "Danish postcode where the vehicle will be based",
+    "Postnr.": "Postcode",
+    "Fx 6700": "E.g. 6700",
+    "Indtast et gyldigt dansk postnummer (4 cifre).": "Enter a valid Danish postcode (4 digits).",
+    "Land og by hvor køretøjet skal køre": "Country and city where the vehicle will operate",
+    "Land / by": "Country / city",
+    "Fx Tyskland, Hamborg": "E.g. Germany, Hamburg",
+    "Skriv land og by.": "Enter country and city.",
+    // Begrundelser for låste valg
+    "Passer ikke til nedgravede containere": "Not suitable for underground containers",
+    "Ikke muligt med tunge kraner": "Not possible with heavy cranes",
+    "Kræver kombibil eller sugegraver": "Requires a combination truck or suction excavator",
+    "Kræver højtryksspul": "Requires high-pressure jetting",
+    "Normalt ikke muligt på varebiler": "Not normally possible on vans",
+    "For tung til varebil": "Too heavy for a van",
+    "Kraner over 30 tm kræver flere aksler": "Cranes over 30 tm require more axles",
+    "Tanke over 14 m³ kræver 4 aksler": "Tanks over 14 m³ require 4 axles",
+    "30 t hejs kræver flere aksler": "A 30 t hoist requires more axles",
+    "22–27 m³ kræver flere aksler": "22–27 m³ requires more axles",
+    "Kraner over 60 tm kræver 4 aksler": "Cranes over 60 tm require 4 axles",
+    // Kontakt
+    "Salg": "Sales",
+    "Afdelingsleder": "Branch manager",
+    "Udfyld feltet.": "Please fill in this field.",
+    // Ens på begge sprog
+    "1": "1", "2–3": "2–3", "10–15 m³": "10–15 m³", "16–21 m³": "16–21 m³", "22–27 m³": "22–27 m³",
+    "6–9 m³": "6–9 m³", "10–13 m³": "10–13 m³", "14–18 m³": "14–18 m³",
+    "Volvo": "Volvo", "Scania": "Scania", "Mercedes-Benz": "Mercedes-Benz", "DAF": "DAF", "MAN": "MAN"
+  };
+  function tr(s) {
+    if (LANG !== 'en' || s == null) return s;
+    if (EN[s] != null) return EN[s];
+    MISSING[s] = 1; return s;
+  }
+  function L(da, en) { return LANG === 'en' ? en : da; }
+  function withLang(lang, fn) { var o = LANG; LANG = lang; try { return fn(); } finally { LANG = o; } }
+  function loc() { return LANG === 'en' ? 'en-GB' : 'da-DK'; }
+  function tel(p) { return LANG === 'en' ? '+45 ' + p : p; }
+  function detectLang() {
+    try { var q = (new URLSearchParams(window.location.search).get('lang') || '').toLowerCase(); if (q === 'en' || q === 'da') return q; } catch (e) {}
+    try { var st = localStorage.getItem('okc_lang'); if (st === 'en' || st === 'da') return st; } catch (e) {}
+    var langs = (navigator.languages && navigator.languages.length ? navigator.languages : [navigator.language || 'da']);
+    var first = String(langs[0] || 'da').toLowerCase();
+    return /^(da|fo|kl)\b/.test(first) ? 'da' : 'en';
+  }
+  function setLang(lang, silent) {
+    if (lang !== 'da' && lang !== 'en') return;
+    var changed = lang !== LANG; LANG = lang;
+    try { localStorage.setItem('okc_lang', lang); } catch (e) {}
+    try { document.dispatchEvent(new CustomEvent('okc-lang', { detail: lang })); } catch (e) {}
+    if (changed && !silent) track('language', { okc_lang: lang });
+    if (root) render(false);
+  }
+  window.OKC = { setLang: function (l) { setLang(l); }, getLang: function () { return LANG; }, missing: function () { return Object.keys(MISSING); } };
+
+  /* =====================================================================
+     TAL, VÆGT OG TID
+     ===================================================================== */
+  function tons(kg) { return (Math.max(0, kg) / 1000).toLocaleString(loc(), { minimumFractionDigits: 1, maximumFractionDigits: 1 }) + ' t'; }
   function payloadText(pc) {
-    var p = S.product;
-    if (p === 'ren') return 'Vægtmæssigt plads til ca. ' + (Math.round(Math.max(0, pc.payload) / 20 / 10) * 10).toLocaleString('da-DK') + ' tømninger af 240 L-beholdere med restaffald (ca. 20 kg pr. stk.).';
-    if (p === 'kran') return 'Plads til ca. ' + tons(pc.payload) + ' gods på ladet – ud over kran og opbygning.';
-    if (p === 'hejs') return 'Ca. ' + tons(pc.payload) + ' til container og indhold. En tom container vejer typisk 2–3 t.';
+    var p = S.product, n;
+    if (p === 'ren') { n = (Math.round(Math.max(0, pc.payload) / 20 / 10) * 10).toLocaleString(loc());
+      return L('Vægtmæssigt plads til ca. ' + n + ' tømninger af 240 L-beholdere med restaffald (ca. 20 kg pr. stk.).', 'By weight, room for approx. ' + n + ' lifts of 240 L bins of residual waste (approx. 20 kg each).'); }
+    if (p === 'kran') return L('Plads til ca. ' + tons(pc.payload) + ' gods på ladet – ud over kran og opbygning.', 'Room for approx. ' + tons(pc.payload) + ' of goods on the bed – on top of crane and body.');
+    if (p === 'hejs') return L('Ca. ' + tons(pc.payload) + ' til container og indhold. En tom container vejer typisk 2–3 t.', 'Approx. ' + tons(pc.payload) + ' for container and contents. An empty container typically weighs 2–3 t.');
     if (p === 'sug') {
-      var t = WEIGHTS.tank[A('sug_tank') || 's'], m3 = Math.max(0, pc.payload) / 1000;
-      return m3 >= t[1] ? 'Hele tanken (op til ' + t[1] + ' m³) kan fyldes lovligt med slam eller vand.'
-        : 'Lovligt ca. ' + m3.toLocaleString('da-DK', { maximumFractionDigits: 1 }) + ' m³ slam eller vand (ca. 1 t pr. m³) – af en tank på ' + t[0] + '–' + t[1] + ' m³.';
+      var t = WEIGHTS.tank[A('sug_tank') || 's'], m3 = Math.max(0, pc.payload) / 1000, m = m3.toLocaleString(loc(), { maximumFractionDigits: 1 });
+      return m3 >= t[1] ? L('Hele tanken (op til ' + t[1] + ' m³) kan fyldes lovligt med slam eller vand.', 'The whole tank (up to ' + t[1] + ' m³) can legally be filled with sludge or water.')
+        : L('Lovligt ca. ' + m + ' m³ slam eller vand (ca. 1 t pr. m³) – af en tank på ' + t[0] + '–' + t[1] + ' m³.', 'Legally approx. ' + m + ' m³ of sludge or water (approx. 1 t per m³) – out of a ' + t[0] + '–' + t[1] + ' m³ tank.');
     }
     return '';
   }
+  function roundP(n) { var step = n >= 500000 ? 25000 : (n >= 100000 ? 5000 : 1000); return Math.round(n / step) * step; }
+  function fmtRange(lo, hi) {
+    if (hi >= 1000000) {
+      var f = function (x) { return (x / 1000000).toLocaleString(loc(), { minimumFractionDigits: 2, maximumFractionDigits: 2 }); };
+      return L(f(lo) + '–' + f(hi) + ' mio. kr.', 'DKK ' + f(lo) + '–' + f(hi) + ' million');
+    }
+    var g = function (x) { return Math.round(x).toLocaleString(loc()); };
+    return L(g(lo) + '–' + g(hi) + ' kr.', 'DKK ' + g(lo) + '–' + g(hi));
+  }
+  function fmtEur(lo, hi) {
+    var r = function (x) { var v = x / CONFIG.eurRate, st = v >= 100000 ? 5000 : 500; return (Math.round(v / st) * st).toLocaleString('en-GB'); };
+    return '≈ EUR ' + r(lo) + '–' + r(hi);
+  }
+  function weeksToText(w) {
+    if (w[1] <= 10) return L(w[0] + '–' + w[1] + ' uger', w[0] + '–' + w[1] + ' weeks');
+    var a = Math.max(1, Math.round(w[0] / 4.33)), b = Math.max(1, Math.round(w[1] / 4.33));
+    return L('ca. ' + a + '–' + b + ' måneder', 'approx. ' + a + '–' + b + ' months');
+  }
+  function priceLevel(p) {
+    if (!p || p[1] === 0) return 0;
+    var mid = (p[0] + p[1]) / 2;
+    return mid < 30000 ? 1 : mid < 150000 ? 2 : mid < 800000 ? 3 : 4;
+  }
+  function branchFor(zip) {
+    if (A('abroad')) return null;
+    if (!/^\d{4}$/.test(zip || '')) return null;
+    var z = parseInt(zip, 10);
+    if (z < 5000) return 'ringsted';
+    if (z < 6500) return 'kolding';
+    if (z < 7000) return 'esbjerg';
+    if (z < 7400) return 'kolding';
+    if (z < 8000) return 'hobro';
+    if (z >= 8700 && z < 8800) return 'kolding';
+    return 'hobro';
+  }
+  function contactFor() { var b = branchFor(A('zip')); return b ? CONTACTS[b] : FRANK; }
+  function firstName(n) { return String(n || '').trim().split(/\s+/)[0]; }
+  function nextWorkday() {
+    var da = ['søndag', 'mandag', 'tirsdag', 'onsdag', 'torsdag', 'fredag', 'lørdag'], en = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+    var d = new Date(); d.setDate(d.getDate() + 1);
+    var tomorrow = d.getDay();
+    while (d.getDay() === 0 || d.getDay() === 6) d.setDate(d.getDate() + 1);
+    var nm = LANG === 'en' ? en[d.getDay()] : da[d.getDay()];
+    return { tomorrow: d.getDay() === tomorrow, name: nm };
+  }
+  function promise() {
+    var n = nextWorkday();
+    return n.tomorrow ? L('senest i morgen (' + n.name + ') kl. 12', 'by 12:00 tomorrow (' + n.name + ', Danish time)')
+      : L('senest ' + n.name + ' kl. 12', 'by 12:00 on ' + n.name + ' (Danish time)');
+  }
 
   /* =====================================================================
-     4. FAGLIGE ANBEFALINGER (dup = dækkes af nyttelast/fejltjek og vises ikke igen på prissiden)
+     FAGLIGE ANBEFALINGER (dup = dækkes af nyttelast/fejltjek og vises ikke igen på prissiden)
      ===================================================================== */
   function advice() {
     var out = [], p = S.product;
     function add(screen, type, title, text, dup) { out.push({ s: screen, t: type, h: title, m: text, dup: !!dup }); }
     if (p === 'ren') {
-      if (A('ren_use') === 'nedgr') add('ren1', 'rec', 'Nedgravede containere', 'Tømning sker med kran og krogsystem (1-krog, 2-krog eller Kinshofer). Vi anbefaler en kranbil med renovationsopbygning – fortæl os gerne hvilke containertyper I har.');
-      if (A('ren_use') === 'rest' || A('ren_use') === 'genanv') add('ren1', 'tip', 'Overvej 2-kammer', 'Med 10 affaldstyper kan to fraktioner på samme tur spare kørsel, chaufførtimer og CO₂. Kammerfordelingen (fx 60/40) vælges ud fra fraktionernes mængde og vægt.');
-      if (A('ren_area') === 'by') add('ren1', 'tip', 'Kørsel i tæt by', 'Støjsvag drift giver mulighed for tidligere start, og low-entry førerhus og kameraer gør en stor forskel for chaufføren. Husk miljøzonekrav.');
-      if (A('ren_area') === 'land') add('ren1', 'tip', 'Landruter', 'En sidelæsser kan betjenes af én person, fordi chaufføren bliver i førerhuset. Det kræver, at beholderne stilles i samme side af vejen.');
-      if (A('ren_body') === 'side' && A('ren_area') === 'by') add('ren2', 'warn', 'Sidelæsser i tæt by', 'Parkerede biler og smalle fortove kan gøre det svært for sidearmen at nå beholderne. En baglader er ofte mere fleksibel i byen.');
-      if (A('ren_body') === 'kran' && A('ren_use') !== 'nedgr') add('ren2', 'warn', 'Kranbil uden nedgravede containere', 'En kranbil er primært til nedgravede containere. Til almindelige beholdere er en baglader eller sidelæsser typisk billigere og hurtigere.');
+      if (A('ren_use') === 'nedgr') add('ren1', 'rec', L('Nedgravede containere', 'Underground containers'), L('Tømning sker med kran og krogsystem (1-krog, 2-krog eller Kinshofer). Vi anbefaler en kranbil med renovationsopbygning – fortæl os gerne hvilke containertyper I har.', 'Emptying is done by crane with a hook system (1-hook, 2-hook or Kinshofer). We recommend a crane truck with a refuse body – please tell us which container types you have.'));
+      if (A('ren_use') === 'rest' || A('ren_use') === 'genanv') add('ren1', 'tip', L('Overvej 2-kammer', 'Consider a split body'), L('Med 10 affaldstyper kan to fraktioner på samme tur spare kørsel, chaufførtimer og CO₂. Kammerfordelingen (fx 60/40) vælges ud fra fraktionernes mængde og vægt.', 'With 10 waste types, two fractions in the same round save mileage, driver hours and CO₂. The compartment split (e.g. 60/40) is chosen from the volume and weight of each fraction.'));
+      if (A('ren_area') === 'by') add('ren1', 'tip', L('Kørsel i tæt by', 'Dense urban routes'), L('Støjsvag drift giver mulighed for tidligere start, og low-entry førerhus og kameraer gør en stor forskel for chaufføren. Husk miljøzonekrav.', 'Quiet operation allows earlier starts, and a low-entry cab and cameras make a big difference for the driver. Remember low-emission zone rules.'));
+      if (A('ren_area') === 'land') add('ren1', 'tip', L('Landruter', 'Rural routes'), L('En sidelæsser kan betjenes af én person, fordi chaufføren bliver i førerhuset. Det kræver, at beholderne stilles i samme side af vejen.', 'A side loader can be run by one person, as the driver stays in the cab. Bins must be placed on the same side of the road.'));
+      if (A('ren_body') === 'side' && A('ren_area') === 'by') add('ren2', 'warn', L('Sidelæsser i tæt by', 'Side loader in dense urban areas'), L('Parkerede biler og smalle fortove kan gøre det svært for sidearmen at nå beholderne. En baglader er ofte mere fleksibel i byen.', 'Parked cars and narrow pavements can make it hard for the arm to reach the bins. A rear loader is often more flexible in town.'));
+      if (A('ren_body') === 'kran' && A('ren_use') !== 'nedgr') add('ren2', 'warn', L('Kranbil uden nedgravede containere', 'Crane truck without underground containers'), L('En kranbil er primært til nedgravede containere. Til almindelige beholdere er en baglader eller sidelæsser typisk billigere og hurtigere.', 'A crane truck is mainly for underground containers. For ordinary bins, a rear or side loader is usually cheaper and faster.'));
     }
     if (p === 'kran') {
-      if (A('kran_size') && A('kran_size') !== 'let') add('kran1', 'tip', 'Kranførercertifikat', 'Kraner over 25 tm kræver kranførercertifikat. Har I chauffører med certifikat, eller skal det med i planen?', true);
-      if (A('kran_use') === 'skrot') add('kran1', 'rec', 'Skrotopgaver', 'Til skrot anbefaler vi rotator og grab samt en forstærket skrotkasse – som på vores skrotbil til Tonny Frank Jensen.');
-      if (A('kran_use') === 'container') add('kran2', 'rec', 'Containere og moduler', 'Kombinér kran og krog-/wirehejs, så samme bil kan både løfte moduler og hejse containere.');
-      if (A('kran_pos') === 'rear' && A('axles') === '2') add('chassis', 'warn', 'Bagmonteret kran på 2 aksler', 'Bagmonteret kran belaster bagakslen hårdt. Overvej 3 aksler for at bevare nyttelasten.', true);
+      if (A('kran_size') && A('kran_size') !== 'let') add('kran1', 'tip', L('Kranførercertifikat', 'Crane operator certificate'), L('Kraner over 25 tm kræver kranførercertifikat. Har I chauffører med certifikat, eller skal det med i planen?', 'In Denmark, cranes over 25 tm require a crane operator certificate. Do your drivers have one, or should it be part of the plan?'), true);
+      if (A('kran_use') === 'skrot') add('kran1', 'rec', L('Skrotopgaver', 'Scrap work'), L('Til skrot anbefaler vi rotator og grab samt en forstærket skrotkasse – som på vores skrotbil til Tonny Frank Jensen.', 'For scrap we recommend a rotator and grab plus a reinforced scrap body – like our scrap truck for Tonny Frank Jensen.'));
+      if (A('kran_use') === 'container') add('kran2', 'rec', L('Containere og moduler', 'Containers and modules'), L('Kombinér kran og krog-/wirehejs, så samme bil kan både løfte moduler og hejse containere.', 'Combine a crane with a hook lift or cable hoist, so the same truck can both lift modules and load containers.'));
+      if (A('kran_pos') === 'rear' && A('axles') === '2') add('chassis', 'warn', L('Bagmonteret kran på 2 aksler', 'Rear-mounted crane on 2 axles'), L('Bagmonteret kran belaster bagakslen hårdt. Overvej 3 aksler for at bevare nyttelasten.', 'A rear-mounted crane puts a heavy load on the rear axle. Consider 3 axles to keep your payload.'), true);
     }
     if (p === 'hejs') {
-      if (A('hejs_trailer') === 'ja') add('hejs1', 'tip', 'Kørsel med anhænger', 'Til anhængerkørsel anbefaler vi 3 aksler, kraftig kobling og hejs der kan læsse containeren fra anhængeren over på bilen.');
-      if (A('hejs_trailer') === 'ja' && A('axles') === '2') add('chassis', 'warn', 'Anhænger på 2 aksler', '2 aksler giver begrænset tilladt vogntogsvægt. Vi anbefaler 3 aksler ved anhængerkørsel.');
+      if (A('hejs_trailer') === 'ja') add('hejs1', 'tip', L('Kørsel med anhænger', 'Towing a trailer'), L('Til anhængerkørsel anbefaler vi 3 aksler, kraftig kobling og hejs der kan læsse containeren fra anhængeren over på bilen.', 'For trailer work we recommend 3 axles, a heavy-duty coupling and a hoist that can transfer the container from trailer to truck.'));
+      if (A('hejs_trailer') === 'ja' && A('axles') === '2') add('chassis', 'warn', L('Anhænger på 2 aksler', 'Trailer on 2 axles'), L('2 aksler giver begrænset tilladt vogntogsvægt. Vi anbefaler 3 aksler ved anhængerkørsel.', '2 axles limit the permitted combination weight. We recommend 3 axles for trailer work.'));
     }
     if (p === 'sug') {
-      if (A('sug_use') === 'grav' && A('sug_type') && A('sug_type') !== 'graver') add('sug1', 'rec', 'Sugegravning', 'Til sugegravning anbefaler vi en sugegraver med high-flow blæser. En vakuumpumpe flytter for lidt luft til tørt materiale.', true);
-      if (A('sug_use') === 'kloak') add('sug1', 'tip', 'Kloakrensning', 'Kombibil med vandrecirkulering er den mest effektive løsning: én bil og én mand kan spule og suge i timevis.');
-      if (A('drive') === 'el') add('chassis', 'warn', 'El og sugebil', 'Pumper og blæsere bruger meget energi. Med el-drift skal batteriet dimensioneres til både kørsel og arbejde – vi regner på jeres arbejdsdag.');
+      if (A('sug_use') === 'grav' && A('sug_type') && A('sug_type') !== 'graver') add('sug1', 'rec', L('Sugegravning', 'Suction excavation'), L('Til sugegravning anbefaler vi en sugegraver med high-flow blæser. En vakuumpumpe flytter for lidt luft til tørt materiale.', 'For suction excavation we recommend a suction excavator with a high-flow blower. A vacuum pump moves too little air for dry material.'), true);
+      if (A('sug_use') === 'kloak') add('sug1', 'tip', L('Kloakrensning', 'Sewer cleaning'), L('Kombibil med vandrecirkulering er den mest effektive løsning: én bil og én mand kan spule og suge i timevis.', 'A combination truck with water recycling is the most efficient solution: one truck and one operator can jet and vacuum for hours.'));
+      if (A('drive') === 'el') add('chassis', 'warn', L('El og sugebil', 'Electric vacuum truck'), L('Pumper og blæsere bruger meget energi. Med el-drift skal batteriet dimensioneres til både kørsel og arbejde – vi regner på jeres arbejdsdag.', 'Pumps and blowers use a lot of energy. With electric drive the battery must be sized for both driving and work – we will calculate your working day.'));
     }
-    if (p === 'lift' && A('lift_cap') === '2500') add('lift1', 'tip', 'Tung lift', 'Ved 2.000–2.500 kg skal bilens bagudhæng, ramme og bagakseltryk kontrolleres. Vi tjekker det op mod chassisfabrikantens opbygningsvejledning.');
+    if (p === 'lift' && A('lift_cap') === '2500') add('lift1', 'tip', L('Tung lift', 'Heavy-duty lift'), L('Ved 2.000–2.500 kg skal bilens bagudhæng, ramme og bagakseltryk kontrolleres. Vi tjekker det op mod chassisfabrikantens opbygningsvejledning.', 'At 2,000–2,500 kg the rear overhang, frame and rear axle load must be checked. We check this against the chassis manufacturer\'s body builder guidelines.'));
     if (P() && P().chassis) {
-      if (A('ch_source') === 'own') add('chassis', 'tip', 'Eget chassis', 'Send os chassisets specifikation: akselafstand, totalvægt, PTO/kraftudtag og førerhustype. Vi bestiller gerne direkte med jeres forhandler, så chassiset kommer rigtigt fra fabrikken.');
-      if (A('drive') === 'el') add('chassis', 'tip', 'El-drift', 'El giver lavere energi- og vejafgift, men højere anskaffelse, længere leveringstid og tunge batterier. Rækkevidden skal matche ruten inkl. energi til løft og komprimering.');
-      if (A('drive') === 'hvo') add('chassis', 'tip', 'HVO', 'HVO kan bruges direkte i godkendte dieselmotorer og nedbringer CO₂ markant over livscyklussen. Lokale NOx-udledninger og støj er dog som diesel.');
+      if (A('ch_source') === 'own') add('chassis', 'tip', L('Eget chassis', 'Your own chassis'), L('Send os chassisets specifikation: akselafstand, totalvægt, PTO/kraftudtag og førerhustype. Vi bestiller gerne direkte med jeres forhandler, så chassiset kommer rigtigt fra fabrikken.', 'Send us the chassis specification: wheelbase, gross weight, PTO and cab type. We are happy to order directly with your dealer, so the chassis arrives right from the factory.'));
+      if (A('drive') === 'el') add('chassis', 'tip', L('El-drift', 'Electric drive'), L('El giver lavere energi- og vejafgift, men højere anskaffelse, længere leveringstid og tunge batterier. Rækkevidden skal matche ruten inkl. energi til løft og komprimering.', 'Electric means lower energy costs and road toll, but a higher purchase price, longer delivery and heavy batteries. Range must match the route incl. energy for lifting and compaction.'));
+      if (A('drive') === 'hvo') add('chassis', 'tip', 'HVO', L('HVO kan bruges direkte i godkendte dieselmotorer og nedbringer CO₂ markant over livscyklussen. Lokale NOx-udledninger og støj er dog som diesel.', 'HVO can be used directly in approved diesel engines and cuts CO₂ significantly over the life cycle. Local NOx emissions and noise are the same as diesel, though.'));
     }
-    if (A('trigger') === 'bid' || A('trigger') === 'won') add('project', 'rec', 'Udbud', 'Vedhæft kravspecifikationen i sidste trin, så leverer vi pris og teknisk datablad, der matcher udbuddets krav punkt for punkt.');
-    if (A('tradein') === 'ja') add('project', 'tip', 'Byttebil', 'En vedligeholdt opbygning med servicehistorik holder værdien bedst. Har I billeder og servicebog, så vedhæft dem i sidste trin.');
-    if (A('qty') === '4+') add('project', 'tip', 'Flådeordre', 'Ved 4 eller flere enheder kan vi aftale samlet produktionsplan, ensartet specifikation og fast servicepris.');
+    if (A('trigger') === 'bid' || A('trigger') === 'won') add('project', 'rec', L('Udbud', 'Tender'), L('Vedhæft kravspecifikationen i sidste trin, så leverer vi pris og teknisk datablad, der matcher udbuddets krav punkt for punkt.', 'Attach the tender specification in the last step, and we will deliver a price and technical data sheet that match the requirements point by point.'));
+    if (A('tradein') === 'ja') add('project', 'tip', L('Byttebil', 'Trade-in'), L('En vedligeholdt opbygning med servicehistorik holder værdien bedst. Har I billeder og servicebog, så vedhæft dem i sidste trin.', 'A well-maintained body with service history holds its value best. If you have photos and a service record, attach them in the last step.'));
+    if (A('qty') === '4+') add('project', 'tip', L('Flådeordre', 'Fleet order'), L('Ved 4 eller flere enheder kan vi aftale samlet produktionsplan, ensartet specifikation og fast servicepris.', 'For 4 or more units we can agree a joint production plan, a uniform specification and a fixed service price.'));
+    if (A('abroad')) add('project', 'tip', L('Uden for Danmark', 'Outside Denmark'), L('Vi leverer også til udlandet. Vi afklarer registrering, godkendelse og service i jeres land ved gennemgangen.', 'We also deliver abroad. We will clarify registration, type approval and service in your country during the review.'));
     return out;
   }
 
@@ -1080,14 +1593,14 @@ textarea.okc-input{height:auto;padding:12px 16px}
       else if (cur) { var o = opt(id, cur); if (!o || (o.dis && o.dis())) { delete S.a[id]; delete S.unsure[id]; } }
     });
   }
+  function textOk(q, v) { return q.pattern ? q.pattern.test(v || '') : !!String(v || '').trim(); }
   function missingStep() {
-    // Første skærm før prissiden med et ubesvaret, påkrævet spørgsmål (eller -1)
     var l = screens();
     for (var i = 1; i < l.length; i++) {
       if (l[i] === 'price') return -1;
       var bad = qsOf(l[i]).some(function (id) {
         var q = Q[id], v = S.a[id]; if (q.optional) return false;
-        return q.type === 'text' ? !(q.pattern ? q.pattern.test(v || '') : v) : !v;
+        return q.type === 'text' ? !textOk(q, v) : !v;
       });
       if (bad) return i;
     }
@@ -1098,8 +1611,8 @@ textarea.okc-input{height:auto;padding:12px 16px}
     function ok(x) { return !(x.dis && x.dis()); }
     for (i = 0; i < o.length; i++) if (o[i].def && o[i].rec && o[i].rec() && ok(o[i])) return o[i].v;
     for (i = 0; i < o.length; i++) if (o[i].rec && o[i].rec() && ok(o[i])) return o[i].v;
-    for (i = 0; i < o.length; i++) if (o[i].def && !(o[i].dis && o[i].dis())) return o[i].v;
-    for (i = 0; i < o.length; i++) if (!(o[i].dis && o[i].dis())) return o[i].v;
+    for (i = 0; i < o.length; i++) if (o[i].def && ok(o[i])) return o[i].v;
+    for (i = 0; i < o.length; i++) if (ok(o[i])) return o[i].v;
     return null;
   }
 
@@ -1121,61 +1634,23 @@ textarea.okc-input{height:auto;padding:12px 16px}
           var grp = q.group || 'body';
           if (grp === 'chassis' && own) return;
           g[grp][0] += o.p[0]; g[grp][1] += o.p[1];
-          if (o.p[1] > 0) lines.push({ grp: grp, label: (q.short || q.label) + ': ' + o.l, p: o.p });
+          if (o.p[1] > 0) lines.push({ grp: grp, label: tr(q.short || q.label) + ': ' + tr(o.l), p: o.p });
         });
       });
     });
     var mont = S.product === 'lift' ? [5000, 15000] : [40000, 90000];
     g.body[0] += mont[0]; g.body[1] += mont[1];
-    lines.push({ grp: 'body', label: S.product === 'lift' ? 'Montage og godkendelse' : 'Montage, klargøring, syn og levering', p: mont });
+    lines.push({ grp: 'body', label: S.product === 'lift' ? L('Montage og godkendelse', 'Fitting and approval') : L('Montage, klargøring, syn og levering', 'Assembly, preparation, approval and delivery'), p: mont });
     var lo = roundP(g.body[0] + g.chassis[0] + g.trailer[0]), hi = roundP(g.body[1] + g.chassis[1] + g.trailer[1]);
     var bw = P().weeks, cw = (!P().chassis || own) ? [0, 0] : (A('drive') === 'el' ? [26, 52] : [16, 30]), weeks;
     if (P().chassis) weeks = [Math.max(bw[0], cw[0]) + CONFIG.assemblyWeeks[0] + extraW[0], Math.max(bw[1], cw[1]) + CONFIG.assemblyWeeks[1] + extraW[1]];
     else weeks = [bw[0] + extraW[0], bw[1] + extraW[1]];
-    var L = CONFIG.leasing;
-    function pmt(pv) { var r = L.rate / 12, n = L.months, fv = pv * L.residual; return (pv - fv / Math.pow(1 + r, n)) * r / (1 - Math.pow(1 + r, -n)); }
+    var Ls = CONFIG.leasing;
+    function pmt(pv) { var r = Ls.rate / 12, n = Ls.months, fv = pv * Ls.residual; return (pv - fv / Math.pow(1 + r, n)) * r / (1 - Math.pow(1 + r, -n)); }
     var monthly = [pmt(lo), pmt(hi)].map(function (x) { return Math.round(x / 500) * 500; });
     var qtyMul = { '1': [1, 1], '2-3': [2, 3], '4+': [4, 4] }[A('qty')] || [1, 1];
     return { lo: lo, hi: hi, g: g, lines: lines, weeks: weeks, monthly: monthly, qtyMul: qtyMul, own: own };
   }
-  function roundP(n) { var step = n >= 500000 ? 25000 : (n >= 100000 ? 5000 : 1000); return Math.round(n / step) * step; }
-  function fmtRange(lo, hi) {
-    if (hi >= 1000000) {
-      var f = function (x) { return (x / 1000000).toLocaleString('da-DK', { minimumFractionDigits: 2, maximumFractionDigits: 2 }); };
-      return f(lo) + '–' + f(hi) + ' mio. kr.';
-    }
-    return Math.round(lo).toLocaleString('da-DK') + '–' + Math.round(hi).toLocaleString('da-DK') + ' kr.';
-  }
-  function weeksToText(w) {
-    if (w[1] <= 10) return w[0] + '–' + w[1] + ' uger';
-    return 'ca. ' + Math.max(1, Math.round(w[0] / 4.33)) + '–' + Math.max(1, Math.round(w[1] / 4.33)) + ' måneder';
-  }
-  function priceLevel(p) {
-    if (!p || p[1] === 0) return 0;
-    var mid = (p[0] + p[1]) / 2;
-    return mid < 30000 ? 1 : mid < 150000 ? 2 : mid < 800000 ? 3 : 4;
-  }
-  function branchFor(zip) {
-    if (!/^\d{4}$/.test(zip || '')) return null;
-    var z = parseInt(zip, 10);
-    if (z < 5000) return 'ringsted';
-    if (z < 6500) return 'kolding';
-    if (z < 7000) return 'esbjerg';
-    if (z < 7400) return 'kolding';
-    if (z < 8000) return 'hobro';
-    if (z >= 8700 && z < 8800) return 'kolding';
-    return 'hobro';
-  }
-  function contactFor() { var b = branchFor(A('zip')); return b ? CONTACTS[b] : FRANK; }
-  function firstName(n) { return String(n || '').trim().split(/\s+/)[0]; }
-  function nextWorkday() {
-    var names = ['søndag', 'mandag', 'tirsdag', 'onsdag', 'torsdag', 'fredag', 'lørdag'];
-    var d = new Date(); d.setDate(d.getDate() + 1);
-    var tomorrow = d.getDay();
-    while (d.getDay() === 0 || d.getDay() === 6) d.setDate(d.getDate() + 1);
-    return (d.getDay() === tomorrow ? 'i morgen (' + names[d.getDay()] + ')' : names[d.getDay()]);
-  }
-  function promise() { return 'senest ' + nextWorkday() + ' kl. 12'; }
 
   /* =====================================================================
      7. TJEK AF DE 5 DYRESTE FEJL
@@ -1183,45 +1658,48 @@ textarea.okc-input{height:auto;padding:12px 16px}
   function mistakes(e, pc) {
     var p = S.product, out = [];
     function add(st, h, m) { out.push({ st: st, h: h, m: m }); }
-    // 1. Nyttelast
+    var H1 = L('For tung opbygning på for lille chassis', 'Too heavy a body on too small a chassis');
     if (p === 'lift') {
-      add(S.unsure.lift_cap ? 'open' : 'ok', 'Liften er for svag til lasten', S.unsure.lift_cap ? 'Kapaciteten er valgt for jer – vi afstemmer den med jeres tungeste last.' : 'I har valgt ' + (opt('lift_cap', A('lift_cap')) || {}).l + '. Husk at regne palleløfteren med.');
+      add(S.unsure.lift_cap ? 'open' : 'ok', L('Liften er for svag til lasten', 'The lift is too weak for the load'), S.unsure.lift_cap ? L('Kapaciteten er valgt for jer – vi afstemmer den med jeres tungeste last.', 'The capacity was chosen for you – we will match it to your heaviest load.') : L('I har valgt ', 'You have chosen ') + tr((opt('lift_cap', A('lift_cap')) || {}).l) + L('. Husk at regne palleløfteren med.', '. Remember to include the pallet truck.'));
     } else if (pc) {
-      if (pc.status === 'ok') add('ok', 'For tung opbygning på for lille chassis', 'Ca. ' + tons(pc.payload) + ' nyttelast – god margin.');
-      else if (pc.status === 'tight') add('open', 'For tung opbygning på for lille chassis', 'Ca. ' + tons(pc.payload) + ' nyttelast er stramt. Vi regner præcist på jeres last, før bilen bygges.');
-      else add('warn', 'For tung opbygning på for lille chassis', 'Kun ca. ' + tons(pc.payload) + ' nyttelast. Overvej flere aksler eller en lettere opbygning.');
+      if (pc.status === 'ok') add('ok', H1, L('Ca. ' + tons(pc.payload) + ' nyttelast – god margin.', 'Approx. ' + tons(pc.payload) + ' payload – good margin.'));
+      else if (pc.status === 'tight') add('open', H1, L('Ca. ' + tons(pc.payload) + ' nyttelast er stramt. Vi regner præcist på jeres last, før bilen bygges.', 'Approx. ' + tons(pc.payload) + ' payload is tight. We calculate your load precisely before the truck is built.'));
+      else add('warn', H1, L('Kun ca. ' + tons(pc.payload) + ' nyttelast. Overvej flere aksler eller en lettere opbygning.', 'Only approx. ' + tons(pc.payload) + ' payload. Consider more axles or a lighter body.'));
     }
-    // 2. Leveringstid vs. opstart
+    var H2 = L('Bestilt for sent til opstartsdatoen', 'Ordered too late for the start date'), wt = weeksToText(e.weeks);
     var maxM = { '0-3': 3, '3-6': 6, '6-12': 12 }[A('timeline')];
     var loM = e.weeks[0] / 4.33, hiM = e.weeks[1] / 4.33;
-    if (!maxM) add('ok', 'Bestilt for sent til opstartsdatoen', 'Jeres tidshorisont giver god tid til forventet leveringstid (' + weeksToText(e.weeks) + ').');
-    else if (loM > maxM) add('warn', 'Bestilt for sent til opstartsdatoen', 'Forventet leveringstid (' + weeksToText(e.weeks) + ') er længere end jeres tidshorisont. Spørg til lager-, demo- eller lejebiler.');
-    else if (hiM > maxM) add('open', 'Bestilt for sent til opstartsdatoen', 'Det kan blive stramt (' + weeksToText(e.weeks) + '). Vi lægger en tidsplan sammen med jer fra dag ét.');
-    else add('ok', 'Bestilt for sent til opstartsdatoen', 'Leveringstiden (' + weeksToText(e.weeks) + ') passer med jeres tidshorisont.');
-    // 3. Produktspecifik fejl
+    if (!maxM) add('ok', H2, L('Jeres tidshorisont giver god tid til forventet leveringstid (' + wt + ').', 'Your timeframe leaves good time for the expected delivery (' + wt + ').'));
+    else if (loM > maxM) add('warn', H2, L('Forventet leveringstid (' + wt + ') er længere end jeres tidshorisont. Spørg til lager-, demo- eller lejebiler.', 'Expected delivery (' + wt + ') is longer than your timeframe. Ask about stock, demo or rental vehicles.'));
+    else if (hiM > maxM) add('open', H2, L('Det kan blive stramt (' + wt + '). Vi lægger en tidsplan sammen med jer fra dag ét.', 'It may be tight (' + wt + '). We will draw up a schedule with you from day one.'));
+    else add('ok', H2, L('Leveringstiden (' + wt + ') passer med jeres tidshorisont.', 'The delivery time (' + wt + ') fits your timeframe.'));
     if (p === 'ren') {
-      if (A('ren_lift') && !S.unsure.ren_lift && Q.ren_lift.showIf()) add('ok', 'Løfteren passer ikke til beholderne', 'I har valgt ' + opt('ren_lift', A('ren_lift')).l.toLowerCase() + '. Vi tjekker den mod jeres beholderpark.');
-      else add('open', 'Løfteren passer ikke til beholderne', 'Vi afstemmer løfter, arm eller krogsystem med jeres beholdere og containere.');
+      var H3 = L('Løfteren passer ikke til beholderne', 'The lifter does not match the bins');
+      if (A('ren_lift') && !S.unsure.ren_lift && Q.ren_lift.showIf()) add('ok', H3, L('I har valgt ', 'You have chosen ') + tr(opt('ren_lift', A('ren_lift')).l).toLowerCase() + L('. Vi tjekker den mod jeres beholderpark.', '. We will check it against your bins.'));
+      else add('open', H3, L('Vi afstemmer løfter, arm eller krogsystem med jeres beholdere og containere.', 'We will match the lifter, arm or hook system to your bins and containers.'));
     } else if (p === 'kran') {
-      if ((A('kran_use') === 'maskine' || A('kran_use') === 'container') && A('kran_size') === 'let') add('warn', 'For lille kran uden reserve', 'En let kran er sjældent nok til maskiner og moduler. Regn jeres tungeste løft igennem med 20–30 % reserve.');
-      else add('ok', 'For lille kran uden reserve', 'Kranstørrelsen passer til opgaven. Vi regner jeres tungeste løft igennem med 20–30 % reserve.');
+      var Hk = L('For lille kran uden reserve', 'Too small a crane with no reserve');
+      if ((A('kran_use') === 'maskine' || A('kran_use') === 'container') && A('kran_size') === 'let') add('warn', Hk, L('En let kran er sjældent nok til maskiner og moduler. Regn jeres tungeste løft igennem med 20–30 % reserve.', 'A light crane is rarely enough for machinery and modules. Check your heaviest lift with 20–30 % in reserve.'));
+      else add('ok', Hk, L('Kranstørrelsen passer til opgaven. Vi regner jeres tungeste løft igennem med 20–30 % reserve.', 'The crane size suits the job. We will check your heaviest lift with 20–30 % in reserve.'));
     } else if (p === 'hejs') {
-      add('open', 'Hejsen passer ikke til containerparken', 'Tjek at alle jeres containere har ' + (A('hejs_type') === 'krog' ? 'krogbøjle' : 'wirebeslag') + ' – ellers kan de ikke hejses.');
+      add('open', L('Hejsen passer ikke til containerparken', 'The hoist does not match the containers'), A('hejs_type') === 'krog'
+        ? L('Tjek at alle jeres containere har krogbøjle – ellers kan de ikke hejses.', 'Check that all your containers have a hook bar – otherwise they cannot be loaded.')
+        : L('Tjek at alle jeres containere har wirebeslag – ellers kan de ikke hejses.', 'Check that all your containers have cable fittings – otherwise they cannot be loaded.'));
     } else if (p === 'sug') {
-      if (A('sug_use') === 'grav' && A('sug_type') !== 'graver') add('warn', 'Forkert pumpe til opgaven', 'Sugegravning kræver en high-flow blæser. En vakuumpumpe flytter for lidt luft.');
-      else add('ok', 'Forkert pumpe til opgaven', 'Pumpe og biltype passer til jeres primære anvendelse.');
+      var Hs = L('Forkert pumpe til opgaven', 'The wrong pump for the job');
+      if (A('sug_use') === 'grav' && A('sug_type') !== 'graver') add('warn', Hs, L('Sugegravning kræver en high-flow blæser. En vakuumpumpe flytter for lidt luft.', 'Suction excavation requires a high-flow blower. A vacuum pump moves too little air.'));
+      else add('ok', Hs, L('Pumpe og biltype passer til jeres primære anvendelse.', 'Pump and truck type match your main application.'));
     } else if (p === 'lift') {
-      add('open', 'Liften monteres uden hensyn til bagudhæng', 'Vi tjekker bagudhæng, ramme og akseltryk mod chassisets opbygningsvejledning.');
+      add('open', L('Liften monteres uden hensyn til bagudhæng', 'The lift is fitted without regard to rear overhang'), L('Vi tjekker bagudhæng, ramme og akseltryk mod chassisets opbygningsvejledning.', 'We check rear overhang, frame and axle load against the chassis body builder guidelines.'));
     }
-    // 4. Dyr eftermontering
+    var H4 = L('Dyr eftermontering af udstyr', 'Costly retrofitting of equipment');
     var sel = A('ex_' + p) || [], missed = (Q['ex_' + p].opts || []).filter(function (o) { return o.miss && sel.indexOf(o.v) < 0 && !(o.dis && o.dis()); });
-    if (!missed.length) add('ok', 'Dyr eftermontering af udstyr', 'I har valgt det udstyr, kunderne oftest savner bagefter.');
-    else add('open', 'Dyr eftermontering af udstyr', 'Overvej: ' + missed.map(function (o) { return o.l.toLowerCase(); }).join(', ') + '. Det er billigere at bygge med fra start.');
-    // 5. Service
-    var br = branchFor(A('zip'));
-    if (A('service') === 'full' || A('service') === 'basic') add('ok', 'Ingen plan for service og eftersyn', 'Service hos ' + (br ? BRANCHES[br].name : 'Ove Kock') + ' – tæt på jeres drift.');
-    else if (A('service') === 'own') add('open', 'Ingen plan for service og eftersyn', 'Sørg for, at jeres værksted kan håndtere hydraulikken og de lovpligtige eftersyn.');
-    else add('open', 'Ingen plan for service og eftersyn', 'Vi foreslår en serviceplan, der passer til jeres kørsel.');
+    if (!missed.length) add('ok', H4, L('I har valgt det udstyr, kunderne oftest savner bagefter.', 'You have chosen the equipment customers most often miss later.'));
+    else add('open', H4, L('Overvej: ', 'Consider: ') + missed.map(function (o) { return tr(o.l).toLowerCase(); }).join(', ') + L('. Det er billigere at bygge med fra start.', '. It is cheaper to build in from the start.'));
+    var H5 = L('Ingen plan for service og eftersyn', 'No plan for service and inspections'), br = branchFor(A('zip'));
+    if (A('service') === 'full' || A('service') === 'basic') add('ok', H5, L('Service hos ', 'Service at ') + (br ? BRANCHES[br].name : 'Ove Kock') + L(' – tæt på jeres drift.', ' – close to your operation.'));
+    else if (A('service') === 'own') add('open', H5, L('Sørg for, at jeres værksted kan håndtere hydraulikken og de lovpligtige eftersyn.', 'Make sure your workshop can handle the hydraulics and statutory inspections.'));
+    else add('open', H5, L('Vi foreslår en serviceplan, der passer til jeres kørsel.', 'We will suggest a service plan that suits your operation.'));
     return out;
   }
 
@@ -1248,7 +1726,7 @@ textarea.okc-input{height:auto;padding:12px 16px}
   function track(name, data) {
     try {
       window.dataLayer = window.dataLayer || [];
-      var ev = { event: 'okc_' + name, okc_product: S.product || null, okc_step: curScreen() };
+      var ev = { event: 'okc_' + name, okc_product: S.product || null, okc_step: curScreen(), okc_lang: LANG };
       if (data) for (var k in data) ev[k] = data[k];
       window.dataLayer.push(ev);
       if (CONFIG.debug) console.log('[OKC]', ev);
@@ -1354,19 +1832,28 @@ textarea.okc-input{height:auto;padding:12px 16px}
      ===================================================================== */
   function esc(s) { return String(s == null ? '' : s).replace(/[&<>"']/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]; }); }
 
+  function langToggle() {
+    if (root.getAttribute('data-lang-toggle') === 'off') return '';
+    return '<div class="okc-lang" role="group" aria-label="Sprog / Language">' +
+      '<button type="button" data-lang="da" aria-pressed="' + (LANG === 'da') + '">DA</button>' +
+      '<button type="button" data-lang="en" aria-pressed="' + (LANG === 'en') + '">EN</button></div>';
+  }
+
   function render(scrollTop) {
     sanitize();
+    root.setAttribute('lang', LANG);
     var sid = curScreen(), list = screens();
     var flowLen = S.product ? list.length - 1 : 8;
     var idx = Math.min(S.step, flowLen - 1);
-    var h = '<div class="okc-head"><div class="okc-head-top"><div class="okc-brand">Projektkonfigurator</div>';
-    if (S.step > 0 && sid !== 'done') h += '<button type="button" class="okc-restart" data-act="restart">Start forfra</button>';
-    h += '</div>';
+    var h = '<div class="okc-head"><div class="okc-head-top"><div class="okc-brand">' + L('Projektkonfigurator', 'Project configurator') + '</div><div class="okc-head-r">';
+    if (S.step > 0 && sid !== 'done') h += '<button type="button" class="okc-restart" data-act="restart">' + L('Start forfra', 'Start over') + '</button>';
+    h += langToggle() + '</div></div>';
     if (sid !== 'done') {
       h += '<div class="okc-progress" aria-hidden="true">';
       for (var i = 0; i < flowLen; i++) h += '<i class="' + (i <= idx ? 'on' : '') + '"></i>';
       var toPrice = list.indexOf('price') - S.step;
-      h += '</div><div class="okc-progress-label">Trin ' + (idx + 1) + ' af ' + flowLen + (sid === 'price' ? ' – jeres prisindikation er klar' : (toPrice > 0 ? ' · prisindikation om ' + toPrice + ' trin' : '')) + '</div>';
+      h += '</div><div class="okc-progress-label">' + L('Trin ', 'Step ') + (idx + 1) + L(' af ', ' of ') + flowLen +
+        (sid === 'price' ? L(' – jeres prisindikation er klar', ' – your price indication is ready') : (toPrice > 0 ? L(' · prisindikation om ' + toPrice + ' trin', ' · price indication in ' + toPrice + (toPrice === 1 ? ' step' : ' steps')) : '')) + '</div>';
     }
     h += '</div><div class="okc-grid"><div class="okc-main" id="okc-main">';
     if (sid === 'price') h += renderPrice();
@@ -1390,41 +1877,41 @@ textarea.okc-input{height:auto;padding:12px 16px}
   }
 
   function note(n) {
-    return '<div class="okc-note ' + n.t + '"><b>' + (n.t === 'warn' ? 'Vær opmærksom: ' : n.t === 'rec' ? 'Vores anbefaling: ' : '') + esc(n.h) + '</b>' + esc(n.m) + '</div>';
+    return '<div class="okc-note ' + n.t + '"><b>' + (n.t === 'warn' ? L('Vær opmærksom: ', 'Please note: ') : n.t === 'rec' ? L('Vores anbefaling: ', 'Our recommendation: ') : '') + esc(n.h) + '</b>' + esc(n.m) + '</div>';
   }
 
   function renderQuestions(sid) {
     var sc = SCREENS[sid], h = '';
-    h += '<h2 class="okc-title">' + esc(sc.title) + '</h2>';
-    if (sc.intro) h += '<p class="okc-intro">' + esc(sc.intro) + '</p>';
+    h += '<h2 class="okc-title">' + esc(tr(sc.title)) + '</h2>';
+    if (sc.intro) h += '<p class="okc-intro">' + esc(tr(sc.intro)) + '</p>';
     if (S.fromCase && sid !== 'product' && screens().indexOf(sid) < screens().indexOf('project')) {
       var c = CASES.filter(function (x) { return x.id === S.fromCase; })[0];
-      if (c) h += '<div class="okc-banner"><span>Udfyldt ud fra <b>' + esc(c.title) + '</b>. Ret det, der skal være anderledes – eller</span> <button type="button" data-act="jump-project">gå direkte til jeres projekt →</button></div>';
+      if (c) h += '<div class="okc-banner"><span>' + L('Udfyldt ud fra ', 'Pre-filled from ') + '<b>' + esc(tr(c.title)) + '</b>. ' + L('Ret det, der skal være anderledes – eller', 'Change anything that should be different – or') + '</span> <button type="button" data-act="jump-project">' + L('gå direkte til jeres projekt →', 'go straight to your project →') + '</button></div>';
     }
     var mpc = sid !== 'product' ? payloadCalc() : null;
-    if (mpc) h += '<div class="okc-mmeter st-' + mpc.status + '"><span>Beregnet nyttelast</span><strong>ca. ' + tons(mpc.payload) + '</strong>' +
+    if (mpc) h += '<div class="okc-mmeter st-' + mpc.status + '"><span>' + L('Beregnet nyttelast', 'Calculated payload') + '</span><strong>' + L('ca. ', 'approx. ') + tons(mpc.payload) + '</strong>' +
       '<i style="width:' + Math.max(0, Math.min(100, mpc.payload / mpc.gvw * 100)).toFixed(0) + '%"></i></div>';
-    if (sc.lead) h += '<div class="okc-notes okc-notes-top">' + note(sc.lead) + '</div>';
+    if (sc.lead) h += '<div class="okc-notes okc-notes-top">' + note({ t: sc.lead.t, h: tr(sc.lead.h), m: tr(sc.lead.m) }) + '</div>';
     qsOf(sid).forEach(function (id) { h += renderQ(id, sid); });
     if (sid === 'product') h += renderCases();
     var notes = advice().filter(function (n) { return n.s === sid; });
     if (notes.length) { h += '<div class="okc-notes" aria-live="polite">'; notes.forEach(function (n) { h += note(n); }); h += '</div>'; }
     h += '<div class="okc-nav">';
-    h += S.step > 0 ? '<button type="button" class="okc-btn okc-btn-ghost" data-act="back">← Tilbage</button>' : '<span></span>';
-    var nextLabel = sid === 'product' ? 'Kom i gang →' : (screens()[S.step + 1] === 'price' ? 'Se prisindikation →' : 'Næste →');
+    h += S.step > 0 ? '<button type="button" class="okc-btn okc-btn-ghost" data-act="back">' + L('← Tilbage', '← Back') + '</button>' : '<span></span>';
+    var nextLabel = sid === 'product' ? L('Kom i gang →', 'Get started →') : (screens()[S.step + 1] === 'price' ? L('Se prisindikation →', 'See price indication →') : L('Næste →', 'Next →'));
     h += '<button type="button" class="okc-btn okc-btn-primary" data-act="next">' + nextLabel + '</button></div>';
     return h;
   }
 
   function renderCases() {
-    var h = '<div class="okc-cases-wrap"><div class="okc-or"><span>Eller start fra en bil, vi har bygget</span></div>';
-    h += '<p class="okc-q-help">Vælg en, der ligner – så er det meste udfyldt, og I retter bare det, der skal være anderledes.</p><div class="okc-cases">';
+    var h = '<div class="okc-cases-wrap"><div class="okc-or"><span>' + L('Eller start fra en bil, vi har bygget', 'Or start from a truck we have built') + '</span></div>';
+    h += '<p class="okc-q-help">' + L('Vælg en, der ligner – så er det meste udfyldt, og I retter bare det, der skal være anderledes.', 'Pick one that is similar – most of it is filled in, and you just change what should be different.') + '</p><div class="okc-cases">';
     CASES.forEach(function (c) {
       var svg = withAnswers(c.product, c.a, function () { return truckSVG(c.product, { mini: true, axles: c.a.axles }); });
       h += '<button type="button" class="okc-case" data-case="' + c.id + '">' + svg +
-        '<span class="okc-case-tag' + (c.tag === 'Leveret' ? ' on' : '') + '">' + esc(c.tag) + '</span>' +
-        '<span class="okc-case-t">' + esc(c.title) + '</span><span class="okc-case-s">' + esc(c.sub) + '</span>' +
-        '<span class="okc-case-go">Start herfra →</span></button>';
+        '<span class="okc-case-tag' + (c.tag === 'Leveret' ? ' on' : '') + '">' + esc(tr(c.tag)) + '</span>' +
+        '<span class="okc-case-t">' + esc(tr(c.title)) + '</span><span class="okc-case-s">' + esc(tr(c.sub)) + '</span>' +
+        '<span class="okc-case-go">' + L('Start herfra →', 'Start here →') + '</span></button>';
     });
     return h + '</div></div>';
   }
@@ -1432,61 +1919,67 @@ textarea.okc-input{height:auto;padding:12px 16px}
   function renderQ(id, sid) {
     var q = Q[id], h = '<div class="okc-q" id="okc-q-' + id + '">';
     if (q.type === 'product') {
-      h += '<div class="okc-opts okc-opts-prod" role="radiogroup" aria-label="Vælg løsning">';
+      h += '<div class="okc-opts okc-opts-prod" role="radiogroup" aria-label="' + esc(tr(q.label)) + '">';
       PRODUCT_ORDER.forEach(function (k) {
         var pr = PRODUCTS[k], on = S.product === k;
         h += '<button type="button" class="okc-opt okc-prod" role="radio" aria-checked="' + on + '" data-q="product" data-v="' + k + '"><span class="okc-opt-check"></span>' +
           withAnswers(k, {}, function () { return truckSVG(k, { mini: true, mono: true, axles: k === 'lift' ? '2' : '3', vehicle: 'truck' }); }) +
-          '<span class="okc-opt-l">' + esc(pr.name) + '</span><span class="okc-opt-d">' + esc(pr.desc) + '</span></button>';
+          '<span class="okc-opt-l">' + esc(tr(pr.name)) + '</span><span class="okc-opt-d">' + esc(tr(pr.desc)) + '</span></button>';
       });
-      return h + '</div><div class="okc-q-err">Vælg en løsning – eller start fra en af bilerne herunder.</div></div>';
+      return h + '</div><div class="okc-q-err">' + L('Vælg en løsning – eller start fra en af bilerne herunder.', 'Choose a solution – or start from one of the trucks below.') + '</div></div>';
     }
-    h += '<div class="okc-q-label">' + esc(q.label) + (q.optional && q.type !== 'multi' ? ' <span class="okc-opt-tag">Valgfrit</span>' : '') + '</div>';
-    if (q.help) h += '<div class="okc-q-help">' + esc(q.help) + '</div>';
-    if (q.type === 'multi') h += '<div class="okc-q-help">Vælg gerne flere – eller spring over.</div>';
+    h += '<div class="okc-q-label">' + esc(tr(q.label)) + (q.optional && q.type !== 'multi' ? ' <span class="okc-opt-tag">' + L('Valgfrit', 'Optional') + '</span>' : '') + '</div>';
+    if (q.help) h += '<div class="okc-q-help">' + esc(tr(q.help)) + '</div>';
+    if (q.type === 'multi') h += '<div class="okc-q-help">' + L('Vælg gerne flere – eller spring over.', 'Choose as many as you like – or skip.') + '</div>';
     if (q.type === 'text') {
       h += '<input class="okc-input' + (q.numeric ? '' : ' okc-input-wide') + '" type="text" ' + (q.numeric ? 'inputmode="numeric" autocomplete="postal-code" maxlength="4"' : 'maxlength="160"') +
-        ' id="okc-in-' + id + '" data-in="' + id + '" value="' + esc(S.a[id] || '') + '" placeholder="' + esc(q.placeholder || '') + '" aria-label="' + esc(q.label) + '">';
+        ' id="okc-in-' + id + '" data-in="' + id + '" value="' + esc(S.a[id] || '') + '" placeholder="' + esc(tr(q.placeholder || '')) + '" aria-label="' + esc(tr(q.label)) + '">';
       if (id === 'zip') {
-        var br = branchFor(S.a.zip);
-        h += '<div class="okc-q-help" id="okc-branch-hint">' + (br ? 'Nærmeste afdeling: <b>' + esc(BRANCHES[br].name) + '</b> · Jeres kontakt: <b>' + esc(CONTACTS[br].name) + '</b>' : '') + '</div>';
+        h += '<div class="okc-q-help" id="okc-branch-hint">' + branchHint() + '</div>';
+        h += '<button type="button" class="okc-unsure" data-act="abroad-on">' + L('Uden for Danmark?', 'Outside Denmark?') + '</button>';
       }
-      return h + '<div class="okc-q-err">' + esc(q.err || 'Udfyld feltet.') + '</div></div>';
+      if (id === 'country') h += '<button type="button" class="okc-unsure" data-act="abroad-off">' + L('Tilbage til dansk postnummer', 'Use a Danish postcode instead') + '</button>';
+      return h + '<div class="okc-q-err">' + esc(tr(q.err || 'Udfyld feltet.')) + '</div></div>';
     }
-    var pcAx = id === 'axles' ? true : false;
-    h += '<div class="okc-opts" role="' + (q.type === 'multi' ? 'group' : 'radiogroup') + '" aria-label="' + esc(q.label) + '">';
+    var pcAx = id === 'axles';
+    h += '<div class="okc-opts" role="' + (q.type === 'multi' ? 'group' : 'radiogroup') + '" aria-label="' + esc(tr(q.label)) + '">';
     q.opts.forEach(function (o) {
       var on = has(id, o.v), dis = o.dis ? o.dis() : null, rec = !dis && o.rec && o.rec(), miss = !dis && !rec && o.miss;
       h += '<button type="button" class="okc-opt' + (q.type === 'multi' ? ' multi' : '') + '" role="' + (q.type === 'multi' ? 'checkbox' : 'radio') + '" aria-checked="' + on + '" data-q="' + id + '" data-v="' + o.v + '"' + (dis ? ' disabled' : '') + '>';
-      if (rec) h += '<span class="okc-rec">Anbefalet</span>';
-      else if (miss) h += '<span class="okc-rec okc-miss">Ofte savnet</span>';
-      h += '<span class="okc-opt-check"></span><span class="okc-opt-l">' + esc(o.l) + '</span>';
-      if (o.d) h += '<span class="okc-opt-d">' + esc(o.d) + '</span>';
-      if (dis) h += '<span class="okc-opt-dis">' + esc(dis) + '</span>';
+      if (rec) h += '<span class="okc-rec">' + L('Anbefalet', 'Recommended') + '</span>';
+      else if (miss) h += '<span class="okc-rec okc-miss">' + L('Ofte savnet', 'Often missed') + '</span>';
+      h += '<span class="okc-opt-check"></span><span class="okc-opt-l">' + esc(tr(o.l)) + '</span>';
+      if (o.d) h += '<span class="okc-opt-d">' + esc(tr(o.d)) + '</span>';
+      if (dis) h += '<span class="okc-opt-dis">' + esc(tr(dis)) + '</span>';
       if (pcAx && !dis) {
         var pc = payloadCalc(o.v);
-        if (pc) h += '<span class="okc-opt-pl st-' + pc.status + '">Nyttelast ca. ' + tons(pc.payload) + '</span>';
+        if (pc) h += '<span class="okc-opt-pl st-' + pc.status + '">' + L('Nyttelast ca. ', 'Payload approx. ') + tons(pc.payload) + '</span>';
       }
-      if (o.env) h += '<span class="okc-env-tag">Arbejdsmiljø</span>';
+      if (o.env) h += '<span class="okc-env-tag">' + L('Arbejdsmiljø', 'Working conditions') + '</span>';
       var lvl = priceLevel(o.p);
       if (o.p && lvl > 0) {
-        h += '<span class="okc-lvl" title="Relativ påvirkning af prisen">Prisniveau <b>';
+        h += '<span class="okc-lvl" title="' + L('Relativ påvirkning af prisen', 'Relative effect on price') + '">' + L('Prisniveau', 'Price level') + ' <b>';
         for (var i = 1; i <= 4; i++) h += '<i class="' + (i <= lvl ? 'on' : '') + '"></i>';
         h += '</b></span>';
-      } else if (o.p && o.p[1] === 0) h += '<span class="okc-lvl">Inkluderet i grundpris</span>';
+      } else if (o.p && o.p[1] === 0) h += '<span class="okc-lvl">' + L('Inkluderet i grundpris', 'Included in base price') + '</span>';
       h += '</button>';
     });
     h += '</div>';
     if (q.type === 'single' && !q.optional && !q.noUnsure && sid !== 'project') {
-      h += S.unsure[id] ? '<div class="okc-unsure-on">✓ Valgt for jer – vi afklarer det sammen</div>'
-        : '<button type="button" class="okc-unsure" data-unsure="' + id + '">Ved ikke – vælg det mest almindelige for os</button>';
+      h += S.unsure[id] ? '<div class="okc-unsure-on">' + L('✓ Valgt for jer – vi afklarer det sammen', '✓ Chosen for you – we will clarify it together') + '</div>'
+        : '<button type="button" class="okc-unsure" data-unsure="' + id + '">' + L('Ved ikke – vælg det mest almindelige for os', 'Not sure – choose the most common option for us') + '</button>';
     }
-    return h + '<div class="okc-q-err">Vælg en mulighed – eller tryk «Ved ikke».</div></div>';
+    return h + '<div class="okc-q-err">' + L('Vælg en mulighed – eller tryk «Ved ikke».', 'Choose an option – or press «Not sure».') + '</div></div>';
+  }
+
+  function branchHint() {
+    var br = branchFor(S.a.zip);
+    return br ? L('Nærmeste afdeling: ', 'Nearest branch: ') + '<b>' + esc(BRANCHES[br].name) + '</b> · ' + L('Jeres kontakt: ', 'Your contact: ') + '<b>' + esc(CONTACTS[br].name) + '</b>' : '';
   }
 
   function summaryItems() {
     var items = [];
-    if (S.product) items.push(['Løsning', P().name]);
+    if (S.product) items.push([L('Løsning', 'Solution'), tr(P().name)]);
     screens().forEach(function (sid) {
       if (['product', 'price', 'lead', 'done'].indexOf(sid) > -1) return;
       qsOf(sid).forEach(function (id) {
@@ -1494,10 +1987,10 @@ textarea.okc-input{height:auto;padding:12px 16px}
         if (v == null || v === '' || (Array.isArray(v) && !v.length)) return;
         var label;
         if (q.type === 'text') label = v;
-        else if (Array.isArray(v)) label = v.map(function (x) { var o = opt(id, x); return o ? o.l : x; }).join(', ');
-        else { var o = opt(id, v); label = o ? o.l : v; }
-        if (S.unsure[id]) label += ' (afklares)';
-        items.push([q.short || q.label, label]);
+        else if (Array.isArray(v)) label = v.map(function (x) { var o = opt(id, x); return o ? tr(o.l) : x; }).join(', ');
+        else { var o = opt(id, v); label = o ? tr(o.l) : v; }
+        if (S.unsure[id]) label += L(' (afklares)', ' (to be clarified)');
+        items.push([tr(q.short || q.label), label]);
       });
     });
     return items;
@@ -1506,16 +1999,17 @@ textarea.okc-input{height:auto;padding:12px 16px}
   function renderMeter(pc) {
     var tot = Math.max(pc.gvw, pc.chassis + pc.body + pc.extras + Math.max(0, pc.payload));
     function seg(cls, v, label) { return v > 0 ? '<i class="' + cls + '" style="width:' + (v / tot * 100).toFixed(1) + '%" title="' + label + '"></i>' : ''; }
+    var lCh = L('Chassis', 'Chassis'), lBd = L('Opbygning', 'Body'), lEx = L('Udstyr', 'Equipment'), lPl = L('Nyttelast', 'Payload');
     var h = '<div class="okc-meter st-' + pc.status + '">';
-    h += '<div class="okc-meter-top"><span>Beregnet nyttelast</span><strong>ca. ' + tons(pc.payload) + '</strong></div>';
-    h += '<div class="okc-meter-bar" role="img" aria-label="Nyttelast ca. ' + tons(pc.payload) + ' af ' + tons(pc.gvw) + ' totalvægt">' +
-      seg('ch', pc.chassis, 'Chassis') + seg('bd', pc.body, 'Opbygning') + seg('ex', pc.extras, 'Udstyr') + seg('pl', Math.max(0, pc.payload), 'Nyttelast') + '</div>';
-    h += '<div class="okc-meter-leg"><span><i class="ch"></i>Chassis ' + tons(pc.chassis) + '</span><span><i class="bd"></i>Opbygning ' + tons(pc.body) + '</span>' +
-      (pc.extras ? '<span><i class="ex"></i>Udstyr ' + tons(pc.extras) + '</span>' : '') + '<span><i class="pl"></i>Nyttelast</span></div>';
-    if (pc.status === 'tight') h += '<p class="okc-meter-msg">Stramt – tunge fraktioner kan nå totalvægten, før bilen er fuld.</p>';
-    if (pc.status === 'low') h += '<p class="okc-meter-msg">For lidt nyttelast – overvej flere aksler eller en lettere opbygning.</p>';
+    h += '<div class="okc-meter-top"><span>' + L('Beregnet nyttelast', 'Calculated payload') + '</span><strong>' + L('ca. ', 'approx. ') + tons(pc.payload) + '</strong></div>';
+    h += '<div class="okc-meter-bar" role="img" aria-label="' + lPl + ' ' + tons(pc.payload) + ' / ' + tons(pc.gvw) + '">' +
+      seg('ch', pc.chassis, lCh) + seg('bd', pc.body, lBd) + seg('ex', pc.extras, lEx) + seg('pl', Math.max(0, pc.payload), lPl) + '</div>';
+    h += '<div class="okc-meter-leg"><span><i class="ch"></i>' + lCh + ' ' + tons(pc.chassis) + '</span><span><i class="bd"></i>' + lBd + ' ' + tons(pc.body) + '</span>' +
+      (pc.extras ? '<span><i class="ex"></i>' + lEx + ' ' + tons(pc.extras) + '</span>' : '') + '<span><i class="pl"></i>' + lPl + '</span></div>';
+    if (pc.status === 'tight') h += '<p class="okc-meter-msg">' + L('Stramt – tunge fraktioner kan nå totalvægten, før bilen er fuld.', 'Tight – heavy loads may reach the gross weight before the truck is full.') + '</p>';
+    if (pc.status === 'low') h += '<p class="okc-meter-msg">' + L('For lidt nyttelast – overvej flere aksler eller en lettere opbygning.', 'Too little payload – consider more axles or a lighter body.') + '</p>';
     h += '<p class="okc-meter-txt">' + esc(payloadText(pc)) + '</p>';
-    h += '<p class="okc-meter-note">' + (pc.assumed ? 'Beregnet med ' + pc.axles + ' aksler – I vælger chassis på et senere trin. ' : '') + 'Overslag ved ' + tons(pc.gvw) + ' totalvægt.</p>';
+    h += '<p class="okc-meter-note">' + (pc.assumed ? L('Beregnet med ' + pc.axles + ' aksler – I vælger chassis på et senere trin. ', 'Calculated with ' + pc.axles + ' axles – you choose the chassis in a later step. ') : '') + L('Overslag ved ' + tons(pc.gvw) + ' totalvægt.', 'Estimate at ' + tons(pc.gvw) + ' gross weight.') + '</p>';
     return h + '</div>';
   }
 
@@ -1527,19 +2021,19 @@ textarea.okc-input{height:auto;padding:12px 16px}
 
   function renderContact(sid) {
     var c = contactFor(), br = branchFor(A('zip'));
-    var title = sid === 'lead' || sid === 'done' ? 'Jeres kontaktperson' : 'Hellere tale med en fagperson?';
+    var title = sid === 'lead' || sid === 'done' ? L('Jeres kontaktperson', 'Your contact person') : L('Hellere tale med en fagperson?', 'Rather talk to an expert?');
     var h = '<div class="okc-card okc-contact"><h4>' + title + '</h4>';
-    h += '<div class="okc-person">' + avatar(c) + '<div><b>' + esc(c.name) + '</b><span>' + esc(c.role) + (br ? ' · ' + esc(BRANCHES[br].name.replace('Ove Kock ', '')) : '') + '</span>' +
-      '<a href="tel:' + esc(c.tel) + '">' + esc(c.phone) + '</a></div></div>';
+    h += '<div class="okc-person">' + avatar(c) + '<div><b>' + esc(c.name) + '</b><span>' + esc(tr(c.role)) + (br ? ' · ' + esc(BRANCHES[br].name.replace('Ove Kock ', '')) : '') + '</span>' +
+      '<a href="tel:' + esc(c.tel) + '">' + esc(tel(c.phone)) + '</a></div></div>';
     if (sid !== 'lead' && sid !== 'done') {
-      if (S.cb.sent) h += '<p class="okc-cb-ok">Tak' + (S.cb.name ? ', ' + esc(firstName(S.cb.name)) : '') + ' – ' + esc(firstName(c.name)) + ' ringer jer ' + promise() + '.</p>';
-      else if (!S.cb.open) h += '<button type="button" class="okc-btn okc-btn-outline okc-btn-sm" data-act="cb-open">Bliv ringet op</button>';
+      if (S.cb.sent) h += '<p class="okc-cb-ok">' + L('Tak', 'Thank you') + (S.cb.name ? ', ' + esc(firstName(S.cb.name)) : '') + L(' – ' + esc(firstName(c.name)) + ' ringer jer ', ' – ' + esc(firstName(c.name)) + ' will call you ') + promise() + '.</p>';
+      else if (!S.cb.open) h += '<button type="button" class="okc-btn okc-btn-outline okc-btn-sm" data-act="cb-open">' + L('Bliv ringet op', 'Request a call') + '</button>';
       else {
-        h += '<div class="okc-cb"><input class="okc-input" type="text" data-cb="name" autocomplete="name" placeholder="Navn" value="' + esc(S.cb.name) + '" aria-label="Navn">' +
-          '<input class="okc-input" type="tel" data-cb="phone" autocomplete="tel" inputmode="tel" placeholder="Telefon" value="' + esc(S.cb.phone) + '" aria-label="Telefon">' +
+        h += '<div class="okc-cb"><input class="okc-input" type="text" data-cb="name" autocomplete="name" placeholder="' + L('Navn', 'Name') + '" value="' + esc(S.cb.name) + '" aria-label="' + L('Navn', 'Name') + '">' +
+          '<input class="okc-input" type="tel" data-cb="phone" autocomplete="tel" inputmode="tel" placeholder="' + L('Telefon', 'Phone (incl. country code)') + '" value="' + esc(S.cb.phone) + '" aria-label="' + L('Telefon', 'Phone') + '">' +
           '<div class="okc-cb-err" id="okc-cb-err"></div>' +
-          '<button type="button" class="okc-btn okc-btn-accent okc-btn-sm" data-act="cb-send">Ring mig op</button>' +
-          '<p class="okc-fine">Vi bruger kun nummeret til at ringe jer op om jeres projekt. Vi kan se, hvad I har valgt indtil nu.</p></div>';
+          '<button type="button" class="okc-btn okc-btn-accent okc-btn-sm" data-act="cb-send">' + L('Ring mig op', 'Call me') + '</button>' +
+          '<p class="okc-fine">' + L('Vi bruger kun nummeret til at ringe jer op om jeres projekt. Vi kan se, hvad I har valgt indtil nu.', 'We only use the number to call you about your project. We can see what you have chosen so far.') + '</p></div>';
       }
     }
     if (br && (sid === 'price' || sid === 'lead' || sid === 'done')) h += '<p class="okc-branch">' + esc(BRANCHES[br].name) + ', ' + esc(BRANCHES[br].addr) + '</p>';
@@ -1564,11 +2058,11 @@ textarea.okc-input{height:auto;padding:12px 16px}
   function renderSide(sid) {
     var h = '', pc = payloadCalc();
     if (S.product && sid !== 'done') {
-      h += '<div class="okc-card okc-viz"><h4>Jeres bil</h4>' + truckSVG(S.product);
+      h += '<div class="okc-card okc-viz"><h4>' + L('Jeres bil', 'Your truck') + '</h4>' + truckSVG(S.product);
       if (pc) h += renderMeter(pc);
       var items = summaryItems();
       if (items.length > 1) {
-        h += '<details class="okc-sum-d"><summary>Se jeres valg (' + (items.length - 1) + ')</summary><ul class="okc-sum">';
+        h += '<details class="okc-sum-d"><summary>' + L('Se jeres valg', 'See your choices') + ' (' + (items.length - 1) + ')</summary><ul class="okc-sum">';
         items.forEach(function (it) { h += '<li><span>' + esc(it[0]) + '</span><strong>' + esc(it[1]) + '</strong></li>'; });
         h += '</ul></details>';
       }
@@ -1576,166 +2070,178 @@ textarea.okc-input{height:auto;padding:12px 16px}
     }
     var info = SCREENS[sid] && SCREENS[sid].info;
     if (info && info.length) {
-      h += '<div class="okc-card okc-info"><h4>Godt at vide</h4><ul>';
-      info.forEach(function (t) { h += '<li>' + t + '</li>'; });
+      h += '<div class="okc-card okc-info"><h4>' + L('Godt at vide', 'Good to know') + '</h4><ul>';
+      info.forEach(function (t) { h += '<li>' + tr(t) + '</li>'; });
       h += '</ul></div>';
     }
     var reached = S.product && screens().indexOf(sid) >= screens().indexOf('extras');
     if (reached && sid !== 'lead' && sid !== 'done') {
       var env = envItems();
       if (env.chosen.length || env.suggest) {
-        h += '<div class="okc-card okc-env"><h4>Arbejdsmiljø</h4><ul>';
-        env.chosen.slice(0, 4).forEach(function (o) { h += '<li class="on"><b>' + esc(o.l) + '</b>' + esc(o.env) + '</li>'; });
-        if (env.suggest && env.chosen.length < 4) h += '<li class="sug"><b>Overvej: ' + esc(env.suggest.l) + '</b>' + esc(env.suggest.env) + '</li>';
+        h += '<div class="okc-card okc-env"><h4>' + L('Arbejdsmiljø', 'Working conditions') + '</h4><ul>';
+        env.chosen.slice(0, 4).forEach(function (o) { h += '<li class="on"><b>' + esc(tr(o.l)) + '</b>' + esc(tr(o.env)) + '</li>'; });
+        if (env.suggest && env.chosen.length < 4) h += '<li class="sug"><b>' + L('Overvej: ', 'Consider: ') + esc(tr(env.suggest.l)) + '</b>' + esc(tr(env.suggest.env)) + '</li>';
         h += '</ul></div>';
       }
     }
     if (S.product || sid === 'product') h += renderContact(sid);
     if (sid === 'lead') {
-      h += '<div class="okc-card okc-info"><h4>Derfor Ove Kock</h4><ul>' +
-        '<li>Specialbyggede biler siden 1970 – vi bygger fra bunden og skræddersyr.</li>' +
-        '<li>Eneforhandler af JOAB i Danmark – inkl. ZOELLER og FAUN. Forhandler af MTS sugebiler og mangeårig HMF-partner.</li>' +
-        '<li>Renovationsbiler i drift fra Frederikshavn og Thisted til Randers og Djursland.</li>' +
-        '<li>Service i hele landet fra Esbjerg, Kolding, Ringsted og Hobro.</li></ul></div>';
+      h += '<div class="okc-card okc-info"><h4>' + L('Derfor Ove Kock', 'Why Ove Kock') + '</h4><ul>' +
+        L('<li>Specialbyggede biler siden 1970 – vi bygger fra bunden og skræddersyr.</li>' +
+          '<li>Eneforhandler af JOAB i Danmark – inkl. ZOELLER og FAUN. Forhandler af MTS sugebiler og mangeårig HMF-partner.</li>' +
+          '<li>Renovationsbiler i drift fra Frederikshavn og Thisted til Randers og Djursland.</li>' +
+          '<li>Service i hele landet fra Esbjerg, Kolding, Ringsted og Hobro.</li>',
+          '<li>Purpose-built trucks since 1970 – we build from the ground up and tailor every detail.</li>' +
+          '<li>Exclusive JOAB dealer in Denmark – incl. ZOELLER and FAUN. MTS vacuum truck dealer and long-standing HMF partner.</li>' +
+          '<li>Refuse trucks in service across Denmark, from Frederikshavn and Thisted to Randers and Djursland.</li>' +
+          '<li>Nationwide service from Esbjerg, Kolding, Ringsted and Hobro.</li>') + '</ul></div>';
     }
     return h;
   }
 
   function renderShare() {
-    var h = '<button type="button" class="okc-btn okc-btn-outline" data-act="share-toggle" aria-expanded="' + shareOpen + '">Del med en kollega</button>';
-    return h;
+    return '<button type="button" class="okc-btn okc-btn-outline" data-act="share-toggle" aria-expanded="' + shareOpen + '">' + L('Del med en kollega', 'Share with a colleague') + '</button>';
   }
   function renderSharePanel() {
     if (!shareOpen) return '';
-    var link = shareLink();
-    var mail = 'mailto:?subject=' + encodeURIComponent('Konfiguration fra Ove Kock: ' + P().name) + '&body=' + encodeURIComponent('Se den konfiguration, jeg har lavet hos Ove Kock – med prisindikation og leveringstid:\n\n' + link);
-    var sms = 'sms:?&body=' + encodeURIComponent('Se vores konfiguration hos Ove Kock: ' + link);
-    return '<div class="okc-share"><p>Send konfigurationen til driftslederen, indkøb eller ejeren. De ser præcis det samme som jer – og kan selv rette i den.</p>' +
-      '<input class="okc-input okc-input-wide" type="text" readonly value="' + esc(link) + '" id="okc-share-link" aria-label="Link til konfigurationen">' +
-      '<div class="okc-share-btns"><button type="button" class="okc-btn okc-btn-primary okc-btn-sm" data-act="share-copy">Kopiér link</button>' +
-      '<a class="okc-btn okc-btn-outline okc-btn-sm" href="' + esc(mail) + '" data-track="share_mail">Send på mail</a>' +
-      '<a class="okc-btn okc-btn-outline okc-btn-sm" href="' + esc(sms) + '" data-track="share_sms">Send som SMS</a></div></div>';
+    var link = shareLink(), pn = tr(P().name);
+    var mail = 'mailto:?subject=' + encodeURIComponent(L('Konfiguration fra Ove Kock: ', 'Configuration from Ove Kock: ') + pn) + '&body=' + encodeURIComponent(L('Se den konfiguration, jeg har lavet hos Ove Kock – med prisindikation og leveringstid:\n\n', 'See the configuration I have made with Ove Kock – with price indication and delivery time:\n\n') + link);
+    var sms = 'sms:?&body=' + encodeURIComponent(L('Se vores konfiguration hos Ove Kock: ', 'See our configuration with Ove Kock: ') + link);
+    return '<div class="okc-share"><p>' + L('Send konfigurationen til driftslederen, indkøb eller ejeren. De ser præcis det samme som jer – og kan selv rette i den.', 'Send the configuration to your operations manager, purchasing or the owner. They see exactly what you see – and can edit it.') + '</p>' +
+      '<input class="okc-input okc-input-wide" type="text" readonly value="' + esc(link) + '" id="okc-share-link" aria-label="' + L('Link til konfigurationen', 'Link to the configuration') + '">' +
+      '<div class="okc-share-btns"><button type="button" class="okc-btn okc-btn-primary okc-btn-sm" data-act="share-copy">' + L('Kopiér link', 'Copy link') + '</button>' +
+      '<a class="okc-btn okc-btn-outline okc-btn-sm" href="' + esc(mail) + '" data-track="share_mail">' + L('Send på mail', 'Send by email') + '</a>' +
+      '<a class="okc-btn okc-btn-outline okc-btn-sm" href="' + esc(sms) + '" data-track="share_sms">' + L('Send som SMS', 'Send by text') + '</a></div></div>';
   }
 
   function renderPrice() {
     var e = estimate(), pc = payloadCalc(), h = '';
-    h += '<h2 class="okc-title">Jeres prisindikation</h2>';
-    h += '<p class="okc-intro">Baseret på jeres valg. Vejledende pris ekskl. moms og registreringsafgift – det endelige tilbud udarbejdes efter en teknisk gennemgang.</p>';
-    h += '<div class="okc-price-hero" aria-live="polite"><small>Vejledende pris pr. enhed' + (e.own ? ' (ekskl. chassis)' : '') + '</small>';
+    h += '<h2 class="okc-title">' + L('Jeres prisindikation', 'Your price indication') + '</h2>';
+    h += '<p class="okc-intro">' + L('Baseret på jeres valg. Vejledende pris ekskl. moms og registreringsafgift – det endelige tilbud udarbejdes efter en teknisk gennemgang.', 'Based on your choices. Indicative price excl. VAT and registration tax – the final quote is prepared after a technical review.') + '</p>';
+    h += '<div class="okc-price-hero" aria-live="polite"><small>' + L('Vejledende pris pr. enhed', 'Indicative price per unit') + (e.own ? L(' (ekskl. chassis)', ' (excl. chassis)') : '') + '</small>';
     h += '<div class="okc-price-val">' + fmtRange(e.lo, e.hi) + '</div>';
-    if (e.qtyMul[1] > 1) h += '<div class="okc-price-sub">For ' + (A('qty') === '4+' ? '4+ enheder' : '2–3 enheder') + ' i alt ca. ' + fmtRange(e.lo * e.qtyMul[0], e.hi * e.qtyMul[1]) + ' – før mængderabat.</div>';
-    if (A('tradein') === 'ja') h += '<div class="okc-price-sub">Byttebilen er ikke modregnet – vi vurderer den ved gennemgangen.</div>';
-    h += '<div class="okc-kpis"><div class="okc-kpi"><small>Forventet leveringstid</small><strong>' + weeksToText(e.weeks) + '</strong></div>';
-    if (pc) h += '<div class="okc-kpi"><small>Beregnet nyttelast</small><strong>ca. ' + tons(pc.payload) + '</strong></div>';
-    if (e.hi >= 200000) h += '<div class="okc-kpi"><small>Leasing-overslag pr. måned</small><strong>' + fmtRange(e.monthly[0], e.monthly[1]) + '</strong></div>';
+    if (LANG === 'en') h += '<div class="okc-price-sub okc-eur">' + fmtEur(e.lo, e.hi) + ' ' + '(at DKK ' + CONFIG.eurRate.toLocaleString('en-GB') + ' per EUR)</div>';
+    if (e.qtyMul[1] > 1) h += '<div class="okc-price-sub">' + L('For ' + (A('qty') === '4+' ? '4+ enheder' : '2–3 enheder') + ' i alt ca. ', 'For ' + (A('qty') === '4+' ? '4+ units' : '2–3 units') + ' in total approx. ') + fmtRange(e.lo * e.qtyMul[0], e.hi * e.qtyMul[1]) + L(' – før mængderabat.', ' – before volume discount.') + '</div>';
+    if (A('tradein') === 'ja') h += '<div class="okc-price-sub">' + L('Byttebilen er ikke modregnet – vi vurderer den ved gennemgangen.', 'The trade-in is not deducted – we will value it during the review.') + '</div>';
+    h += '<div class="okc-kpis"><div class="okc-kpi"><small>' + L('Forventet leveringstid', 'Expected delivery time') + '</small><strong>' + weeksToText(e.weeks) + '</strong></div>';
+    if (pc) h += '<div class="okc-kpi"><small>' + L('Beregnet nyttelast', 'Calculated payload') + '</small><strong>' + L('ca. ', 'approx. ') + tons(pc.payload) + '</strong></div>';
+    if (e.hi >= 200000) h += '<div class="okc-kpi"><small>' + L('Leasing-overslag pr. måned', 'Leasing estimate per month') + '</small><strong>' + fmtRange(e.monthly[0], e.monthly[1]) + '</strong></div>';
     h += '</div></div>';
 
-    // Fejltjek
     var m = mistakes(e, pc), okN = m.filter(function (x) { return x.st === 'ok'; }).length;
-    h += '<div class="okc-check-head"><h3 class="okc-h3">Tjek: de 5 dyreste fejl, vi ser</h3><span class="okc-score">' + okN + ' af ' + m.length + ' i orden</span></div>';
-    h += '<p class="okc-q-help">Fejl vi gang på gang ser koste kunder penge eller tid – og hvordan jeres konfiguration klarer sig.</p><ul class="okc-checks">';
+    h += '<div class="okc-check-head"><h3 class="okc-h3">' + L('Tjek: de 5 dyreste fejl, vi ser', 'Check: the 5 most costly mistakes we see') + '</h3><span class="okc-score">' + okN + L(' af ', ' of ') + m.length + L(' i orden', ' OK') + '</span></div>';
+    h += '<p class="okc-q-help">' + L('Fejl vi gang på gang ser koste kunder penge eller tid – og hvordan jeres konfiguration klarer sig.', 'Mistakes we see costing customers time or money again and again – and how your configuration measures up.') + '</p><ul class="okc-checks">';
     m.forEach(function (x) {
       h += '<li class="st-' + x.st + '"><span class="okc-ico" aria-hidden="true">' + (x.st === 'ok' ? '✓' : x.st === 'warn' ? '!' : '?') + '</span><div><b>' + esc(x.h) + '</b>' + esc(x.m) + '</div></li>';
     });
     h += '</ul>';
 
-    var unsureL = Object.keys(S.unsure).filter(function (id) { return S.unsure[id] && S.a[id] && (!Q[id].showIf || Q[id].showIf()); }).map(function (id) { return Q[id].short || Q[id].label; });
+    var unsureL = Object.keys(S.unsure).filter(function (id) { return S.unsure[id] && S.a[id] && (!Q[id].showIf || Q[id].showIf()); }).map(function (id) { return tr(Q[id].short || Q[id].label); });
     var notes = advice().filter(function (n) { return !n.dup && (n.t === 'warn' || n.t === 'rec'); }).slice(0, 3);
     if (unsureL.length || notes.length) {
       h += '<div class="okc-notes">';
-      if (unsureL.length) h += note({ t: 'tip', h: 'Det afklarer vi sammen', m: 'I bad os vælge: ' + unsureL.join(', ') + '. Prisen er beregnet med det mest almindelige valg.' });
+      if (unsureL.length) h += note({ t: 'tip', h: L('Det afklarer vi sammen', 'We will clarify together'), m: L('I bad os vælge: ', 'You asked us to choose: ') + unsureL.join(', ') + L('. Prisen er beregnet med det mest almindelige valg.', '. The price is based on the most common option.') });
       notes.forEach(function (n) { h += note(n); });
       h += '</div>';
     }
 
-    // Detaljer (foldet sammen)
-    var names = { chassis: 'Chassis og drivlinje', body: 'Opbygning, udstyr og montage', trailer: 'Anhænger' };
-    h += '<details class="okc-more"><summary>Se hvad prisen består af</summary><table class="okc-table"><thead><tr><th>Post</th><th>Vejledende</th></tr></thead><tbody>';
+    var names = { chassis: L('Chassis og drivlinje', 'Chassis and drivetrain'), body: L('Opbygning, udstyr og montage', 'Body, equipment and assembly'), trailer: L('Anhænger', 'Trailer') };
+    h += '<details class="okc-more"><summary>' + L('Se hvad prisen består af', 'See the price breakdown') + '</summary><table class="okc-table"><thead><tr><th>' + L('Post', 'Item') + '</th><th>' + L('Vejledende', 'Indicative') + '</th></tr></thead><tbody>';
     ['chassis', 'body', 'trailer'].forEach(function (k) { if (e.g[k][1] > 0) h += '<tr><td><b>' + names[k] + '</b></td><td><b>' + fmtRange(roundP(e.g[k][0]), roundP(e.g[k][1])) + '</b></td></tr>'; });
-    if (e.own) h += '<tr><td>Chassis</td><td>Leveres af jer</td></tr>';
+    if (e.own) h += '<tr><td>' + L('Chassis', 'Chassis') + '</td><td>' + L('Leveres af jer', 'Supplied by you') + '</td></tr>';
     e.lines.forEach(function (l) { h += '<tr class="okc-sub"><td>' + esc(l.label) + '</td><td>' + fmtRange(l.p[0], l.p[1]) + '</td></tr>'; });
     h += '</tbody></table></details>';
-    h += '<details class="okc-more"><summary>Hvorfor et interval?</summary><ul class="okc-list">' +
-      '<li><b>Chassispriser</b> varierer med mærke, motor, førerhus og aktuelle kampagner.</li>' +
-      '<li><b>Valuta og råvarer:</b> Opbygninger importeres i euro, og stålpriser svinger.</li>' +
-      '<li><b>Detaljer:</b> Akselafstand, hydraulik, el-system og lakering afklares ved den tekniske gennemgang.</li>' +
-      (A('drive') === 'el' ? '<li><b>Batteristørrelse</b> afhænger af ruten og energiforbruget til arbejdsfunktionerne.</li>' : '') +
+    h += '<details class="okc-more"><summary>' + L('Hvorfor et interval?', 'Why a range?') + '</summary><ul class="okc-list">' +
+      L('<li><b>Chassispriser</b> varierer med mærke, motor, førerhus og aktuelle kampagner.</li><li><b>Valuta og råvarer:</b> Opbygninger importeres i euro, og stålpriser svinger.</li><li><b>Detaljer:</b> Akselafstand, hydraulik, el-system og lakering afklares ved den tekniske gennemgang.</li>',
+        '<li><b>Chassis prices</b> vary with make, engine, cab and current offers.</li><li><b>Currency and materials:</b> Bodies are imported in euros, and steel prices fluctuate.</li><li><b>Details:</b> Wheelbase, hydraulics, electrics and paint are settled in the technical review.</li>') +
+      (A('drive') === 'el' ? L('<li><b>Batteristørrelse</b> afhænger af ruten og energiforbruget til arbejdsfunktionerne.</li>', '<li><b>Battery size</b> depends on the route and the energy used by the body functions.</li>') : '') +
+      (A('abroad') ? L('', '<li><b>Delivery abroad:</b> Transport, registration and local approval are quoted separately.</li>') : '') +
       '</ul></details>';
 
     var c = contactFor();
-    h += '<div class="okc-cta okc-noprint"><div><h3 class="okc-h3">Vil I have den præcise pris?</h3><p>' + esc(firstName(c.name)) + ' gennemgår jeres konfiguration med vægt- og akseltryksberegning og vender tilbage ' + promise() + ' med et bindende tilbud.</p></div>' +
-      '<div class="okc-cta-btns"><button type="button" class="okc-btn okc-btn-accent" data-act="next">Få præcist tilbud →</button>' + renderShare() + '</div></div>';
+    h += '<div class="okc-cta okc-noprint"><div><h3 class="okc-h3">' + L('Vil I have den præcise pris?', 'Want the exact price?') + '</h3><p>' +
+      L(esc(firstName(c.name)) + ' gennemgår jeres konfiguration med vægt- og akseltryksberegning og vender tilbage ' + promise() + ' med et bindende tilbud.',
+        esc(firstName(c.name)) + ' will review your configuration with a weight and axle load calculation and get back to you ' + promise() + ' with a binding quote.') + '</p></div>' +
+      '<div class="okc-cta-btns"><button type="button" class="okc-btn okc-btn-accent" data-act="next">' + L('Få præcist tilbud →', 'Get exact quote →') + '</button>' + renderShare() + '</div></div>';
     h += renderSharePanel();
-    h += '<p class="okc-fine">Leasing-overslaget er beregnet som operationel leasing over ' + CONFIG.leasing.months + ' måneder med ' + Math.round(CONFIG.leasing.residual * 100) + ' % restværdi. Nyttelasten er et overslag. Prisindikationen er ikke et tilbud.</p>';
-    h += '<div class="okc-nav"><button type="button" class="okc-btn okc-btn-ghost" data-act="back">← Ret mine valg</button><span></span></div>';
+    h += '<p class="okc-fine">' + L('Leasing-overslaget er beregnet som operationel leasing over ' + CONFIG.leasing.months + ' måneder med ' + Math.round(CONFIG.leasing.residual * 100) + ' % restværdi. Nyttelasten er et overslag. Prisindikationen er ikke et tilbud.',
+      'The leasing estimate is based on operating lease over ' + CONFIG.leasing.months + ' months with ' + Math.round(CONFIG.leasing.residual * 100) + ' % residual value. The payload is an estimate. The price indication is not an offer.') + '</p>';
+    h += '<div class="okc-nav"><button type="button" class="okc-btn okc-btn-ghost" data-act="back">' + L('← Ret mine valg', '← Change my choices') + '</button><span></span></div>';
     return h;
   }
 
   function field(key, label, type, attrs, full, errMsg) {
     return '<div class="okc-field' + (full ? ' full' : '') + '" id="okc-f-' + key + '"><label for="okc-l-' + key + '">' + label + '</label>' +
       '<input class="okc-input" id="okc-l-' + key + '" type="' + type + '" data-lead="' + key + '" value="' + esc(S.lead[key] || '') + '" ' + (attrs || '') + '>' +
-      '<div class="okc-q-err">' + (errMsg || 'Udfyld feltet.') + '</div></div>';
+      '<div class="okc-q-err">' + (errMsg || L('Udfyld feltet.', 'Please fill in this field.')) + '</div></div>';
   }
   function filesHTML() {
     if (!FILES.length) return '';
     return '<ul class="okc-files-list">' + FILES.map(function (f, i) {
-      return '<li><span>' + esc(f.name) + ' <em>' + (f.size < 1048576 ? Math.max(1, Math.round(f.size / 1024)) + ' kB' : (f.size / 1048576).toFixed(1).replace('.', ',') + ' MB') + '</em></span><button type="button" data-rmfile="' + i + '" aria-label="Fjern ' + esc(f.name) + '">×</button></li>';
+      var sz = f.size < 1048576 ? Math.max(1, Math.round(f.size / 1024)) + ' kB' : (f.size / 1048576).toLocaleString(loc(), { maximumFractionDigits: 1 }) + ' MB';
+      return '<li><span>' + esc(f.name) + ' <em>' + sz + '</em></span><button type="button" data-rmfile="' + i + '" aria-label="' + L('Fjern ', 'Remove ') + esc(f.name) + '">×</button></li>';
     }).join('') + '</ul>';
   }
 
   function renderLead() {
     var e = estimate(), c = contactFor(), h = '';
-    h += '<h2 class="okc-title">Få et præcist tilbud</h2>';
-    h += '<p class="okc-intro">Jeres konfiguration (' + esc(P().name.toLowerCase()) + ', vejledende ' + fmtRange(e.lo, e.hi) + ') går direkte til ' + esc(c.name) + '. I får et bindende tilbud og en teknisk specifikation.</p>';
+    h += '<h2 class="okc-title">' + L('Få et præcist tilbud', 'Get an exact quote') + '</h2>';
+    h += '<p class="okc-intro">' + L('Jeres konfiguration (' + esc(tr(P().name).toLowerCase()) + ', vejledende ' + fmtRange(e.lo, e.hi) + ') går direkte til ' + esc(c.name) + '. I får et bindende tilbud og en teknisk specifikation.',
+      'Your configuration (' + esc(tr(P().name).toLowerCase()) + ', indicative ' + fmtRange(e.lo, e.hi) + ') goes straight to ' + esc(c.name) + '. You will receive a binding quote and a technical specification.') + '</p>';
     h += '<div class="okc-form" id="okc-form">';
-    h += field('name', 'Navn *', 'text', 'autocomplete="name"');
-    h += field('company', 'Virksomhed *', 'text', 'autocomplete="organization"');
-    h += field('email', 'E-mail *', 'email', 'autocomplete="email" inputmode="email"', false, 'Indtast en gyldig e-mailadresse.');
-    h += field('phone', 'Telefon *', 'tel', 'autocomplete="tel" inputmode="tel"', false, 'Indtast et gyldigt telefonnummer.');
-    h += '<div class="okc-field" id="okc-f-role"><label for="okc-l-role">Din rolle *</label><select class="okc-input" id="okc-l-role" data-lead="role">';
-    [['', 'Vælg …'], ['owner', 'Ejer / direktør'], ['purchase', 'Indkøb'], ['fleet', 'Drifts- / flådeansvarlig'], ['workshop', 'Værkstedsansvarlig'], ['driver', 'Chauffør / medarbejder'], ['other', 'Andet']].forEach(function (o) {
+    h += field('name', L('Navn *', 'Name *'), 'text', 'autocomplete="name"');
+    h += field('company', L('Virksomhed *', 'Company *'), 'text', 'autocomplete="organization"');
+    h += field('email', L('E-mail *', 'Email *'), 'email', 'autocomplete="email" inputmode="email"', false, L('Indtast en gyldig e-mailadresse.', 'Enter a valid email address.'));
+    h += field('phone', L('Telefon *', 'Phone (incl. country code) *'), 'tel', 'autocomplete="tel" inputmode="tel"', false, L('Indtast et gyldigt telefonnummer.', 'Enter a valid phone number.'));
+    h += '<div class="okc-field" id="okc-f-role"><label for="okc-l-role">' + L('Din rolle *', 'Your role *') + '</label><select class="okc-input" id="okc-l-role" data-lead="role">';
+    [['', L('Vælg …', 'Choose …')], ['owner', L('Ejer / direktør', 'Owner / managing director')], ['purchase', L('Indkøb', 'Purchasing')], ['fleet', L('Drifts- / flådeansvarlig', 'Operations / fleet manager')], ['workshop', L('Værkstedsansvarlig', 'Workshop manager')], ['driver', L('Chauffør / medarbejder', 'Driver / employee')], ['other', L('Andet', 'Other')]].forEach(function (o) {
       h += '<option value="' + o[0] + '"' + (S.lead.role === o[0] ? ' selected' : '') + '>' + o[1] + '</option>';
     });
-    h += '</select><div class="okc-q-err">Vælg din rolle.</div></div>';
-    h += field('cvr', 'CVR-nr. (valgfrit)', 'text', 'inputmode="numeric" maxlength="8"');
-    h += '<div class="okc-field full"><label>Hvordan vil I helst kontaktes?</label><div class="okc-seg" role="radiogroup">';
-    [['call', 'Ring mig op'], ['meeting', 'Book et møde'], ['mail', 'Send tilbud på mail']].forEach(function (o) {
+    h += '</select><div class="okc-q-err">' + L('Vælg din rolle.', 'Choose your role.') + '</div></div>';
+    h += field('cvr', L('CVR-nr. (valgfrit)', 'Company / VAT no. (optional)'), 'text', 'maxlength="20"');
+    h += '<div class="okc-field full"><label>' + L('Hvordan vil I helst kontaktes?', 'How would you prefer to be contacted?') + '</label><div class="okc-seg" role="radiogroup">';
+    [['call', L('Ring mig op', 'Call me')], ['meeting', L('Book et møde', 'Book a meeting')], ['mail', L('Send tilbud på mail', 'Email me the quote')]].forEach(function (o) {
       h += '<button type="button" role="radio" aria-checked="' + (S.lead.contactPref === o[0]) + '" data-pref="' + o[0] + '">' + o[1] + '</button>';
     });
     h += '</div></div>';
-    var hint = (A('trigger') === 'bid' || A('trigger') === 'won') ? 'Udbudsmateriale eller kravspecifikation' : (A('tradein') === 'ja' ? 'Billeder af byttebilen, servicebog' : 'Kravspecifikation, foto af nuværende bil');
-    h += '<div class="okc-field full"><label for="okc-files">Vedhæft filer (valgfrit)</label>' +
-      '<label class="okc-drop" for="okc-files"><b>Vælg filer</b> eller træk dem hertil<span>' + esc(hint) + ' eller en skitse – PDF, billeder, Word og Excel, i alt maks. ' + CONFIG.maxUploadMB + ' MB.</span></label>' +
+    var hint = (A('trigger') === 'bid' || A('trigger') === 'won') ? L('Udbudsmateriale eller kravspecifikation', 'Tender documents or specification') : (A('tradein') === 'ja' ? L('Billeder af byttebilen, servicebog', 'Photos of the trade-in, service record') : L('Kravspecifikation, foto af nuværende bil', 'Specification, photo of your current vehicle'));
+    h += '<div class="okc-field full"><label for="okc-files">' + L('Vedhæft filer (valgfrit)', 'Attach files (optional)') + '</label>' +
+      '<label class="okc-drop" for="okc-files"><b>' + L('Vælg filer', 'Choose files') + '</b> ' + L('eller træk dem hertil', 'or drag them here') + '<span>' + esc(hint) + L(' eller en skitse – PDF, billeder, Word og Excel, i alt maks. ', ' or a sketch – PDF, images, Word and Excel, max. ') + CONFIG.maxUploadMB + L(' MB.', ' MB in total.') + '</span></label>' +
       '<input type="file" id="okc-files" class="okc-file-input" multiple accept=".pdf,.doc,.docx,.xls,.xlsx,.jpg,.jpeg,.png,.heic,.webp">' +
       '<div id="okc-files-list">' + filesHTML() + '</div><div class="okc-q-err" id="okc-files-err"></div></div>';
-    h += '<div class="okc-field full"><label for="okc-l-msg">Kommentar eller særlige krav (valgfrit)</label><textarea class="okc-input" id="okc-l-msg" data-lead="msg" rows="3">' + esc(S.lead.msg || '') + '</textarea></div>';
-    h += '<div class="okc-hp" aria-hidden="true"><label>Lad dette felt være tomt<input type="text" tabindex="-1" autocomplete="off" data-lead="website"></label></div>';
-    h += '<div class="okc-field full" id="okc-f-consent"><label class="okc-check"><input type="checkbox" data-lead-check="consent"' + (S.lead.consent ? ' checked' : '') + '><span>Jeg accepterer, at Ove Kock A/S behandler mine oplysninger for at besvare min forespørgsel. Læs vores <a href="' + esc(CONFIG.privacyUrl) + '" target="_blank" rel="noopener">privatlivspolitik</a>. *</span></label><div class="okc-q-err">Samtykke er nødvendigt for at vi kan kontakte jer.</div></div>';
-    h += '<div class="okc-field full"><label class="okc-check"><input type="checkbox" data-lead-check="marketing"' + (S.lead.marketing ? ' checked' : '') + '><span>Ja tak til nyheder om nye løsninger, demobiler og arrangementer fra Ove Kock (kan altid afmeldes).</span></label></div>';
+    h += '<div class="okc-field full"><label for="okc-l-msg">' + L('Kommentar eller særlige krav (valgfrit)', 'Comments or special requirements (optional)') + '</label><textarea class="okc-input" id="okc-l-msg" data-lead="msg" rows="3">' + esc(S.lead.msg || '') + '</textarea></div>';
+    h += '<div class="okc-hp" aria-hidden="true"><label>Leave empty<input type="text" tabindex="-1" autocomplete="off" data-lead="website"></label></div>';
+    h += '<div class="okc-field full" id="okc-f-consent"><label class="okc-check"><input type="checkbox" data-lead-check="consent"' + (S.lead.consent ? ' checked' : '') + '><span>' +
+      L('Jeg accepterer, at Ove Kock A/S behandler mine oplysninger for at besvare min forespørgsel. Læs vores ', 'I agree that Ove Kock A/S may process my details to answer my enquiry. Read our ') +
+      '<a href="' + esc(CONFIG.privacyUrl) + '" target="_blank" rel="noopener">' + L('privatlivspolitik', 'privacy policy') + '</a>. *</span></label><div class="okc-q-err">' + L('Samtykke er nødvendigt for at vi kan kontakte jer.', 'Consent is required for us to contact you.') + '</div></div>';
+    h += '<div class="okc-field full"><label class="okc-check"><input type="checkbox" data-lead-check="marketing"' + (S.lead.marketing ? ' checked' : '') + '><span>' + L('Ja tak til nyheder om nye løsninger, demobiler og arrangementer fra Ove Kock (kan altid afmeldes).', 'Yes please, send me news about new solutions, demo vehicles and events from Ove Kock (unsubscribe at any time).') + '</span></label></div>';
     h += '</div><div id="okc-alert"></div>';
-    h += '<div class="okc-nav"><button type="button" class="okc-btn okc-btn-ghost" data-act="back">← Tilbage til prisen</button><button type="button" class="okc-btn okc-btn-accent" data-act="submit">Send forespørgsel</button></div>';
+    h += '<div class="okc-nav"><button type="button" class="okc-btn okc-btn-ghost" data-act="back">' + L('← Tilbage til prisen', '← Back to price') + '</button><button type="button" class="okc-btn okc-btn-accent" data-act="submit">' + L('Send forespørgsel', 'Send enquiry') + '</button></div>';
     return h;
   }
 
   function renderDone() {
     var e = estimate(), h = '', br = branchFor(A('zip')), c = contactFor();
-    h += '<h2 class="okc-title">Tak, ' + esc(firstName(S.lead.name)) + ' – vi har modtaget jeres forespørgsel</h2>';
-    h += '<div class="okc-done-ref">Reference: ' + esc(S.ref) + '</div>';
-    h += '<div class="okc-done-contact">' + avatar(c) + '<p><b>' + esc(c.name) + '</b> ' + (S.lead.contactPref === 'mail' ? 'sender jer tilbuddet på mail ' : S.lead.contactPref === 'meeting' ? 'ringer jer for at aftale et møde ' : 'ringer jer ') + promise() + '. Har I travlt, så ring på <a href="tel:' + esc(c.tel) + '">' + esc(c.phone) + '</a>.</p></div>';
-    h += '<h3 class="okc-h3">Det sker nu</h3><ol class="okc-steps">' +
-      '<li><b>Teknisk gennemgang.</b> Vi gennemgår jeres konfiguration, vægt og akseltryk' + (FILES.length ? ' og de vedhæftede filer' : '') + '.</li>' +
-      '<li><b>Vi afklarer detaljerne</b> med jer' + (Object.keys(S.unsure).length ? ' – også de punkter, I bad os vælge' : '') + '.</li>' +
-      '<li><b>I modtager et bindende tilbud</b> med teknisk specifikation og leveringsplan.</li></ol>';
-    h += '<h3 class="okc-h3">Jeres konfiguration</h3><table class="okc-table"><tbody>';
+    h += '<h2 class="okc-title">' + L('Tak, ', 'Thank you, ') + esc(firstName(S.lead.name)) + L(' – vi har modtaget jeres forespørgsel', ' – we have received your enquiry') + '</h2>';
+    h += '<div class="okc-done-ref">' + L('Reference: ', 'Reference: ') + esc(S.ref) + '</div>';
+    var act = S.lead.contactPref === 'mail' ? L('sender jer tilbuddet på mail ', 'will email you the quote ') : S.lead.contactPref === 'meeting' ? L('ringer jer for at aftale et møde ', 'will call you to arrange a meeting ') : L('ringer jer ', 'will call you ');
+    h += '<div class="okc-done-contact">' + avatar(c) + '<p><b>' + esc(c.name) + '</b> ' + act + promise() + L('. Har I travlt, så ring på ', '. In a hurry? Call ') + '<a href="tel:' + esc(c.tel) + '">' + esc(tel(c.phone)) + '</a>.</p></div>';
+    h += '<h3 class="okc-h3">' + L('Det sker nu', 'What happens next') + '</h3><ol class="okc-steps">' +
+      L('<li><b>Teknisk gennemgang.</b> Vi gennemgår jeres konfiguration, vægt og akseltryk' + (FILES.length ? ' og de vedhæftede filer' : '') + '.</li>',
+        '<li><b>Technical review.</b> We review your configuration, weight and axle loads' + (FILES.length ? ' and the attached files' : '') + '.</li>') +
+      L('<li><b>Vi afklarer detaljerne</b> med jer' + (Object.keys(S.unsure).length ? ' – også de punkter, I bad os vælge' : '') + '.</li>',
+        '<li><b>We clarify the details</b> with you' + (Object.keys(S.unsure).length ? ' – including the points you asked us to choose' : '') + '.</li>') +
+      L('<li><b>I modtager et bindende tilbud</b> med teknisk specifikation og leveringsplan.</li>', '<li><b>You receive a binding quote</b> with technical specification and delivery plan.</li>') + '</ol>';
+    h += '<h3 class="okc-h3">' + L('Jeres konfiguration', 'Your configuration') + '</h3><table class="okc-table"><tbody>';
     summaryItems().forEach(function (it) { h += '<tr><td>' + esc(it[0]) + '</td><td class="okc-td-l">' + esc(it[1]) + '</td></tr>'; });
-    h += '<tr><td><b>Vejledende pris pr. enhed</b></td><td class="okc-td-l"><b>' + fmtRange(e.lo, e.hi) + '</b></td></tr>';
-    h += '<tr><td>Forventet leveringstid</td><td class="okc-td-l">' + weeksToText(e.weeks) + '</td></tr>';
-    var pc = payloadCalc(); if (pc) h += '<tr><td>Beregnet nyttelast</td><td class="okc-td-l">ca. ' + tons(pc.payload) + '</td></tr>';
-    if (br) h += '<tr><td>Nærmeste afdeling</td><td class="okc-td-l">' + esc(BRANCHES[br].name + ', ' + BRANCHES[br].addr + ', tlf. ' + BRANCHES[br].phone) + '</td></tr>';
+    h += '<tr><td><b>' + L('Vejledende pris pr. enhed', 'Indicative price per unit') + '</b></td><td class="okc-td-l"><b>' + fmtRange(e.lo, e.hi) + '</b>' + (LANG === 'en' ? ' (' + fmtEur(e.lo, e.hi) + ')' : '') + '</td></tr>';
+    h += '<tr><td>' + L('Forventet leveringstid', 'Expected delivery time') + '</td><td class="okc-td-l">' + weeksToText(e.weeks) + '</td></tr>';
+    var pc = payloadCalc(); if (pc) h += '<tr><td>' + L('Beregnet nyttelast', 'Calculated payload') + '</td><td class="okc-td-l">' + L('ca. ', 'approx. ') + tons(pc.payload) + '</td></tr>';
+    if (br) h += '<tr><td>' + L('Nærmeste afdeling', 'Nearest branch') + '</td><td class="okc-td-l">' + esc(BRANCHES[br].name + ', ' + BRANCHES[br].addr + ', ' + L('tlf. ', 'tel. ') + tel(BRANCHES[br].phone)) + '</td></tr>';
     h += '</tbody></table>';
-    h += '<div class="okc-nav okc-noprint okc-nav-start"><button type="button" class="okc-btn okc-btn-primary" data-act="print">Gem som PDF / print</button>' + renderShare() + '<button type="button" class="okc-btn okc-btn-ghost" data-act="restart">Lav en ny konfiguration</button></div>';
+    h += '<div class="okc-nav okc-noprint okc-nav-start"><button type="button" class="okc-btn okc-btn-primary" data-act="print">' + L('Gem som PDF / print', 'Save as PDF / print') + '</button>' + renderShare() + '<button type="button" class="okc-btn okc-btn-ghost" data-act="restart">' + L('Lav en ny konfiguration', 'Start a new configuration') + '</button></div>';
     h += renderSharePanel();
-    h += '<p class="okc-fine">Prisindikationen er vejledende og ikke et tilbud.</p>';
+    h += '<p class="okc-fine">' + L('Prisindikationen er vejledende og ikke et tilbud.', 'The price indication is for guidance only and is not an offer.') + '</p>';
     return h;
   }
 
@@ -1748,7 +2254,7 @@ textarea.okc-input{height:auto;padding:12px 16px}
     else qsOf(sid).forEach(function (id) {
       var q = Q[id], v = S.a[id], bad = false;
       if (q.optional) return;
-      if (q.type === 'text') bad = !(q.pattern ? q.pattern.test(v || '') : v);
+      if (q.type === 'text') bad = !textOk(q, v);
       else if (q.type === 'single') bad = !v;
       var el = root.querySelector('#okc-q-' + id);
       if (el) el.classList.toggle('err', bad);
@@ -1758,13 +2264,13 @@ textarea.okc-input{height:auto;padding:12px 16px}
     return true;
   }
   function validateLead() {
-    var L = S.lead, errs = {};
-    if (!L.name || L.name.trim().length < 2) errs.name = 1;
-    if (!L.company || L.company.trim().length < 2) errs.company = 1;
-    if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test((L.email || '').trim())) errs.email = 1;
-    if ((L.phone || '').replace(/\D/g, '').length < 8) errs.phone = 1;
-    if (!L.role) errs.role = 1;
-    if (!L.consent) errs.consent = 1;
+    var Ld = S.lead, errs = {};
+    if (!Ld.name || Ld.name.trim().length < 2) errs.name = 1;
+    if (!Ld.company || Ld.company.trim().length < 2) errs.company = 1;
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test((Ld.email || '').trim())) errs.email = 1;
+    if ((Ld.phone || '').replace(/\D/g, '').length < 8) errs.phone = 1;
+    if (!Ld.role) errs.role = 1;
+    if (!Ld.consent) errs.consent = 1;
     ['name', 'company', 'email', 'phone', 'role', 'consent'].forEach(function (k) { var el = root.querySelector('#okc-f-' + k); if (el) el.classList.toggle('err', !!errs[k]); });
     var keys = Object.keys(errs);
     if (keys.length) { var el = root.querySelector('#okc-f-' + keys[0]); if (el) { try { el.scrollIntoView({ behavior: 'smooth', block: 'center' }); } catch (e) {} var inp = el.querySelector('input,select'); if (inp) inp.focus({ preventScroll: true }); } }
@@ -1789,36 +2295,41 @@ textarea.okc-input{height:auto;padding:12px 16px}
   function b64d(str) { str = str.replace(/-/g, '+').replace(/_/g, '/'); while (str.length % 4) str += '='; return decodeURIComponent(escape(atob(str))); }
   function shareLink() {
     var base = window.location.href.split('#')[0].split('?')[0];
-    return base + '?konfiguration=' + b64e(JSON.stringify({ p: S.product, a: S.a, u: S.unsure }));
+    return base + '?' + (LANG === 'en' ? 'lang=en&' : '') + 'konfiguration=' + b64e(JSON.stringify({ p: S.product, a: S.a, u: S.unsure }));
   }
-  function readable() { var o = {}; summaryItems().forEach(function (it) { o[it[0]] = it[1]; }); return o; }
+  // Til Ove Kock altid på dansk
+  function readableDa() { return withLang('da', function () { var o = {}; summaryItems().forEach(function (it) { o[it[0]] = it[1]; }); return o; }); }
 
   function buildPayload() {
     var e = estimate(), sc = leadScore(e), br = branchFor(A('zip')), pc = payloadCalc(), c = contactFor();
-    return {
-      type: 'quote', reference: S.ref, submitted_at: new Date().toISOString(),
-      lead: { name: S.lead.name, company: S.lead.company, email: S.lead.email, phone: S.lead.phone, role: S.lead.role, cvr: S.lead.cvr || null,
-        contact_preference: S.lead.contactPref, message: S.lead.msg || null, consent: !!S.lead.consent, marketing_consent: !!S.lead.marketing },
-      qualification: { score: sc.score, grade: sc.grade, timeline: A('timeline'), trigger: A('trigger'), quantity: A('qty'), service: A('service'),
-        postal_code: A('zip'), nearest_branch: br ? BRANCHES[br].name : null, contact_person: c.name },
-      configuration: { product: S.product, product_name: P().name, started_from_case: S.fromCase, raw: S.a, readable: readable(),
-        to_clarify: Object.keys(S.unsure).filter(function (k) { return S.unsure[k]; }),
-        trade_in: A('tradein') === 'ja' ? (A('tradein_desc') || 'Ja – ikke beskrevet') : null },
-      estimate: { currency: 'DKK', excl_vat: true, per_unit_low: e.lo, per_unit_high: e.hi, chassis_included: !e.own, lead_time_weeks: e.weeks,
-        leasing_monthly: e.monthly, payload_kg: pc ? Math.round(pc.payload) : null, payload_status: pc ? pc.status : null,
-        lines: e.lines.map(function (l) { return { item: l.label, low: l.p[0], high: l.p[1] }; }) },
-      mistakes_check: mistakes(e, pc).map(function (m) { return m.st + ': ' + m.h; }),
-      advice: advice().map(function (n) { return n.t + ': ' + n.h; }),
-      attachments: FILES.map(function (f) { return { name: f.name, size: f.size }; }),
-      share_link: shareLink(),
-      attribution: attribution()
-    };
+    return withLang('da', function () {
+      return {
+        type: 'quote', reference: S.ref, submitted_at: new Date().toISOString(), language: LANG_AT_SUBMIT,
+        lead: { name: S.lead.name, company: S.lead.company, email: S.lead.email, phone: S.lead.phone, role: S.lead.role, cvr: S.lead.cvr || null,
+          contact_preference: S.lead.contactPref, message: S.lead.msg || null, consent: !!S.lead.consent, marketing_consent: !!S.lead.marketing },
+        qualification: { score: sc.score, grade: sc.grade, timeline: A('timeline'), trigger: A('trigger'), quantity: A('qty'), service: A('service'),
+          postal_code: A('abroad') ? null : A('zip'), country: A('abroad') ? A('country') : 'Danmark', nearest_branch: br ? BRANCHES[br].name : null, contact_person: c.name },
+        configuration: { product: S.product, product_name: P().name, started_from_case: S.fromCase, raw: S.a, readable: readableDa(),
+          to_clarify: Object.keys(S.unsure).filter(function (k) { return S.unsure[k]; }),
+          trade_in: A('tradein') === 'ja' ? (A('tradein_desc') || 'Ja – ikke beskrevet') : null },
+        estimate: { currency: 'DKK', excl_vat: true, per_unit_low: e.lo, per_unit_high: e.hi, chassis_included: !e.own, lead_time_weeks: e.weeks,
+          leasing_monthly: e.monthly, payload_kg: pc ? Math.round(pc.payload) : null, payload_status: pc ? pc.status : null,
+          lines: estimate().lines.map(function (l) { return { item: l.label, low: l.p[0], high: l.p[1] }; }) },
+        mistakes_check: mistakes(e, pc).map(function (m) { return m.st + ': ' + m.h; }),
+        advice: advice().map(function (n) { return n.t + ': ' + n.h; }),
+        attachments: FILES.map(function (f) { return { name: f.name, size: f.size }; }),
+        share_link: shareLink(),
+        attribution: attribution()
+      };
+    });
   }
+  var LANG_AT_SUBMIT = 'da';
   function emailBody(p) {
-    var l = ['Forespørgsel fra konfiguratoren – ' + p.reference, '', 'Navn: ' + p.lead.name, 'Virksomhed: ' + p.lead.company, 'E-mail: ' + p.lead.email, 'Telefon: ' + p.lead.phone, 'Kontakt: ' + p.lead.contact_preference, ''];
+    var l = ['Forespørgsel fra konfiguratoren – ' + p.reference, '', 'Sprog: ' + (p.language === 'en' ? 'ENGELSK – svar på engelsk' : 'dansk'), 'Navn: ' + p.lead.name, 'Virksomhed: ' + p.lead.company, 'E-mail: ' + p.lead.email, 'Telefon: ' + p.lead.phone, 'Kontakt: ' + p.lead.contact_preference, ''];
+    if (p.qualification.country && p.qualification.country !== 'Danmark') l.push('Land: ' + p.qualification.country, '');
     Object.keys(p.configuration.readable).forEach(function (k) { l.push(k + ': ' + p.configuration.readable[k]); });
-    l.push('', 'Vejledende pris: ' + fmtRange(p.estimate.per_unit_low, p.estimate.per_unit_high));
-    if (p.estimate.payload_kg != null) l.push('Nyttelast: ca. ' + tons(p.estimate.payload_kg));
+    l.push('', 'Vejledende pris: ' + withLang('da', function () { return fmtRange(p.estimate.per_unit_low, p.estimate.per_unit_high); }));
+    if (p.estimate.payload_kg != null) l.push('Nyttelast: ca. ' + withLang('da', function () { return tons(p.estimate.payload_kg); }));
     l.push('Leadscore: ' + p.qualification.score + ' (' + p.qualification.grade + ')');
     if (p.lead.message) l.push('', 'Kommentar: ' + p.lead.message);
     if (p.attachments.length) l.push('', 'HUSK at vedhæfte: ' + p.attachments.map(function (a) { return a.name; }).join(', '));
@@ -1844,9 +2355,10 @@ textarea.okc-input{height:auto;padding:12px 16px}
     if (S.lead.website) return;
     if (!validateLead()) { track('validation_error', { okc_screen: 'lead' }); return; }
     S.ref = S.ref || makeRef();
+    LANG_AT_SUBMIT = LANG;
     var payload = buildPayload(), alertBox = root.querySelector('#okc-alert');
-    btn.disabled = true; btn.textContent = 'Sender …';
-    send(payload, FILES, 'Konfigurator: ' + P().name + ' – ' + (S.lead.company || '') + ' (' + S.ref + ')', emailBody(payload))
+    btn.disabled = true; btn.textContent = L('Sender …', 'Sending …');
+    send(payload, FILES, (LANG === 'en' ? '[EN] ' : '') + 'Konfigurator: ' + withLang('da', function () { return P().name; }) + ' – ' + (S.lead.company || '') + ' (' + S.ref + ')', emailBody(payload))
       .then(function () {
         S.sent = true;
         track('lead_submitted', { okc_reference: S.ref, okc_grade: payload.qualification.grade, okc_score: payload.qualification.score, okc_value_high: payload.estimate.per_unit_high, okc_files: FILES.length });
@@ -1854,30 +2366,31 @@ textarea.okc-input{height:auto;padding:12px 16px}
         try { localStorage.removeItem(CONFIG.storageKey); } catch (e) {}
       })
       .catch(function () {
-        btn.disabled = false; btn.textContent = 'Send forespørgsel'; track('submit_error');
-        alertBox.innerHTML = '<div class="okc-alert">Beklager – forespørgslen kunne ikke sendes. Prøv igen, eller ring på 7611 7777 / skriv til <a href="mailto:' + esc(CONFIG.fallbackEmail) + '">' + esc(CONFIG.fallbackEmail) + '</a> og oplys reference ' + esc(S.ref) + '.</div>';
+        btn.disabled = false; btn.textContent = L('Send forespørgsel', 'Send enquiry'); track('submit_error');
+        alertBox.innerHTML = '<div class="okc-alert">' + L('Beklager – forespørgslen kunne ikke sendes. Prøv igen, eller ring på 7611 7777 / skriv til ', 'Sorry – the enquiry could not be sent. Please try again, or call +45 7611 7777 / email ') +
+          '<a href="mailto:' + esc(CONFIG.fallbackEmail) + '">' + esc(CONFIG.fallbackEmail) + '</a>' + L(' og oplys reference ', ' quoting reference ') + esc(S.ref) + '.</div>';
       });
   }
 
   function sendCallback(btn) {
     var err = root.querySelector('#okc-cb-err');
-    if ((S.cb.phone || '').replace(/\D/g, '').length < 8) { if (err) err.textContent = 'Indtast et telefonnummer med mindst 8 cifre.'; return; }
-    var c = contactFor(), ref = makeRef();
-    var payload = { type: 'callback', reference: ref, submitted_at: new Date().toISOString(), lead: { name: S.cb.name || null, phone: S.cb.phone },
-      contact_person: c.name, step: curScreen(), configuration: S.product ? { product: S.product, readable: readable() } : null,
+    if ((S.cb.phone || '').replace(/\D/g, '').length < 8) { if (err) err.textContent = L('Indtast et telefonnummer med mindst 8 cifre.', 'Enter a phone number with at least 8 digits.'); return; }
+    var c = contactFor(), ref = makeRef(), lang = LANG;
+    var payload = { type: 'callback', reference: ref, submitted_at: new Date().toISOString(), language: lang, lead: { name: S.cb.name || null, phone: S.cb.phone },
+      contact_person: c.name, step: curScreen(), configuration: S.product ? { product: S.product, readable: readableDa() } : null,
       share_link: S.product ? shareLink() : null, attribution: attribution() };
-    var body = 'Ring venligst op: ' + (S.cb.name || '(intet navn)') + ', tlf. ' + S.cb.phone + '\n\nKontaktperson: ' + c.name + '\nTrin: ' + curScreen() + (payload.share_link ? '\nKonfiguration indtil nu: ' + payload.share_link : '');
-    btn.disabled = true; btn.textContent = 'Sender …';
-    send(payload, null, 'Ring mig op – ' + (S.cb.name || S.cb.phone) + ' (' + ref + ')', body)
+    var body = 'Ring venligst op: ' + (S.cb.name || '(intet navn)') + ', tlf. ' + S.cb.phone + (lang === 'en' ? '\nSprog: ENGELSK' : '') + '\n\nKontaktperson: ' + c.name + '\nTrin: ' + curScreen() + (payload.share_link ? '\nKonfiguration indtil nu: ' + payload.share_link : '');
+    btn.disabled = true; btn.textContent = L('Sender …', 'Sending …');
+    send(payload, null, (lang === 'en' ? '[EN] ' : '') + 'Ring mig op – ' + (S.cb.name || S.cb.phone) + ' (' + ref + ')', body)
       .then(function () { S.cb.sent = true; S.cb.open = false; track('callback_requested', { okc_reference: ref }); render(false); })
-      .catch(function () { btn.disabled = false; btn.textContent = 'Ring mig op'; if (err) err.textContent = 'Det lykkedes ikke at sende. Ring i stedet på ' + c.phone + '.'; });
+      .catch(function () { btn.disabled = false; btn.textContent = L('Ring mig op', 'Call me'); if (err) err.textContent = L('Det lykkedes ikke at sende. Ring i stedet på ', 'Sending failed. Please call ') + tel(c.phone) + '.'; });
   }
 
   function addFiles(list) {
     var err = root.querySelector('#okc-files-err'), max = CONFIG.maxUploadMB * 1048576;
     var total = FILES.reduce(function (s, f) { return s + f.size; }, 0), skipped = 0;
     Array.prototype.forEach.call(list || [], function (f) { if (total + f.size <= max) { FILES.push(f); total += f.size; } else skipped++; });
-    if (err) { err.textContent = skipped ? skipped + ' fil(er) blev ikke tilføjet – samlet størrelse må højst være ' + CONFIG.maxUploadMB + ' MB.' : ''; err.style.display = skipped ? 'block' : 'none'; }
+    if (err) { err.textContent = skipped ? L(skipped + ' fil(er) blev ikke tilføjet – samlet størrelse må højst være ' + CONFIG.maxUploadMB + ' MB.', skipped + ' file(s) were not added – total size may not exceed ' + CONFIG.maxUploadMB + ' MB.') : ''; err.style.display = skipped ? 'block' : 'none'; }
     var box = root.querySelector('#okc-files-list'); if (box) box.innerHTML = filesHTML();
     if (FILES.length) track('files_added', { okc_files: FILES.length });
   }
@@ -1896,6 +2409,7 @@ textarea.okc-input{height:auto;padding:12px 16px}
       var q = t.getAttribute('data-q'), v = t.getAttribute('data-v'), act = t.getAttribute('data-act');
       var y = window.pageYOffset;
       function rerender(focusSel) { render(false); try { window.scrollTo(0, y); } catch (e) {} if (focusSel) { var f = root.querySelector(focusSel); if (f) f.focus({ preventScroll: true }); } }
+      var lg = t.getAttribute('data-lang'); if (lg) { setLang(lg); try { window.scrollTo(0, y); } catch (e) {} return; }
       if (q) {
         if (q === 'product') { if (S.product !== v) { S.product = v; S.a = {}; S.unsure = {}; S.fromCase = null; track('product_selected', { okc_product: v }); } }
         else if (Q[q].type === 'multi') { var arr = (S.a[q] || []).slice(), i = arr.indexOf(v); if (i > -1) arr.splice(i, 1); else arr.push(v); S.a[q] = arr; }
@@ -1920,12 +2434,14 @@ textarea.okc-input{height:auto;padding:12px 16px}
       else if (act === 'restart') reset();
       else if (act === 'submit') submit(t);
       else if (act === 'print') { track('print_spec'); window.print(); }
+      else if (act === 'abroad-on') { S.a.abroad = '1'; track('abroad'); rerender('[data-in="country"]'); }
+      else if (act === 'abroad-off') { delete S.a.abroad; rerender('[data-in="zip"]'); }
       else if (act === 'jump-project') { var ms = missingStep(), pi = screens().indexOf('project'); S.step = ms > -1 && ms < pi ? ms : pi; track('case_jump'); render(true); }
       else if (act === 'cb-open') { S.cb.open = true; track('callback_open'); rerender('[data-cb="name"]'); }
       else if (act === 'cb-send') sendCallback(t);
       else if (act === 'share-toggle') { shareOpen = !shareOpen; if (shareOpen) track('share_open'); rerender(shareOpen ? '#okc-share-link' : null); }
       else if (act === 'share-copy') {
-        var inp = root.querySelector('#okc-share-link'), done = function () { t.textContent = 'Kopieret ✓'; track('share_copy'); };
+        var inp = root.querySelector('#okc-share-link'), done = function () { t.textContent = L('Kopieret ✓', 'Copied ✓'); track('share_copy'); };
         if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(inp.value).then(done, function () { inp.select(); try { document.execCommand('copy'); done(); } catch (e) {} });
         else { inp.select(); try { document.execCommand('copy'); done(); } catch (e) {} }
       }
@@ -1936,10 +2452,10 @@ textarea.okc-input{height:auto;padding:12px 16px}
         S.a[k] = Q[k].numeric ? t.value.replace(/\D/g, '').slice(0, 4) : t.value;
         if (t.value !== S.a[k]) t.value = S.a[k];
         if (k === 'zip') {
-          var hint = root.querySelector('#okc-branch-hint'), br = branchFor(S.a.zip);
-          if (hint) hint.innerHTML = br ? 'Nærmeste afdeling: <b>' + esc(BRANCHES[br].name) + '</b> · Jeres kontakt: <b>' + esc(CONTACTS[br].name) + '</b>' : '';
-          if (br) { var qe = root.querySelector('#okc-q-zip'); if (qe) qe.classList.remove('err'); }
+          var hint = root.querySelector('#okc-branch-hint'); if (hint) hint.innerHTML = branchHint();
+          if (branchFor(S.a.zip)) { var qe = root.querySelector('#okc-q-zip'); if (qe) qe.classList.remove('err'); }
         }
+        if (k === 'country' && textOk(Q.country, S.a.country)) { var qc = root.querySelector('#okc-q-country'); if (qc) qc.classList.remove('err'); }
         return save();
       }
       var cbk = t.getAttribute('data-cb'); if (cbk) { S.cb[cbk] = t.value; return save(); }
@@ -1975,15 +2491,18 @@ textarea.okc-input{height:auto;padding:12px 16px}
           track('share_opened'); return;
         }
       }
-      var qp = (params.get('produkt') || '').toLowerCase();
-      var map = { ren: 'ren', renovation: 'ren', renovationsbil: 'ren', renovationsbiler: 'ren', kran: 'kran', kraner: 'kran', tiplad: 'kran', lift: 'lift', lifte: 'lift', laessebagsmaek: 'lift', sug: 'sug', sugebil: 'sug', sugebiler: 'sug', hejs: 'hejs', krog: 'hejs', wire: 'hejs' };
+      var qp = (params.get('produkt') || params.get('product') || '').toLowerCase();
+      var map = { ren: 'ren', renovation: 'ren', renovationsbil: 'ren', renovationsbiler: 'ren', refuse: 'ren', kran: 'kran', kraner: 'kran', tiplad: 'kran', crane: 'kran', lift: 'lift', lifte: 'lift', laessebagsmaek: 'lift', sug: 'sug', sugebil: 'sug', sugebiler: 'sug', vacuum: 'sug', hejs: 'hejs', krog: 'hejs', wire: 'hejs', hooklift: 'hejs' };
       if (map[qp] && S.product !== map[qp]) { S = fresh(); S.product = map[qp]; S.step = 1; }
     } catch (e) {}
   }
 
   function init() {
     root = document.getElementById('okc-root'); if (!root) return;
-    load(); applyUrl(); bind(); render(false); track('loaded');
+    LANG = detectLang();
+    load(); applyUrl(); bind();
+    setLang(LANG, true);
+    track('loaded');
   }
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init); else init();
 })();
@@ -1997,21 +2516,45 @@ textarea.okc-input{height:auto;padding:12px 16px}
     <a class="okp-logo" href="https://www.ovekock.dk/" aria-label="Ove Kock – forsiden"><img src="../assets/ovekock-logo.png" alt="Ove Kock – Hydraulik &amp; Karosserifabrik" width="597" height="188"></a><br>
     <a class="okp-fb" href="https://www.facebook.com/p/Ove-Kock-AS-100056483064749/" target="_blank" rel="noopener">
       <svg width="30" height="30" viewBox="0 0 24 24" aria-hidden="true"><rect width="24" height="24" rx="3" fill="#27346a"/><path fill="#fff" d="M16.5 24v-9.3h3.1l.5-3.6h-3.6V8.8c0-1 .3-1.8 1.8-1.8h1.9V3.8c-.3 0-1.5-.1-2.8-.1-2.8 0-4.6 1.7-4.6 4.8v2.6H9.6v3.6h3.2V24z"/></svg>
-      Følg os på Facebook
+      <span data-en="Follow us on Facebook">Følg os på Facebook</span>
     </a>
   </div>
-  <div class="okp-loc"><h4>Esbjerg</h4><p>Murervej 14<br>6710 Esbjerg V</p><p><a href="tel:+4576117777">Telefon 7611 7777</a></p><p><a href="mailto:info@ovekock.dk">E-mail info@ovekock.dk</a></p></div>
-  <div class="okp-loc"><h4>Kolding</h4><p>Armbolten 24 f<br>6000 Kolding</p><p><a href="tel:+4576117777">Telefon 7611 7777</a></p><p><a href="mailto:info@ovekock.dk">E-mail info@ovekock.dk</a></p></div>
-  <div class="okp-loc"><h4>Ringsted</h4><p>Huginsvej 8<br>4100 Ringsted</p><p><a href="tel:+4557613613">Telefon 5761 3613</a></p><p><a href="mailto:info@ovekock.dk">E-mail info@ovekock.dk</a></p></div>
-  <div class="okp-loc"><h4>Hobro</h4><p>Boldrupvej 112<br>9620 Aalestrup</p><p><a href="tel:+4540210190">Telefon 4021 0190</a></p><p><a href="mailto:info@ovekock.dk">E-mail info@ovekock.dk</a></p></div>
+  <div class="okp-loc"><h4>Esbjerg</h4><p>Murervej 14<br>6710 Esbjerg V<span data-en="&lt;br&gt;Denmark"></span></p><p><a href="tel:+4576117777"><span data-en="Phone +45">Telefon</span> 7611 7777</a></p><p><a href="mailto:info@ovekock.dk"><span data-en="Email">E-mail</span> info@ovekock.dk</a></p></div>
+  <div class="okp-loc"><h4>Kolding</h4><p>Armbolten 24 f<br>6000 Kolding<span data-en="&lt;br&gt;Denmark"></span></p><p><a href="tel:+4576117777"><span data-en="Phone +45">Telefon</span> 7611 7777</a></p><p><a href="mailto:info@ovekock.dk"><span data-en="Email">E-mail</span> info@ovekock.dk</a></p></div>
+  <div class="okp-loc"><h4>Ringsted</h4><p>Huginsvej 8<br>4100 Ringsted<span data-en="&lt;br&gt;Denmark"></span></p><p><a href="tel:+4557613613"><span data-en="Phone +45">Telefon</span> 5761 3613</a></p><p><a href="mailto:info@ovekock.dk"><span data-en="Email">E-mail</span> info@ovekock.dk</a></p></div>
+  <div class="okp-loc"><h4>Hobro</h4><p>Boldrupvej 112<br>9620 Aalestrup<span data-en="&lt;br&gt;Denmark"></span></p><p><a href="tel:+4540210190"><span data-en="Phone +45">Telefon</span> 4021 0190</a></p><p><a href="mailto:info@ovekock.dk"><span data-en="Email">E-mail</span> info@ovekock.dk</a></p></div>
 </div></footer>
 <div class="okp-bottom"><div class="okp-wrap">
-  <a href="https://www.ovekock.dk/cookie-og-privatlivspolitik/">Cookie- &amp; privatlivspolitik</a><i></i>
-  <a href="https://www.ovekock.dk/handelsbetingelser/">Handelsbetingelser</a><i></i>
-  <span>CVR 37880515</span>
+  <a href="https://www.ovekock.dk/cookie-og-privatlivspolitik/" data-en="Cookie &amp; privacy policy">Cookie- &amp; privatlivspolitik</a><i></i>
+  <a href="https://www.ovekock.dk/handelsbetingelser/" data-en="Terms and conditions">Handelsbetingelser</a><i></i>
+  <span data-en="Company reg. (CVR) 37880515">CVR 37880515</span>
 </div></div>
 
 <script>
+(function () {
+  // Sprogskift for sidens ramme (header, hero, footer). Konfiguratoren oversætter sig selv.
+  var store = new WeakMap();
+  function apply(l) {
+    document.documentElement.lang = l;
+    document.querySelectorAll('[data-en]').forEach(function (el) {
+      var o = store.get(el) || {}; if (o.html == null) { o.html = el.innerHTML; store.set(el, o); }
+      el.innerHTML = l === 'en' ? el.getAttribute('data-en') : o.html;
+    });
+    ['placeholder', 'aria-label'].forEach(function (a) {
+      document.querySelectorAll('[data-en-' + a + ']').forEach(function (el) {
+        var o = store.get(el) || {}; if (o[a] == null) { o[a] = el.getAttribute(a) || ''; store.set(el, o); }
+        el.setAttribute(a, l === 'en' ? el.getAttribute('data-en-' + a) : o[a]);
+      });
+    });
+    document.title = l === 'en' ? 'Project configurator – Ove Kock' : 'Projektkonfigurator – Ove Kock';
+    document.querySelectorAll('[data-page-lang]').forEach(function (b) { b.setAttribute('aria-pressed', String(b.getAttribute('data-page-lang') === l)); });
+  }
+  document.addEventListener('okc-lang', function (e) { apply(e.detail); });
+  document.querySelectorAll('[data-page-lang]').forEach(function (b) {
+    b.addEventListener('click', function () { var l = b.getAttribute('data-page-lang'); if (window.OKC) window.OKC.setLang(l); else apply(l); });
+  });
+  apply(window.OKC ? window.OKC.getLang() : 'da');
+})();
 (function () {
   var b = document.querySelector('.okp-burger'), n = document.getElementById('okp-nav');
   if (b && n) b.addEventListener('click', function () {

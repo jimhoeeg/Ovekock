@@ -49,6 +49,18 @@ Den indbyggede viden virker på fire måder:
 - `okc_share_open`, `okc_share_copy`, `okc_share_mail`, `okc_share_sms`, `okc_share_opened`
 - `okc_files_added`
 
+## Dansk / engelsk
+
+- **Sprogknap:** Øverst i højre hjørne (DA / EN) skifter sproget for hele siden og konfiguratoren uden at nulstille kundens valg. Indlejres konfiguratoren uden sidens ramme, viser den sin egen DA/EN-knap. Fjern `data-lang-toggle="off"` fra `#okc-root`, så knappen vises.
+- **Automatisk sprog:** `?lang=en` eller `?lang=da` i adressen vinder. Ellers bruges kundens sidste valg. Ellers vises dansk for browsere på dansk, færøsk og grønlandsk, og engelsk for alle andre.
+- **Tekster:** Alle danske data-tekster er oversat i ordbogen `EN` (nøgle = den danske tekst). Visningsteksterne står parvist som `L('dansk', 'english')`. `OKC.missing()` i browserkonsollen viser tekster uden oversættelse.
+- **Til udenlandske kunder:**
+  - Priserne vises i DKK med et omtrentligt beløb i euro (`eurRate`).
+  - Telefonnumre vises med +45.
+  - Under postnummeret kan kunden vælge «Uden for Danmark» og skrive land og by i stedet.
+- **Leads:** Lead-data og e-mails til Ove Kock er altid på dansk. Feltet `language` og et `[EN]`-præfiks i emnelinjen fortæller sælgeren, at der skal svares på engelsk.
+- **Tracking:** Alle events har `okc_lang`, og et skift af sprog sender `okc_language`.
+
 ## Installation på ovekock.dk
 
 **Mulighed A – direkte i siden (fx WordPress-blokken "Brugerdefineret HTML"):**
